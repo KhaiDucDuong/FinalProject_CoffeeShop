@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Coffee_ShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="bill_id" />
+          </Key>
+          <Property Name="bill_id" Type="int" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Bill_info">
+          <Key>
+            <PropertyRef Name="bill_id" />
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="bill_id" Type="int" Nullable="false" />
+          <Property Name="item_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="employee_id" />
+          </Key>
+          <Property Name="employee_id" Type="int" Nullable="false" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="date_join" Type="date" Nullable="false" />
+          <Property Name="date_left" Type="date" />
+        </EntityType>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="ingredient_id" />
+          </Key>
+          <Property Name="ingredient_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="check_id" />
+          </Key>
+          <Property Name="check_id" Type="int" Nullable="false" />
+          <Property Name="date_check" Type="date" Nullable="false" />
+          <Property Name="checker_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inventory_info">
+          <Key>
+            <PropertyRef Name="check_id" />
+            <PropertyRef Name="ingredient_id" />
+          </Key>
+          <Property Name="check_id" Type="int" Nullable="false" />
+          <Property Name="ingredient_id" Type="int" Nullable="false" />
+          <Property Name="quantity_per_unit" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="int" Nullable="false" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="item_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="remainingItems">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="int" Nullable="false" />
+          <Property Name="quanity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="supplier_id" />
+          </Key>
+          <Property Name="supplier_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone_num" Type="int" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SupplyPurchase">
+          <Key>
+            <PropertyRef Name="purchase_id" />
+          </Key>
+          <Property Name="purchase_id" Type="int" Nullable="false" />
+          <Property Name="employee_in_charge" Type="int" Nullable="false" />
+          <Property Name="supplier_id" Type="int" />
+          <Property Name="purchase_date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SupplyPurchaseInfo">
+          <Key>
+            <PropertyRef Name="purchase_id" />
+            <PropertyRef Name="ingredient_id" />
+          </Key>
+          <Property Name="purchase_id" Type="int" Nullable="false" />
+          <Property Name="ingredient_id" Type="int" Nullable="false" />
+          <Property Name="quantity_per_unit" Type="float" Nullable="false" />
+          <Property Name="purchase_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_bill_id">
+          <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+          <End Role="Bill_info" Type="Self.Bill_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bill">
+              <PropertyRef Name="bill_id" />
+            </Principal>
+            <Dependent Role="Bill_info">
+              <PropertyRef Name="bill_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_checker_id">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Inventory">
+              <PropertyRef Name="checker_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inven_check_id">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="1" />
+          <End Role="Inventory_info" Type="Self.Inventory_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="check_id" />
+            </Principal>
+            <Dependent Role="Inventory_info">
+              <PropertyRef Name="check_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inven_ingredient_id">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="Inventory_info" Type="Self.Inventory_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="ingredient_id" />
+            </Principal>
+            <Dependent Role="Inventory_info">
+              <PropertyRef Name="ingredient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_item_id">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="Bill_info" Type="Self.Bill_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="item_id" />
+            </Principal>
+            <Dependent Role="Bill_info">
+              <PropertyRef Name="item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_remainingItems_item_id">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="remainingItems" Type="Self.remainingItems" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="item_id" />
+            </Principal>
+            <Dependent Role="remainingItems">
+              <PropertyRef Name="item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPurchase_employ_id">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="SupplyPurchase" Type="Self.SupplyPurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="SupplyPurchase">
+              <PropertyRef Name="employee_in_charge" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPurchase_supplier_id">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+          <End Role="SupplyPurchase" Type="Self.SupplyPurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="supplier_id" />
+            </Principal>
+            <Dependent Role="SupplyPurchase">
+              <PropertyRef Name="supplier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPurchaseInfon_ingredient_id">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="SupplyPurchaseInfo" Type="Self.SupplyPurchaseInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="ingredient_id" />
+            </Principal>
+            <Dependent Role="SupplyPurchaseInfo">
+              <PropertyRef Name="ingredient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPurchaseInfon_purchase_id">
+          <End Role="SupplyPurchase" Type="Self.SupplyPurchase" Multiplicity="1" />
+          <End Role="SupplyPurchaseInfo" Type="Self.SupplyPurchaseInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplyPurchase">
+              <PropertyRef Name="purchase_id" />
+            </Principal>
+            <Dependent Role="SupplyPurchaseInfo">
+              <PropertyRef Name="purchase_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Coffee_ShopModelStoreContainer">
+          <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bill_info" EntityType="Self.Bill_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ingredient" EntityType="Self.Ingredient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inventory_info" EntityType="Self.Inventory_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="remainingItems" EntityType="Self.remainingItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupplyPurchase" EntityType="Self.SupplyPurchase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupplyPurchaseInfo" EntityType="Self.SupplyPurchaseInfo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_bill_id" Association="Self.FK_bill_id">
+            <End Role="Bill" EntitySet="Bill" />
+            <End Role="Bill_info" EntitySet="Bill_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_checker_id" Association="Self.FK_checker_id">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Inventory" EntitySet="Inventory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inven_check_id" Association="Self.FK_Inven_check_id">
+            <End Role="Inventory" EntitySet="Inventory" />
+            <End Role="Inventory_info" EntitySet="Inventory_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inven_ingredient_id" Association="Self.FK_Inven_ingredient_id">
+            <End Role="Ingredient" EntitySet="Ingredient" />
+            <End Role="Inventory_info" EntitySet="Inventory_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_item_id" Association="Self.FK_item_id">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Bill_info" EntitySet="Bill_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_remainingItems_item_id" Association="Self.FK_remainingItems_item_id">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="remainingItems" EntitySet="remainingItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPurchase_employ_id" Association="Self.FK_SupplyPurchase_employ_id">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="SupplyPurchase" EntitySet="SupplyPurchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPurchase_supplier_id" Association="Self.FK_SupplyPurchase_supplier_id">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="SupplyPurchase" EntitySet="SupplyPurchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPurchaseInfon_ingredient_id" Association="Self.FK_SupplyPurchaseInfon_ingredient_id">
+            <End Role="Ingredient" EntitySet="Ingredient" />
+            <End Role="SupplyPurchaseInfo" EntitySet="SupplyPurchaseInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPurchaseInfon_purchase_id" Association="Self.FK_SupplyPurchaseInfon_purchase_id">
+            <End Role="SupplyPurchase" EntitySet="SupplyPurchase" />
+            <End Role="SupplyPurchaseInfo" EntitySet="SupplyPurchaseInfo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Coffee_ShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="bill_id" />
+          </Key>
+          <Property Name="bill_id" Type="Int32" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Bill_info" Relationship="Self.FK_bill_id" FromRole="Bill" ToRole="Bill_info" />
+        </EntityType>
+        <EntityType Name="Bill_info">
+          <Key>
+            <PropertyRef Name="bill_id" />
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="bill_id" Type="Int32" Nullable="false" />
+          <Property Name="item_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bill" Relationship="Self.FK_bill_id" FromRole="Bill_info" ToRole="Bill" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_item_id" FromRole="Bill_info" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="employee_id" />
+          </Key>
+          <Property Name="employee_id" Type="Int32" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date_join" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="date_left" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Inventories" Relationship="Self.FK_checker_id" FromRole="Employee" ToRole="Inventory" />
+          <NavigationProperty Name="SupplyPurchases" Relationship="Self.FK_SupplyPurchase_employ_id" FromRole="Employee" ToRole="SupplyPurchase" />
+        </EntityType>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="ingredient_id" />
+          </Key>
+          <Property Name="ingredient_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Inventory_info" Relationship="Self.FK_Inven_ingredient_id" FromRole="Ingredient" ToRole="Inventory_info" />
+          <NavigationProperty Name="SupplyPurchaseInfoes" Relationship="Self.FK_SupplyPurchaseInfon_ingredient_id" FromRole="Ingredient" ToRole="SupplyPurchaseInfo" />
+        </EntityType>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="check_id" />
+          </Key>
+          <Property Name="check_id" Type="Int32" Nullable="false" />
+          <Property Name="date_check" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="checker_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_checker_id" FromRole="Inventory" ToRole="Employee" />
+          <NavigationProperty Name="Inventory_info" Relationship="Self.FK_Inven_check_id" FromRole="Inventory" ToRole="Inventory_info" />
+        </EntityType>
+        <EntityType Name="Inventory_info">
+          <Key>
+            <PropertyRef Name="check_id" />
+            <PropertyRef Name="ingredient_id" />
+          </Key>
+          <Property Name="check_id" Type="Int32" Nullable="false" />
+          <Property Name="ingredient_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity_per_unit" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FK_Inven_ingredient_id" FromRole="Inventory_info" ToRole="Ingredient" />
+          <NavigationProperty Name="Inventory" Relationship="Self.FK_Inven_check_id" FromRole="Inventory_info" ToRole="Inventory" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="Int32" Nullable="false" />
+          <Property Name="item_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="item_price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Bill_info" Relationship="Self.FK_item_id" FromRole="Item" ToRole="Bill_info" />
+          <NavigationProperty Name="remainingItem" Relationship="Self.FK_remainingItems_item_id" FromRole="Item" ToRole="remainingItems" />
+        </EntityType>
+        <EntityType Name="remainingItem">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="Int32" Nullable="false" />
+          <Property Name="quanity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_remainingItems_item_id" FromRole="remainingItems" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="supplier_id" />
+          </Key>
+          <Property Name="supplier_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone_num" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SupplyPurchases" Relationship="Self.FK_SupplyPurchase_supplier_id" FromRole="Supplier" ToRole="SupplyPurchase" />
+        </EntityType>
+        <EntityType Name="SupplyPurchase">
+          <Key>
+            <PropertyRef Name="purchase_id" />
+          </Key>
+          <Property Name="purchase_id" Type="Int32" Nullable="false" />
+          <Property Name="employee_in_charge" Type="Int32" Nullable="false" />
+          <Property Name="supplier_id" Type="Int32" />
+          <Property Name="purchase_date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_SupplyPurchase_employ_id" FromRole="SupplyPurchase" ToRole="Employee" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_SupplyPurchase_supplier_id" FromRole="SupplyPurchase" ToRole="Supplier" />
+          <NavigationProperty Name="SupplyPurchaseInfoes" Relationship="Self.FK_SupplyPurchaseInfon_purchase_id" FromRole="SupplyPurchase" ToRole="SupplyPurchaseInfo" />
+        </EntityType>
+        <EntityType Name="SupplyPurchaseInfo">
+          <Key>
+            <PropertyRef Name="purchase_id" />
+            <PropertyRef Name="ingredient_id" />
+          </Key>
+          <Property Name="purchase_id" Type="Int32" Nullable="false" />
+          <Property Name="ingredient_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity_per_unit" Type="Double" Nullable="false" />
+          <Property Name="purchase_price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FK_SupplyPurchaseInfon_ingredient_id" FromRole="SupplyPurchaseInfo" ToRole="Ingredient" />
+          <NavigationProperty Name="SupplyPurchase" Relationship="Self.FK_SupplyPurchaseInfon_purchase_id" FromRole="SupplyPurchaseInfo" ToRole="SupplyPurchase" />
+        </EntityType>
+        <Association Name="FK_bill_id">
+          <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+          <End Role="Bill_info" Type="Self.Bill_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bill">
+              <PropertyRef Name="bill_id" />
+            </Principal>
+            <Dependent Role="Bill_info">
+              <PropertyRef Name="bill_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_item_id">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="Bill_info" Type="Self.Bill_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="item_id" />
+            </Principal>
+            <Dependent Role="Bill_info">
+              <PropertyRef Name="item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_checker_id">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Inventory">
+              <PropertyRef Name="checker_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPurchase_employ_id">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="SupplyPurchase" Type="Self.SupplyPurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="SupplyPurchase">
+              <PropertyRef Name="employee_in_charge" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inven_ingredient_id">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="Inventory_info" Type="Self.Inventory_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="ingredient_id" />
+            </Principal>
+            <Dependent Role="Inventory_info">
+              <PropertyRef Name="ingredient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPurchaseInfon_ingredient_id">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="SupplyPurchaseInfo" Type="Self.SupplyPurchaseInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="ingredient_id" />
+            </Principal>
+            <Dependent Role="SupplyPurchaseInfo">
+              <PropertyRef Name="ingredient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inven_check_id">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="1" />
+          <End Role="Inventory_info" Type="Self.Inventory_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="check_id" />
+            </Principal>
+            <Dependent Role="Inventory_info">
+              <PropertyRef Name="check_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_remainingItems_item_id">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="remainingItems" Type="Self.remainingItem" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="item_id" />
+            </Principal>
+            <Dependent Role="remainingItems">
+              <PropertyRef Name="item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPurchase_supplier_id">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+          <End Role="SupplyPurchase" Type="Self.SupplyPurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="supplier_id" />
+            </Principal>
+            <Dependent Role="SupplyPurchase">
+              <PropertyRef Name="supplier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPurchaseInfon_purchase_id">
+          <End Role="SupplyPurchase" Type="Self.SupplyPurchase" Multiplicity="1" />
+          <End Role="SupplyPurchaseInfo" Type="Self.SupplyPurchaseInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplyPurchase">
+              <PropertyRef Name="purchase_id" />
+            </Principal>
+            <Dependent Role="SupplyPurchaseInfo">
+              <PropertyRef Name="purchase_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Coffee_ShopEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bills" EntityType="Self.Bill" />
+          <EntitySet Name="Bill_info" EntityType="Self.Bill_info" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
+          <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+          <EntitySet Name="Inventory_info" EntityType="Self.Inventory_info" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="remainingItems" EntityType="Self.remainingItem" />
+          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="SupplyPurchases" EntityType="Self.SupplyPurchase" />
+          <EntitySet Name="SupplyPurchaseInfoes" EntityType="Self.SupplyPurchaseInfo" />
+          <AssociationSet Name="FK_bill_id" Association="Self.FK_bill_id">
+            <End Role="Bill" EntitySet="Bills" />
+            <End Role="Bill_info" EntitySet="Bill_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_item_id" Association="Self.FK_item_id">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="Bill_info" EntitySet="Bill_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_checker_id" Association="Self.FK_checker_id">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Inventory" EntitySet="Inventories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPurchase_employ_id" Association="Self.FK_SupplyPurchase_employ_id">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="SupplyPurchase" EntitySet="SupplyPurchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inven_ingredient_id" Association="Self.FK_Inven_ingredient_id">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="Inventory_info" EntitySet="Inventory_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPurchaseInfon_ingredient_id" Association="Self.FK_SupplyPurchaseInfon_ingredient_id">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="SupplyPurchaseInfo" EntitySet="SupplyPurchaseInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inven_check_id" Association="Self.FK_Inven_check_id">
+            <End Role="Inventory" EntitySet="Inventories" />
+            <End Role="Inventory_info" EntitySet="Inventory_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_remainingItems_item_id" Association="Self.FK_remainingItems_item_id">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="remainingItems" EntitySet="remainingItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPurchase_supplier_id" Association="Self.FK_SupplyPurchase_supplier_id">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="SupplyPurchase" EntitySet="SupplyPurchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPurchaseInfon_purchase_id" Association="Self.FK_SupplyPurchaseInfon_purchase_id">
+            <End Role="SupplyPurchase" EntitySet="SupplyPurchases" />
+            <End Role="SupplyPurchaseInfo" EntitySet="SupplyPurchaseInfoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Coffee_ShopModelStoreContainer" CdmEntityContainer="Coffee_ShopEntities">
+          <EntitySetMapping Name="Bills">
+            <EntityTypeMapping TypeName="Coffee_ShopModel.Bill">
+              <MappingFragment StoreEntitySet="Bill">
+                <ScalarProperty Name="bill_id" ColumnName="bill_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bill_info">
+            <EntityTypeMapping TypeName="Coffee_ShopModel.Bill_info">
+              <MappingFragment StoreEntitySet="Bill_info">
+                <ScalarProperty Name="bill_id" ColumnName="bill_id" />
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="Coffee_ShopModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="date_join" ColumnName="date_join" />
+                <ScalarProperty Name="date_left" ColumnName="date_left" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingredients">
+            <EntityTypeMapping TypeName="Coffee_ShopModel.Ingredient">
+              <MappingFragment StoreEntitySet="Ingredient">
+                <ScalarProperty Name="ingredient_id" ColumnName="ingredient_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventories">
+            <EntityTypeMapping TypeName="Coffee_ShopModel.Inventory">
+              <MappingFragment StoreEntitySet="Inventory">
+                <ScalarProperty Name="check_id" ColumnName="check_id" />
+                <ScalarProperty Name="date_check" ColumnName="date_check" />
+                <ScalarProperty Name="checker_id" ColumnName="checker_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventory_info">
+            <EntityTypeMapping TypeName="Coffee_ShopModel.Inventory_info">
+              <MappingFragment StoreEntitySet="Inventory_info">
+                <ScalarProperty Name="check_id" ColumnName="check_id" />
+                <ScalarProperty Name="ingredient_id" ColumnName="ingredient_id" />
+                <ScalarProperty Name="quantity_per_unit" ColumnName="quantity_per_unit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="Coffee_ShopModel.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+                <ScalarProperty Name="item_name" ColumnName="item_name" />
+                <ScalarProperty Name="item_price" ColumnName="item_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="remainingItems">
+            <EntityTypeMapping TypeName="Coffee_ShopModel.remainingItem">
+              <MappingFragment StoreEntitySet="remainingItems">
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+                <ScalarProperty Name="quanity" ColumnName="quanity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="Coffee_ShopModel.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone_num" ColumnName="phone_num" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupplyPurchases">
+            <EntityTypeMapping TypeName="Coffee_ShopModel.SupplyPurchase">
+              <MappingFragment StoreEntitySet="SupplyPurchase">
+                <ScalarProperty Name="purchase_id" ColumnName="purchase_id" />
+                <ScalarProperty Name="employee_in_charge" ColumnName="employee_in_charge" />
+                <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+                <ScalarProperty Name="purchase_date" ColumnName="purchase_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupplyPurchaseInfoes">
+            <EntityTypeMapping TypeName="Coffee_ShopModel.SupplyPurchaseInfo">
+              <MappingFragment StoreEntitySet="SupplyPurchaseInfo">
+                <ScalarProperty Name="purchase_id" ColumnName="purchase_id" />
+                <ScalarProperty Name="ingredient_id" ColumnName="ingredient_id" />
+                <ScalarProperty Name="quantity_per_unit" ColumnName="quantity_per_unit" />
+                <ScalarProperty Name="purchase_price" ColumnName="purchase_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
