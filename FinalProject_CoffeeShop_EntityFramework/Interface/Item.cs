@@ -128,6 +128,17 @@ namespace FinalProject_CoffeeShop.Interface
             dgv_Item_CellClick(null, null);
         }
 
+        private void dgv_Item_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_Item.RowCount >= 2)
+            {
+                int rowIndex = dgv_Item.CurrentCell.RowIndex;
+
+                this.Item_txt_ItemId.Text = dgv_Item.Rows[rowIndex].Cells[0].Value.ToString();
+                this.Item_txt_ItemName.Text = dgv_Item.Rows[rowIndex].Cells[1].Value.ToString();
+                this.Item_txt_ItemPrice.Text = dgv_Item.Rows[rowIndex].Cells[2].Value.ToString();
+            }
+        }
         private void addRow()
         {
             if(checkSpecialCharactersForTextBoxes())
@@ -241,17 +252,7 @@ namespace FinalProject_CoffeeShop.Interface
         }
 
         //display the selected row data on the input panel text boxes
-        private void dgv_Item_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgv_Item.RowCount >= 2)
-            {
-                int rowIndex = dgv_Item.CurrentCell.RowIndex;
-
-                this.Item_txt_ItemId.Text = dgv_Item.Rows[rowIndex].Cells[0].Value.ToString();
-                this.Item_txt_ItemName.Text = dgv_Item.Rows[rowIndex].Cells[1].Value.ToString();
-                this.Item_txt_ItemPrice.Text = dgv_Item.Rows[rowIndex].Cells[2].Value.ToString();
-            }
-        }
+        
 
         //return true if there's a special character in any of the text boxes
         private bool checkSpecialCharactersForTextBoxes()
