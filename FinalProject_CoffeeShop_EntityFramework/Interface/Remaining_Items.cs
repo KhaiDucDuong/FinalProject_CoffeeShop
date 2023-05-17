@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using FinalProject_CoffeeShop.Ado_Net.BL;
+
 namespace FinalProject_CoffeeShop.Interface
 {
     public partial class Remaining_Items : Form

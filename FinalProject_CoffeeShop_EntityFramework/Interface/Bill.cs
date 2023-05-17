@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using FinalProject_CoffeeShop.BS_Layer;
+using FinalProject_CoffeeShop.Ado_Net.BL;
 
 namespace FinalProject_CoffeeShop.Interface
 {
@@ -30,7 +30,7 @@ namespace FinalProject_CoffeeShop.Interface
 
         bool Add;
         string err;
-        BL_Bill db_Bill = new BL_Bill();
+        //BL_Bill db_Bill = new BL_Bill();
 
 
 
@@ -42,7 +42,7 @@ namespace FinalProject_CoffeeShop.Interface
         {
             try
             {
-                dgv_Bill.DataSource = db_Bill.GetBill();
+                //dgv_Bill.DataSource = db_Bill.GetBill();
 
                 dgv_Bill.AutoResizeColumns();
 
@@ -134,12 +134,8 @@ namespace FinalProject_CoffeeShop.Interface
             {
                 try
                 {
-                    BL_Bill blBill = new BL_Bill();
-                    //Convert bill id from 'string' to 'int'
-                    //int billId = int.Parse(this.Bill_txt_Bill_Id.Text);
-                    //Convert created at from 'string' to 'System.DateTime'
-                    //DateTime createdAt = DateTime.Parse(this.Bill_dtp_CreatedAt.Text);
-                    blBill.AddBill(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
+                    //BL_Bill blBill = new BL_Bill();
+                    //blBill.AddBill(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
 
                     LoadData();
                     MessageBox.Show("Done added !");
@@ -148,10 +144,8 @@ namespace FinalProject_CoffeeShop.Interface
             }
             else
             {
-                BL_Bill blBill = new BL_Bill();
-                //int billid = int.Parse(this.Bill_txt_Bill_Id.Text);
-                //DateTime createdat = DateTime.Parse(this.Bill_dtp_CreatedAt.Text);
-                blBill.UpdateBill(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
+                //BL_Bill blBill = new BL_Bill();
+                //blBill.UpdateBill(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
 
                 LoadData();
 
@@ -179,8 +173,7 @@ namespace FinalProject_CoffeeShop.Interface
 
                     if (reply == DialogResult.Yes)
                     {
-                        //int strbill = int.Parse(this.strBill.Text);
-                        db_Bill.DeleteBill(strBill, ref err);
+                        //db_Bill.DeleteBill(strBill, ref err);
                         LoadData();
                         MessageBox.Show("Done deleted !");
                     }

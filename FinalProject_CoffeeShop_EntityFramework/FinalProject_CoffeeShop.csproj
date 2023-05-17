@@ -66,37 +66,6 @@
     <Compile Include="Ado Net\BL\BL_item.cs" />
     <Compile Include="Ado Net\BL\BL_remainingItem.cs" />
     <Compile Include="Ado Net\DB\DB_Main.cs" />
-    <Compile Include="Bill.cs">
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Bill_info.cs">
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Coffee_ShopEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Coffee_ShopEntities.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Coffee_ShopEntities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Coffee_ShopEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Coffee_ShopEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Employee.cs">
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity_Framework\BS_Layer\BL_Bill.cs" />
-    <Compile Include="Entity_Framework\BS_Layer\BL_Bill_Info.cs" />
-    <Compile Include="Entity_Framework\BS_Layer\BL_Employee.cs" />
-    <Compile Include="Entity_Framework\BS_Layer\BL_Supplier.cs" />
-    <Compile Include="Ingredient.cs">
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="Interface\Bill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,32 +144,8 @@
     <Compile Include="Interface\Supply_Purchase_Info.Designer.cs">
       <DependentUpon>Supply_Purchase_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventory.cs">
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Inventory_info.cs">
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Item.cs">
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="remainingItem.cs">
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Supplier.cs">
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SupplyPurchase.cs">
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SupplyPurchaseInfo.cs">
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Interface\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,13 +194,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="Coffee_ShopEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Coffee_ShopEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Coffee_ShopEntities.edmx.diagram">
-      <DependentUpon>Coffee_ShopEntities.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -272,18 +210,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Coffee_ShopEntities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Coffee_ShopEntities.edmx</DependentUpon>
-      <LastGenOutput>Coffee_ShopEntities.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Coffee_ShopEntities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Coffee_ShopEntities.edmx</DependentUpon>
-      <LastGenOutput>Coffee_ShopEntities.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
