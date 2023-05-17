@@ -23,9 +23,14 @@ namespace FinalProject_CoffeeShop.Ado_Net.BL
         }
 
         //get all the data (rows) in Item table
-        public DataSet getData()
+        public DataTable getData()
         {
-            return db.ExecuteQueryDataSet("select * from " + databaseName, CommandType.Text);
+            DataTable dt = new DataTable();
+            dt.Clear();
+            DataSet ds = db.ExecuteQueryDataSet("select * from " + databaseName, CommandType.Text);
+            dt = ds.Tables[0];
+
+            return dt;
         }
 
         //add a new row to Item table

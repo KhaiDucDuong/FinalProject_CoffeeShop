@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,13 +43,7 @@ namespace FinalProject_CoffeeShop.Interface
 
             try
             {
-                dt = new DataTable();
-                dt.Clear();
-
-                DataSet ds = db_Employee.getData();
-                dt = ds.Tables[0];
-
-                dgv_Employee.DataSource = dt;
+                dgv_Employee.DataSource = db_Employee.getData();
                 dgv_Employee.AutoResizeColumns();
 
                 setInputOff();

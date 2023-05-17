@@ -197,13 +197,7 @@ namespace FinalProject_CoffeeShop.Interface
 
         private void getDataFromTable()
         {
-            dt = new DataTable();
-            dt.Clear();
-
-            DataSet ds = db.getData();
-            dt = ds.Tables[0];
-
-            dgv_RemainingItem.DataSource = dt;
+            dgv_RemainingItem.DataSource = db.getData();
             dgv_RemainingItem.AutoResizeColumns();
         }
         private void setInputButtonsOff()
