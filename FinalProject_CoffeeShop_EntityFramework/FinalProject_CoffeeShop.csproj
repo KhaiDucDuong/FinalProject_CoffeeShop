@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ado Net\BL\BL_Bill.cs" />
+    <Compile Include="Ado Net\BL\BL_Bill_Info.cs" />
     <Compile Include="Ado Net\BL\BL_Employee.cs" />
     <Compile Include="Ado Net\BL\BL_inventory.cs" />
     <Compile Include="Ado Net\BL\BL_InventoryInfo.cs" />

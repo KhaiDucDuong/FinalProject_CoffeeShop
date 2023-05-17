@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace FinalProject_CoffeeShop.Interface
         }
 
         bool Add;
-        string err;
+        string err = "";
         BL_Bill db_Bill = new BL_Bill();
 
 
@@ -150,13 +151,20 @@ namespace FinalProject_CoffeeShop.Interface
             }
             else
             {
-                BL_Bill blBill = new BL_Bill();
+                try
+                {
+                    BL_Bill blBill = new BL_Bill();
 
-                blBill.updateRow(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
+                    blBill.updateRow(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
 
-                LoadData();
-
-                MessageBox.Show("Done editted !");
+                    LoadData();
+                    
+                    MessageBox.Show("Done editted !");
+                }
+                catch(SqlException)
+                {
+                    MessageBox.Show("Failed to update a new row!", "Non Query execution status");
+                }
             }
 
         }
