@@ -1,4 +1,4 @@
-﻿using FinalProject_CoffeeShop.ADO_NET.DB;
+﻿using FinalProject_CoffeeShop.Ado_Net.DB;
 using System;
 using System.Collections.Generic;
 using System.Data;

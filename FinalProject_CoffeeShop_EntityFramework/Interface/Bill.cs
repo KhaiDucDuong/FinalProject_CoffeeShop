@@ -192,7 +192,8 @@ namespace FinalProject_CoffeeShop.Interface
 
                         db_Bill.removeRow(strBill, ref err);
                         LoadData();
-                        MessageBox.Show("Done deleted !");
+                        if (!printError())
+                            MessageBox.Show("Done deleted !");
                     }
                     else
                     {

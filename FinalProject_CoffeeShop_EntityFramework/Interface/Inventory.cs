@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using FinalProject_CoffeeShop.Ado_Net.BL;
-using FinalProject_CoffeeShop.ADO_NET.BL;
+using FinalProject_CoffeeShop.Ado_Net.BL;
 
 namespace FinalProject_CoffeeShop.Interface
 {

@@ -28,16 +28,21 @@ namespace FinalProject_CoffeeShop.Interface
             }
         }
 
-        DataTable dt;
         bool Add;
-        string err;
+        string err = "";
         BL_Employee db_Employee = new BL_Employee();
 
         public Employee()
         {
             InitializeComponent();
         }
-        void LoadData()
+
+        private void Employee_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void LoadData()
         {
             this.workStatusComboBox.SelectedIndex = 0;
 
@@ -50,7 +55,7 @@ namespace FinalProject_CoffeeShop.Interface
 
                 dgv_Employee_CellClick(null, null);
             }
-            catch { MessageBox.Show("Can not get the content in the Bill table. Error !!!"); }
+            catch { MessageBox.Show("Can not get the content in the Employee table. Error !!!"); }
         }
 
 
@@ -74,13 +79,9 @@ namespace FinalProject_CoffeeShop.Interface
                 this.Employee_txt_FirstName.Text = dgv_Employee.Rows[r].Cells[1].Value.ToString();
                 this.Employee_txt_LastName.Text = dgv_Employee.Rows[r].Cells[2].Value.ToString();
                 this.Employee_dtp_DateJoin.Text = dgv_Employee.Rows[r].Cells[3].Value.ToString();
-                this.Employee_dtp_DateLeft.Text = dgv_Employee.Rows[r].Cells[4].Value.ToString();
+                if(dgv_Employee.Rows[r].Cells[4].Value != null)
+                    this.Employee_dtp_DateLeft.Text = dgv_Employee.Rows[r].Cells[4].Value.ToString();
             }
-        }
-
-        private void Employee_Load(object sender, EventArgs e)
-        {
-            LoadData();
         }
 
         private void btn_Reload_Click(object sender, EventArgs e)
@@ -105,6 +106,7 @@ namespace FinalProject_CoffeeShop.Interface
 
                 setInputOn();
                 dgv_Employee_CellClick(null, null);
+                this.Employee_txt_EmployeeId.Enabled = false;
 
                 this.Employee_txt_FirstName.Focus();
             }
@@ -134,10 +136,11 @@ namespace FinalProject_CoffeeShop.Interface
                     if(workStatusComboBox.SelectedIndex == 1)
                         blEmployee.addNewRow(this.Employee_txt_EmployeeId.Text, this.Employee_txt_FirstName.Text, this.Employee_txt_LastName.Text, this.Employee_dtp_DateJoin.Text, this.Employee_dtp_DateLeft.Text, ref err);
                     else
-                        blEmployee.addNewRow(this.Employee_txt_EmployeeId.Text, this.Employee_txt_FirstName.Text, this.Employee_txt_LastName.Text, this.Employee_dtp_DateJoin.Text, null, ref err);
+                        blEmployee.addNewRow(this.Employee_txt_EmployeeId.Text, this.Employee_txt_FirstName.Text, this.Employee_txt_LastName.Text, this.Employee_dtp_DateJoin.Text, "NULL", ref err);
 
                     LoadData();
-                    MessageBox.Show("Done added !");
+                    if(!printError())
+                        MessageBox.Show("Done added !");
                 }
                 catch { MessageBox.Show("Can not add. Error !!!"); }
             }
@@ -148,11 +151,11 @@ namespace FinalProject_CoffeeShop.Interface
                 if (workStatusComboBox.SelectedIndex == 1)
                     blEmployee.updateRow(this.Employee_txt_EmployeeId.Text, this.Employee_txt_FirstName.Text, this.Employee_txt_LastName.Text, this.Employee_dtp_DateJoin.Text, this.Employee_dtp_DateLeft.Text, ref err);
                 else
-                    blEmployee.updateRow(this.Employee_txt_EmployeeId.Text, this.Employee_txt_FirstName.Text, this.Employee_txt_LastName.Text, this.Employee_dtp_DateJoin.Text, null, ref err);
+                    blEmployee.updateRow(this.Employee_txt_EmployeeId.Text, this.Employee_txt_FirstName.Text, this.Employee_txt_LastName.Text, this.Employee_dtp_DateJoin.Text, "NULL", ref err);
 
                 LoadData();
-
-                MessageBox.Show("Done editted !");
+                if (!printError())
+                    MessageBox.Show("Done editted!");
             }
         }
         private void btn_Delete_Click(object sender, EventArgs e)
@@ -177,7 +180,8 @@ namespace FinalProject_CoffeeShop.Interface
 
                         db_Employee.removeRow(strBill, ref err);
                         LoadData();
-                        MessageBox.Show("Done deleted !");
+                        if (!printError())
+                            MessageBox.Show("Done deleted !");
                     }
                     else
                     {
@@ -190,6 +194,8 @@ namespace FinalProject_CoffeeShop.Interface
         }
         private void setInputOff()
         {
+            this.Employee_txt_EmployeeId.Enabled= true;
+
             this.Employee_txt_EmployeeId.ResetText();
             this.Employee_txt_FirstName.ResetText();
             this.Employee_txt_LastName.ResetText();
@@ -206,6 +212,8 @@ namespace FinalProject_CoffeeShop.Interface
         }
         private void setInputOn()
         {
+            this.Employee_txt_EmployeeId.Enabled = true;
+
             this.Employee_txt_EmployeeId.ResetText();
             this.Employee_txt_FirstName.ResetText();
             this.Employee_txt_LastName.ResetText();
@@ -219,6 +227,17 @@ namespace FinalProject_CoffeeShop.Interface
             this.btn_Add.Enabled = false;
             this.btn_Edit.Enabled = false;
             this.btn_Delete.Enabled = false;
+        }
+
+        private bool printError()
+        {
+            if (err == "")
+                return false;
+
+            MessageBox.Show(err, "Error message");
+            err = "";
+
+            return true;
         }
 
         //return true if there's a special character in any of the text boxes

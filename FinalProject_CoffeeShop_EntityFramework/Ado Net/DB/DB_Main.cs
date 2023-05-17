@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace FinalProject_CoffeeShop.ADO_NET.DB
+namespace FinalProject_CoffeeShop.Ado_Net.DB
 {
     internal class DB_Main
     {

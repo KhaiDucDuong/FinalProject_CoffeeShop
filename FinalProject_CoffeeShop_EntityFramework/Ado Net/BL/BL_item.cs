@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using FinalProject_CoffeeShop.ADO_NET.DB;
+using FinalProject_CoffeeShop.Ado_Net.DB;
 
-namespace FinalProject_CoffeeShop.ADO_NET.BL
+namespace FinalProject_CoffeeShop.Ado_Net.BL
 {
     internal class BL_item
     {
