@@ -52,7 +52,7 @@ namespace FinalProject_CoffeeShop.Ado_Net.BL
 
             string sqlString = "UPDATE " + databaseName +
                 " SET " + secondCol + " = '" + converted_date_check + "', " + thirdCol + " = " + checker_id +
-                "WHERE " + primaryKeyCol + " = '" + check_id + "'";
+                " WHERE " + primaryKeyCol + " = '" + check_id + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref error);
         }
 

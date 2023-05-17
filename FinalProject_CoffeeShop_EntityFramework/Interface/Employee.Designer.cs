@@ -50,6 +50,8 @@
             this.Lb_EmployeeID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.workStatusComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Employee)).BeginInit();
             this.Employee_pl_Input.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +60,7 @@
             // 
             this.dgv_Employee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Employee.Location = new System.Drawing.Point(10, 238);
-            this.dgv_Employee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_Employee.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Employee.Name = "dgv_Employee";
             this.dgv_Employee.RowHeadersWidth = 51;
             this.dgv_Employee.RowTemplate.Height = 24;
@@ -69,7 +71,7 @@
             // 
             this.btn_GoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GoBack.Location = new System.Drawing.Point(627, 385);
-            this.btn_GoBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_GoBack.Margin = new System.Windows.Forms.Padding(2);
             this.btn_GoBack.Name = "btn_GoBack";
             this.btn_GoBack.Size = new System.Drawing.Size(79, 64);
             this.btn_GoBack.TabIndex = 51;
@@ -81,7 +83,7 @@
             // 
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.Location = new System.Drawing.Point(627, 209);
-            this.btn_Delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(79, 36);
             this.btn_Delete.TabIndex = 50;
@@ -93,7 +95,7 @@
             // 
             this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.Location = new System.Drawing.Point(627, 330);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(79, 36);
             this.btn_Cancel.TabIndex = 49;
@@ -105,7 +107,7 @@
             // 
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.Location = new System.Drawing.Point(627, 150);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(79, 36);
             this.btn_Save.TabIndex = 48;
@@ -117,7 +119,7 @@
             // 
             this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Edit.Location = new System.Drawing.Point(627, 89);
-            this.btn_Edit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Edit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(79, 34);
             this.btn_Edit.TabIndex = 47;
@@ -129,7 +131,7 @@
             // 
             this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.Location = new System.Drawing.Point(627, 25);
-            this.btn_Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Add.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(79, 34);
             this.btn_Add.TabIndex = 46;
@@ -141,7 +143,7 @@
             // 
             this.btn_Reload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Reload.Location = new System.Drawing.Point(627, 274);
-            this.btn_Reload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Reload.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.Size = new System.Drawing.Size(79, 36);
             this.btn_Reload.TabIndex = 45;
@@ -151,6 +153,8 @@
             // 
             // Employee_pl_Input
             // 
+            this.Employee_pl_Input.Controls.Add(this.workStatusComboBox);
+            this.Employee_pl_Input.Controls.Add(this.label3);
             this.Employee_pl_Input.Controls.Add(this.Employee_dtp_DateLeft);
             this.Employee_pl_Input.Controls.Add(this.Employee_dtp_DateJoin);
             this.Employee_pl_Input.Controls.Add(this.Employee_txt_LastName);
@@ -164,7 +168,7 @@
             this.Employee_pl_Input.Controls.Add(this.Lb_EmployeeID);
             this.Employee_pl_Input.Controls.Add(this.label2);
             this.Employee_pl_Input.Location = new System.Drawing.Point(10, 32);
-            this.Employee_pl_Input.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Employee_pl_Input.Margin = new System.Windows.Forms.Padding(2);
             this.Employee_pl_Input.Name = "Employee_pl_Input";
             this.Employee_pl_Input.Size = new System.Drawing.Size(571, 191);
             this.Employee_pl_Input.TabIndex = 44;
@@ -174,7 +178,7 @@
             this.Employee_dtp_DateLeft.CustomFormat = "hh:mm:ss  dd/MM/yyyy";
             this.Employee_dtp_DateLeft.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Employee_dtp_DateLeft.Location = new System.Drawing.Point(154, 166);
-            this.Employee_dtp_DateLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Employee_dtp_DateLeft.Margin = new System.Windows.Forms.Padding(2);
             this.Employee_dtp_DateLeft.Name = "Employee_dtp_DateLeft";
             this.Employee_dtp_DateLeft.ShowUpDown = true;
             this.Employee_dtp_DateLeft.Size = new System.Drawing.Size(161, 20);
@@ -185,7 +189,7 @@
             this.Employee_dtp_DateJoin.CustomFormat = "hh:mm:ss  dd/MM/yyyy";
             this.Employee_dtp_DateJoin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Employee_dtp_DateJoin.Location = new System.Drawing.Point(154, 126);
-            this.Employee_dtp_DateJoin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Employee_dtp_DateJoin.Margin = new System.Windows.Forms.Padding(2);
             this.Employee_dtp_DateJoin.Name = "Employee_dtp_DateJoin";
             this.Employee_dtp_DateJoin.ShowUpDown = true;
             this.Employee_dtp_DateJoin.Size = new System.Drawing.Size(161, 20);
@@ -194,7 +198,7 @@
             // Employee_txt_LastName
             // 
             this.Employee_txt_LastName.Location = new System.Drawing.Point(154, 86);
-            this.Employee_txt_LastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Employee_txt_LastName.Margin = new System.Windows.Forms.Padding(2);
             this.Employee_txt_LastName.Name = "Employee_txt_LastName";
             this.Employee_txt_LastName.Size = new System.Drawing.Size(388, 20);
             this.Employee_txt_LastName.TabIndex = 9;
@@ -202,7 +206,7 @@
             // Employee_txt_FirstName
             // 
             this.Employee_txt_FirstName.Location = new System.Drawing.Point(154, 48);
-            this.Employee_txt_FirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Employee_txt_FirstName.Margin = new System.Windows.Forms.Padding(2);
             this.Employee_txt_FirstName.Name = "Employee_txt_FirstName";
             this.Employee_txt_FirstName.Size = new System.Drawing.Size(388, 20);
             this.Employee_txt_FirstName.TabIndex = 8;
@@ -263,7 +267,7 @@
             // Employee_txt_EmployeeId
             // 
             this.Employee_txt_EmployeeId.Location = new System.Drawing.Point(154, 7);
-            this.Employee_txt_EmployeeId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Employee_txt_EmployeeId.Margin = new System.Windows.Forms.Padding(2);
             this.Employee_txt_EmployeeId.Name = "Employee_txt_EmployeeId";
             this.Employee_txt_EmployeeId.Size = new System.Drawing.Size(388, 20);
             this.Employee_txt_EmployeeId.TabIndex = 2;
@@ -301,6 +305,28 @@
             this.label1.TabIndex = 43;
             this.label1.Text = "EMPLOYEE";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(329, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Work status:";
+            // 
+            // workStatusComboBox
+            // 
+            this.workStatusComboBox.FormattingEnabled = true;
+            this.workStatusComboBox.Items.AddRange(new object[] {
+            "Working",
+            "Has left"});
+            this.workStatusComboBox.Location = new System.Drawing.Point(445, 131);
+            this.workStatusComboBox.Name = "workStatusComboBox";
+            this.workStatusComboBox.Size = new System.Drawing.Size(97, 21);
+            this.workStatusComboBox.TabIndex = 13;
+            this.workStatusComboBox.SelectedIndexChanged += new System.EventHandler(this.workStatusComboBox_SelectedIndexChanged);
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -316,7 +342,7 @@
             this.Controls.Add(this.btn_Reload);
             this.Controls.Add(this.Employee_pl_Input);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Employee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee";
@@ -353,5 +379,7 @@
         private System.Windows.Forms.Label Lb_EmployeeID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox workStatusComboBox;
+        private System.Windows.Forms.Label label3;
     }
 }

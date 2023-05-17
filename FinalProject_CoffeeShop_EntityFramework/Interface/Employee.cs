@@ -26,9 +26,11 @@ namespace FinalProject_CoffeeShop.Interface
                 return cp;
             }
         }
+
+        DataTable dt;
         bool Add;
         string err;
-        //BL_Employee db_Employee = new BL_Employee();
+        BL_Employee db_Employee = new BL_Employee();
 
         public Employee()
         {
@@ -36,17 +38,22 @@ namespace FinalProject_CoffeeShop.Interface
         }
         void LoadData()
         {
+            this.workStatusComboBox.SelectedIndex = 0;
+
             try
             {
-                //dgv_Employee.DataSource = db_Employee.GetEmployee();
+                dt = new DataTable();
+                dt.Clear();
 
+                DataSet ds = db_Employee.getData();
+                dt = ds.Tables[0];
+
+                dgv_Employee.DataSource = dt;
                 dgv_Employee.AutoResizeColumns();
 
                 setInputOff();
 
                 dgv_Employee_CellClick(null, null);
-
-
             }
             catch { MessageBox.Show("Can not get the content in the Bill table. Error !!!"); }
         }
@@ -103,13 +110,8 @@ namespace FinalProject_CoffeeShop.Interface
 
                 setInputOn();
                 dgv_Employee_CellClick(null, null);
-                this.Employee_txt_EmployeeId.Enabled = false;
 
                 this.Employee_txt_FirstName.Focus();
-                this.Employee_txt_LastName.Focus();
-                this.Employee_dtp_DateJoin.Focus();
-                this.Employee_dtp_DateLeft.Focus();
-
             }
         }
 
@@ -122,13 +124,22 @@ namespace FinalProject_CoffeeShop.Interface
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            if (checkSpecialCharactersForTextBoxes())
+            {
+                MessageBox.Show("Cannot use special characters!", "String error");
+                return;
+            }
+
             if (Add)
             {
                 try
                 {
-                    //BL_Employee blEmployee = new BL_Employee();
+                    BL_Employee blEmployee = new BL_Employee();
 
-                    //blEmployee.AddEmployee(this.Employee_txt_EmployeeId.Text, this.Employee_txt_FirstName.Text, this.Employee_txt_LastName.Text, this.Employee_dtp_DateJoin.Text, this.Employee_dtp_DateLeft.Text, ref err);
+                    if(workStatusComboBox.SelectedIndex == 1)
+                        blEmployee.addNewRow(this.Employee_txt_EmployeeId.Text, this.Employee_txt_FirstName.Text, this.Employee_txt_LastName.Text, this.Employee_dtp_DateJoin.Text, this.Employee_dtp_DateLeft.Text, ref err);
+                    else
+                        blEmployee.addNewRow(this.Employee_txt_EmployeeId.Text, this.Employee_txt_FirstName.Text, this.Employee_txt_LastName.Text, this.Employee_dtp_DateJoin.Text, null, ref err);
 
                     LoadData();
                     MessageBox.Show("Done added !");
@@ -137,9 +148,12 @@ namespace FinalProject_CoffeeShop.Interface
             }
             else
             {
-                //BL_Employee blEmployee = new BL_Employee();
+                BL_Employee blEmployee = new BL_Employee();
 
-                //blEmployee.UpdateEmployee(this.Employee_txt_EmployeeId.Text, this.Employee_txt_FirstName.Text, this.Employee_txt_LastName.Text, this.Employee_dtp_DateJoin.Text, this.Employee_dtp_DateLeft.Text, ref err);
+                if (workStatusComboBox.SelectedIndex == 1)
+                    blEmployee.updateRow(this.Employee_txt_EmployeeId.Text, this.Employee_txt_FirstName.Text, this.Employee_txt_LastName.Text, this.Employee_dtp_DateJoin.Text, this.Employee_dtp_DateLeft.Text, ref err);
+                else
+                    blEmployee.updateRow(this.Employee_txt_EmployeeId.Text, this.Employee_txt_FirstName.Text, this.Employee_txt_LastName.Text, this.Employee_dtp_DateJoin.Text, null, ref err);
 
                 LoadData();
 
@@ -166,7 +180,7 @@ namespace FinalProject_CoffeeShop.Interface
                     if (reply == DialogResult.Yes)
                     {
 
-                        //db_Employee.DeleteEmployee(strBill, ref err);
+                        db_Employee.removeRow(strBill, ref err);
                         LoadData();
                         MessageBox.Show("Done deleted !");
                     }
@@ -210,6 +224,69 @@ namespace FinalProject_CoffeeShop.Interface
             this.btn_Add.Enabled = false;
             this.btn_Edit.Enabled = false;
             this.btn_Delete.Enabled = false;
+        }
+
+        //return true if there's a special character in any of the text boxes
+        private bool checkSpecialCharactersForTextBoxes()
+        {
+            if (checkSpecialCharactersForString(Employee_txt_EmployeeId.Text) ||
+                checkSpecialCharactersForString(Employee_txt_FirstName.Text) ||
+                checkSpecialCharactersForString(Employee_txt_LastName.Text))
+                return true;
+
+            return false;
+        }
+
+        //check if there's a special character in the string, return true if yes
+        private bool checkSpecialCharactersForString(string str)
+        {
+            if (str.Contains("!") ||
+               str.Contains("\"") ||
+               str.Contains("#") ||
+               str.Contains("$") ||
+               str.Contains("%") ||
+               str.Contains("&") ||
+               str.Contains("’") ||
+               str.Contains("(") ||
+               str.Contains(")") ||
+               str.Contains("*") ||
+               str.Contains("+") ||
+               str.Contains(",") ||
+               str.Contains("-") ||
+               str.Contains("/") ||
+               str.Contains(":") ||
+               str.Contains(";") ||
+               str.Contains("<") ||
+               str.Contains("=") ||
+               str.Contains(">") ||
+               str.Contains("?") ||
+               str.Contains("@") ||
+               str.Contains("[") ||
+               str.Contains("\\") ||
+               str.Contains("]") ||
+               str.Contains("^") ||
+               str.Contains("_") ||
+               str.Contains("`") ||
+               str.Contains("{") ||
+               str.Contains("|") ||
+               str.Contains(">") ||
+               str.Contains("~")
+                )
+                return true;
+
+            return false;
+        }
+
+        private void workStatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(workStatusComboBox.SelectedIndex == 0)
+            {
+                Employee_dtp_DateLeft.Enabled = false;
+            }
+            else if(workStatusComboBox.SelectedIndex == 1)
+            {
+                Employee_dtp_DateLeft.Enabled = true;
+            }
         }
     }
 }
