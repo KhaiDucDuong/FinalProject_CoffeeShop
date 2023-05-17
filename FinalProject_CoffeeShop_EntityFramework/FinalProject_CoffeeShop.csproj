@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ado Net\BL\BL_item.cs" />
+    <Compile Include="Ado Net\BL\BL_remainingItem.cs" />
     <Compile Include="Ado Net\DB\DB_Main.cs" />
     <Compile Include="Bill.cs">
       <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>

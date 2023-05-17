@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 
-using FinalProject_CoffeeShop.ADO_NET_classes.BL;
+using FinalProject_CoffeeShop.ADO_NET.BL;
 
 namespace FinalProject_CoffeeShop.Interface
 {
