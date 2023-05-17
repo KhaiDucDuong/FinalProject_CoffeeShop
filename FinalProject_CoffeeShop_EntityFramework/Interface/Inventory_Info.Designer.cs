@@ -52,10 +52,9 @@
             // btn_Delete
             // 
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Delete.Location = new System.Drawing.Point(613, 187);
-            this.btn_Delete.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Delete.Location = new System.Drawing.Point(460, 152);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(100, 59);
+            this.btn_Delete.Size = new System.Drawing.Size(75, 48);
             this.btn_Delete.TabIndex = 16;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
@@ -64,10 +63,9 @@
             // btn_Save
             // 
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.Location = new System.Drawing.Point(613, 73);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Save.Location = new System.Drawing.Point(460, 59);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(100, 59);
+            this.btn_Save.Size = new System.Drawing.Size(75, 48);
             this.btn_Save.TabIndex = 17;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
@@ -76,10 +74,9 @@
             // btn_GoBack
             // 
             this.btn_GoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_GoBack.Location = new System.Drawing.Point(495, 405);
-            this.btn_GoBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_GoBack.Location = new System.Drawing.Point(371, 329);
             this.btn_GoBack.Name = "btn_GoBack";
-            this.btn_GoBack.Size = new System.Drawing.Size(340, 68);
+            this.btn_GoBack.Size = new System.Drawing.Size(255, 55);
             this.btn_GoBack.TabIndex = 18;
             this.btn_GoBack.Text = "Go back";
             this.btn_GoBack.UseVisualStyleBackColor = true;
@@ -88,10 +85,9 @@
             // btn_CheckInventory
             // 
             this.btn_CheckInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CheckInventory.Location = new System.Drawing.Point(495, 313);
-            this.btn_CheckInventory.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_CheckInventory.Location = new System.Drawing.Point(371, 254);
             this.btn_CheckInventory.Name = "btn_CheckInventory";
-            this.btn_CheckInventory.Size = new System.Drawing.Size(340, 68);
+            this.btn_CheckInventory.Size = new System.Drawing.Size(255, 55);
             this.btn_CheckInventory.TabIndex = 19;
             this.btn_CheckInventory.Text = "Check Inventory";
             this.btn_CheckInventory.UseVisualStyleBackColor = true;
@@ -100,10 +96,9 @@
             // btn_Add
             // 
             this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add.Location = new System.Drawing.Point(495, 73);
-            this.btn_Add.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Add.Location = new System.Drawing.Point(371, 59);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(100, 59);
+            this.btn_Add.Size = new System.Drawing.Size(75, 48);
             this.btn_Add.TabIndex = 20;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = true;
@@ -112,10 +107,9 @@
             // btn_Cancel
             // 
             this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cancel.Location = new System.Drawing.Point(735, 187);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Cancel.Location = new System.Drawing.Point(551, 152);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(100, 59);
+            this.btn_Cancel.Size = new System.Drawing.Size(75, 48);
             this.btn_Cancel.TabIndex = 21;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
@@ -124,10 +118,9 @@
             // btn_Edit
             // 
             this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Edit.Location = new System.Drawing.Point(495, 187);
-            this.btn_Edit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Edit.Location = new System.Drawing.Point(371, 152);
             this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(100, 59);
+            this.btn_Edit.Size = new System.Drawing.Size(75, 48);
             this.btn_Edit.TabIndex = 22;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
@@ -136,10 +129,9 @@
             // btn_Reload
             // 
             this.btn_Reload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Reload.Location = new System.Drawing.Point(735, 73);
-            this.btn_Reload.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Reload.Location = new System.Drawing.Point(551, 59);
             this.btn_Reload.Name = "btn_Reload";
-            this.btn_Reload.Size = new System.Drawing.Size(100, 59);
+            this.btn_Reload.Size = new System.Drawing.Size(75, 48);
             this.btn_Reload.TabIndex = 23;
             this.btn_Reload.Text = "Reload";
             this.btn_Reload.UseVisualStyleBackColor = true;
@@ -153,81 +145,74 @@
             this.pl_Input.Controls.Add(this.InventoryInfo_IngredientId);
             this.pl_Input.Controls.Add(this.check_idLb);
             this.pl_Input.Controls.Add(this.InventoryInfo_txt_CheckId);
-            this.pl_Input.Location = new System.Drawing.Point(22, 73);
-            this.pl_Input.Margin = new System.Windows.Forms.Padding(4);
+            this.pl_Input.Location = new System.Drawing.Point(16, 59);
             this.pl_Input.Name = "pl_Input";
-            this.pl_Input.Size = new System.Drawing.Size(457, 153);
+            this.pl_Input.Size = new System.Drawing.Size(343, 124);
             this.pl_Input.TabIndex = 15;
             // 
             // quantity_per_unitLb
             // 
             this.quantity_per_unitLb.AutoSize = true;
             this.quantity_per_unitLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantity_per_unitLb.Location = new System.Drawing.Point(4, 114);
-            this.quantity_per_unitLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.quantity_per_unitLb.Location = new System.Drawing.Point(3, 93);
             this.quantity_per_unitLb.Name = "quantity_per_unitLb";
-            this.quantity_per_unitLb.Size = new System.Drawing.Size(163, 25);
+            this.quantity_per_unitLb.Size = new System.Drawing.Size(132, 20);
             this.quantity_per_unitLb.TabIndex = 1;
             this.quantity_per_unitLb.Text = "Quantity per Unit:";
             // 
             // InventoryInfo_txt_QuantityPerUnit
             // 
             this.InventoryInfo_txt_QuantityPerUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InventoryInfo_txt_QuantityPerUnit.Location = new System.Drawing.Point(188, 114);
-            this.InventoryInfo_txt_QuantityPerUnit.Margin = new System.Windows.Forms.Padding(4);
+            this.InventoryInfo_txt_QuantityPerUnit.Location = new System.Drawing.Point(141, 93);
             this.InventoryInfo_txt_QuantityPerUnit.Name = "InventoryInfo_txt_QuantityPerUnit";
-            this.InventoryInfo_txt_QuantityPerUnit.Size = new System.Drawing.Size(245, 29);
+            this.InventoryInfo_txt_QuantityPerUnit.Size = new System.Drawing.Size(185, 24);
             this.InventoryInfo_txt_QuantityPerUnit.TabIndex = 0;
             // 
             // ingredient_idLb
             // 
             this.ingredient_idLb.AutoSize = true;
             this.ingredient_idLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ingredient_idLb.Location = new System.Drawing.Point(4, 66);
-            this.ingredient_idLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ingredient_idLb.Location = new System.Drawing.Point(3, 54);
             this.ingredient_idLb.Name = "ingredient_idLb";
-            this.ingredient_idLb.Size = new System.Drawing.Size(128, 25);
+            this.ingredient_idLb.Size = new System.Drawing.Size(106, 20);
             this.ingredient_idLb.TabIndex = 1;
             this.ingredient_idLb.Text = "Ingredient ID:";
             // 
             // InventoryInfo_IngredientId
             // 
             this.InventoryInfo_IngredientId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InventoryInfo_IngredientId.Location = new System.Drawing.Point(188, 66);
-            this.InventoryInfo_IngredientId.Margin = new System.Windows.Forms.Padding(4);
+            this.InventoryInfo_IngredientId.Location = new System.Drawing.Point(141, 54);
             this.InventoryInfo_IngredientId.Name = "InventoryInfo_IngredientId";
-            this.InventoryInfo_IngredientId.Size = new System.Drawing.Size(245, 29);
+            this.InventoryInfo_IngredientId.Size = new System.Drawing.Size(185, 24);
             this.InventoryInfo_IngredientId.TabIndex = 0;
             // 
             // check_idLb
             // 
             this.check_idLb.AutoSize = true;
             this.check_idLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_idLb.Location = new System.Drawing.Point(4, 11);
-            this.check_idLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.check_idLb.Location = new System.Drawing.Point(3, 9);
             this.check_idLb.Name = "check_idLb";
-            this.check_idLb.Size = new System.Drawing.Size(99, 25);
+            this.check_idLb.Size = new System.Drawing.Size(79, 20);
             this.check_idLb.TabIndex = 1;
             this.check_idLb.Text = "Check ID:";
             // 
             // InventoryInfo_txt_CheckId
             // 
             this.InventoryInfo_txt_CheckId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InventoryInfo_txt_CheckId.Location = new System.Drawing.Point(188, 11);
-            this.InventoryInfo_txt_CheckId.Margin = new System.Windows.Forms.Padding(4);
+            this.InventoryInfo_txt_CheckId.Location = new System.Drawing.Point(141, 9);
             this.InventoryInfo_txt_CheckId.Name = "InventoryInfo_txt_CheckId";
-            this.InventoryInfo_txt_CheckId.Size = new System.Drawing.Size(245, 29);
+            this.InventoryInfo_txt_CheckId.Size = new System.Drawing.Size(185, 24);
             this.InventoryInfo_txt_CheckId.TabIndex = 0;
             // 
             // dgv_InventoryInfo
             // 
             this.dgv_InventoryInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_InventoryInfo.Location = new System.Drawing.Point(22, 233);
-            this.dgv_InventoryInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_InventoryInfo.Location = new System.Drawing.Point(16, 189);
             this.dgv_InventoryInfo.Name = "dgv_InventoryInfo";
             this.dgv_InventoryInfo.RowHeadersWidth = 51;
-            this.dgv_InventoryInfo.Size = new System.Drawing.Size(457, 239);
+            this.dgv_InventoryInfo.Size = new System.Drawing.Size(343, 194);
             this.dgv_InventoryInfo.TabIndex = 14;
+            this.dgv_InventoryInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_InventoryInfo_CellClick);
             // 
             // label1
             // 
@@ -235,17 +220,18 @@
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 24);
+            this.label1.Location = new System.Drawing.Point(16, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 27);
+            this.label1.Size = new System.Drawing.Size(160, 22);
             this.label1.TabIndex = 64;
             this.label1.Text = "INVENTORY INFO";
             // 
             // Inventory_Info
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 511);
+            this.ClientSize = new System.Drawing.Size(664, 415);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Save);
@@ -257,6 +243,7 @@
             this.Controls.Add(this.btn_Reload);
             this.Controls.Add(this.pl_Input);
             this.Controls.Add(this.dgv_InventoryInfo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Inventory_Info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory_Info";
