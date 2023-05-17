@@ -61,6 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ado Net\BL\BL_item.cs" />
+    <Compile Include="Ado Net\DB\DB_Main.cs" />
     <Compile Include="Bill.cs">
       <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
     </Compile>
@@ -280,6 +282,7 @@
       <LastGenOutput>Coffee_ShopEntities.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
