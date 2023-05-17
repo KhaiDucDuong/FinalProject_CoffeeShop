@@ -200,6 +200,7 @@ namespace FinalProject_CoffeeShop.Interface
 
             this.btn_Save.Enabled = false;
             this.btn_Cancel.Enabled = false;
+            this.btn_Save.Enabled = false;
             this.Bill_pl_Input.Enabled = false;
 
             this.btn_Add.Enabled = true;
@@ -213,6 +214,7 @@ namespace FinalProject_CoffeeShop.Interface
 
             this.btn_Save.Enabled = true;
             this.btn_Cancel.Enabled = true;
+            this.btn_Save.Enabled = true;
             this.Bill_pl_Input.Enabled = true;
 
             this.btn_Add.Enabled = false;
