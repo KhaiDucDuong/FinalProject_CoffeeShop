@@ -27,10 +27,9 @@ namespace FinalProject_CoffeeShop.Interface
             }
         }
 
-
         bool Add;
         string err;
-        //BL_Bill db_Bill = new BL_Bill();
+        BL_Bill db_Bill = new BL_Bill();
 
 
 
@@ -42,13 +41,15 @@ namespace FinalProject_CoffeeShop.Interface
         {
             try
             {
-                //dgv_Bill.DataSource = db_Bill.GetBill();
+                dgv_Bill.DataSource = db_Bill.getData();
 
                 dgv_Bill.AutoResizeColumns();
 
                 setInputOff();
 
                 dgv_Bill_CellClick(null, null);
+
+
             }
             catch { MessageBox.Show("Can not get the content in the Bill table. Error !!!"); }
         }
@@ -73,13 +74,16 @@ namespace FinalProject_CoffeeShop.Interface
             {
                 int r = dgv_Bill.CurrentCell.RowIndex;
 
-                //int billid = int.Parse(this.Bill_txt_Bill_Id.Text);
+
                 this.Bill_txt_Bill_Id.Text = dgv_Bill.Rows[r].Cells[0].Value.ToString();
 
 
-                //DateTime createdat = DateTime.Parse(this.Bill_dtp_CreatedAt.Text);
-                this.Bill_dtp_CreatedAt.Text = (dgv_Bill.Rows[r].Cells[1].Value.ToString());
+
+                this.Bill_dtp_CreatedAt.Text = dgv_Bill.Rows[r].Cells[1].Value.ToString();
+
+
             }
+
         }
 
         private void Bill_Load(object sender, EventArgs e)
@@ -99,19 +103,20 @@ namespace FinalProject_CoffeeShop.Interface
             setInputOn();
 
             this.Bill_txt_Bill_Id.Focus();
+
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
-            if(dgv_Bill.RowCount >= 2)
+            if (dgv_Bill.RowCount >= 2)
             {
                 Add = false;
 
                 setInputOn();
                 dgv_Bill_CellClick(null, null);
 
-                //this.Bill_txt_Bill_Id.Enabled = false;
                 this.Bill_dtp_CreatedAt.Focus();
+
             }
         }
 
@@ -134,8 +139,9 @@ namespace FinalProject_CoffeeShop.Interface
             {
                 try
                 {
-                    //BL_Bill blBill = new BL_Bill();
-                    //blBill.AddBill(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
+                    BL_Bill blBill = new BL_Bill();
+
+                    blBill.addNewRow(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
 
                     LoadData();
                     MessageBox.Show("Done added !");
@@ -144,8 +150,9 @@ namespace FinalProject_CoffeeShop.Interface
             }
             else
             {
-                //BL_Bill blBill = new BL_Bill();
-                //blBill.UpdateBill(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
+                BL_Bill blBill = new BL_Bill();
+
+                blBill.updateRow(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
 
                 LoadData();
 
@@ -158,7 +165,7 @@ namespace FinalProject_CoffeeShop.Interface
         {
             try
             {
-                if(dgv_Bill.RowCount >= 2)
+                if (dgv_Bill.RowCount >= 2)
                 {
                     int r = dgv_Bill.CurrentCell.RowIndex;
 
@@ -173,7 +180,8 @@ namespace FinalProject_CoffeeShop.Interface
 
                     if (reply == DialogResult.Yes)
                     {
-                        //db_Bill.DeleteBill(strBill, ref err);
+
+                        db_Bill.removeRow(strBill, ref err);
                         LoadData();
                         MessageBox.Show("Done deleted !");
                     }
@@ -181,11 +189,11 @@ namespace FinalProject_CoffeeShop.Interface
                     {
                         MessageBox.Show("Unable to delete records !");
                     }
+
                 }
             }
             catch { MessageBox.Show("Can not delete. Error !!!"); }
         }
-
         private void setInputOff()
         {
             this.Bill_txt_Bill_Id.ResetText();
@@ -193,7 +201,6 @@ namespace FinalProject_CoffeeShop.Interface
 
             this.btn_Save.Enabled = false;
             this.btn_Cancel.Enabled = false;
-            this.btn_Save.Enabled = false;
             this.Bill_pl_Input.Enabled = false;
 
             this.btn_Add.Enabled = true;
@@ -207,7 +214,6 @@ namespace FinalProject_CoffeeShop.Interface
 
             this.btn_Save.Enabled = true;
             this.btn_Cancel.Enabled = true;
-            this.btn_Save.Enabled = true;
             this.Bill_pl_Input.Enabled = true;
 
             this.btn_Add.Enabled = false;
@@ -265,4 +271,7 @@ namespace FinalProject_CoffeeShop.Interface
             return false;
         }
     }
+
+    
+    
 }
