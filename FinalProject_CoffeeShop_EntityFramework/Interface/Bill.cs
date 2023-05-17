@@ -145,7 +145,8 @@ namespace FinalProject_CoffeeShop.Interface
                     blBill.addNewRow(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
 
                     LoadData();
-                    MessageBox.Show("Done added !");
+                    if(!printError())
+                        MessageBox.Show("Done added !");
                 }
                 catch { MessageBox.Show("Can not add. Error !!!"); }
             }
@@ -158,12 +159,12 @@ namespace FinalProject_CoffeeShop.Interface
                     blBill.updateRow(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
 
                     LoadData();
-                    
-                    MessageBox.Show("Done editted !");
+                    if(!printError())
+                        MessageBox.Show("Done editted!");
                 }
-                catch(SqlException)
+                catch
                 {
-                    MessageBox.Show("Failed to update a new row!", "Non Query execution status");
+                    MessageBox.Show("Can not add. Error !!!");
                 }
             }
 
@@ -229,6 +230,17 @@ namespace FinalProject_CoffeeShop.Interface
             this.btn_Delete.Enabled = false;
         }
 
+        private bool printError()
+        {
+            if (err == "")
+                return false;
+
+            MessageBox.Show(err, "Error message");
+            err = "";
+
+            return true;
+        }
+
         //return true if there's a special character in any of the text boxes
         private bool checkSpecialCharactersForTextBoxes()
         {
@@ -279,7 +291,4 @@ namespace FinalProject_CoffeeShop.Interface
             return false;
         }
     }
-
-    
-    
 }
