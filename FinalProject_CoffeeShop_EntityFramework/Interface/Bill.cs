@@ -124,6 +124,12 @@ namespace FinalProject_CoffeeShop.Interface
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            if (checkSpecialCharactersForTextBoxes())
+            {
+                MessageBox.Show("Cannot use special characters!", "String error");
+                return;
+            }
+
             if (Add)
             {
                 try
@@ -212,6 +218,56 @@ namespace FinalProject_CoffeeShop.Interface
             this.btn_Add.Enabled = false;
             this.btn_Edit.Enabled = false;
             this.btn_Delete.Enabled = false;
+        }
+
+        //return true if there's a special character in any of the text boxes
+        private bool checkSpecialCharactersForTextBoxes()
+        {
+            if (checkSpecialCharactersForString(Bill_txt_Bill_Id.Text)
+                )
+                return true;
+
+            return false;
+        }
+
+        //check if there's a special character in the string, return true if yes
+        private bool checkSpecialCharactersForString(string str)
+        {
+            if (str.Contains("!") ||
+               str.Contains("\"") ||
+               str.Contains("#") ||
+               str.Contains("$") ||
+               str.Contains("%") ||
+               str.Contains("&") ||
+               str.Contains("’") ||
+               str.Contains("(") ||
+               str.Contains(")") ||
+               str.Contains("*") ||
+               str.Contains("+") ||
+               str.Contains(",") ||
+               str.Contains("-") ||
+               str.Contains("/") ||
+               str.Contains(":") ||
+               str.Contains(";") ||
+               str.Contains("<") ||
+               str.Contains("=") ||
+               str.Contains(">") ||
+               str.Contains("?") ||
+               str.Contains("@") ||
+               str.Contains("[") ||
+               str.Contains("\\") ||
+               str.Contains("]") ||
+               str.Contains("^") ||
+               str.Contains("_") ||
+               str.Contains("`") ||
+               str.Contains("{") ||
+               str.Contains("|") ||
+               str.Contains(">") ||
+               str.Contains("~")
+                )
+                return true;
+
+            return false;
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 
 using FinalProject_CoffeeShop.ADO_NET.BL;
+using System.Runtime.Remoting.Messaging;
 
 namespace FinalProject_CoffeeShop.Interface
 {
@@ -129,6 +130,12 @@ namespace FinalProject_CoffeeShop.Interface
 
         private void addRow()
         {
+            if(checkSpecialCharactersForTextBoxes())
+            {
+                MessageBox.Show("Cannot use special characters!", "String error");
+                return;
+            }
+
             try
             {
                 db.addNewRow(this.Item_txt_ItemId.Text, this.Item_txt_ItemName.Text, this.Item_txt_ItemPrice.Text, ref error);
@@ -145,6 +152,12 @@ namespace FinalProject_CoffeeShop.Interface
         }
         private void updateRow()
         {
+            if (checkSpecialCharactersForTextBoxes())
+            {
+                MessageBox.Show("Cannot use special characters!", "String error");
+                return;
+            }
+
             try
             {
                 db.updateRow(this.Item_txt_ItemId.Text, this.Item_txt_ItemName.Text, this.Item_txt_ItemPrice.Text, ref error);
@@ -238,6 +251,57 @@ namespace FinalProject_CoffeeShop.Interface
                 this.Item_txt_ItemName.Text = dgv_Item.Rows[rowIndex].Cells[1].Value.ToString();
                 this.Item_txt_ItemPrice.Text = dgv_Item.Rows[rowIndex].Cells[2].Value.ToString();
             }
+        }
+
+        //return true if there's a special character in any of the text boxes
+        private bool checkSpecialCharactersForTextBoxes()
+        {
+            if (checkSpecialCharactersForString(Item_txt_ItemId.Text)   ||
+                checkSpecialCharactersForString(Item_txt_ItemName.Text) ||
+                checkSpecialCharactersForString(Item_txt_ItemPrice.Text))
+                return true;
+
+            return false;
+        }
+
+        //check if there's a special character in the string, return true if yes
+        private bool checkSpecialCharactersForString(string str )
+        {
+            if (str.Contains("!")||
+               str.Contains("\"")||
+               str.Contains("#") ||
+               str.Contains("$") ||
+               str.Contains("%") ||
+               str.Contains("&") ||
+               str.Contains("’") ||
+               str.Contains("(") ||
+               str.Contains(")") ||
+               str.Contains("*") ||
+               str.Contains("+") ||
+               str.Contains(",") ||
+               str.Contains("-") ||
+               str.Contains("/") ||
+               str.Contains(":") ||
+               str.Contains(";") ||
+               str.Contains("<") ||
+               str.Contains("=") ||
+               str.Contains(">") ||
+               str.Contains("?") ||
+               str.Contains("@") ||
+               str.Contains("[") ||
+               str.Contains("\\")||
+               str.Contains("]") ||
+               str.Contains("^") ||
+               str.Contains("_") ||
+               str.Contains("`") ||
+               str.Contains("{") ||
+               str.Contains("|") ||
+               str.Contains(">") ||
+               str.Contains("~")
+                )
+                return true;
+
+            return false;
         }
     }
 }
