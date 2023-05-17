@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.Entity.Infrastructure;
+using FinalProject_CoffeeShop_EntityFramework;
 
 namespace FinalProject_CoffeeShop.BS_Layer
 {
@@ -12,7 +13,7 @@ namespace FinalProject_CoffeeShop.BS_Layer
     {
         public DataTable GetSupplier ()
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities();
             var sps =
                 from p in csEntity.Suppliers
                 select p;
@@ -32,7 +33,7 @@ namespace FinalProject_CoffeeShop.BS_Layer
         }
         public bool AddSupplier(int Supplier_Id, string Name, string Address, int Phone_Num , string Email, ref string err)
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities();
             Supplier sp = new Supplier();
             sp.supplier_id = Supplier_Id;
             sp.name = Name; 
@@ -46,7 +47,7 @@ namespace FinalProject_CoffeeShop.BS_Layer
         }
         public bool DeleteSupplier(int Supplier_Id, ref string err) 
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities();
             Supplier sp = new Supplier();
             sp.supplier_id = Supplier_Id;
 
@@ -59,7 +60,7 @@ namespace FinalProject_CoffeeShop.BS_Layer
         }
         public bool UpdateSupplier(int Supplier_Id, string Name, string Address, int Phone_Num, string Email, ref string err) 
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities();
             var spQuery = (from sp in csEntity.Suppliers
                            where sp.supplier_id == Supplier_Id
                            select sp).SingleOrDefault();

@@ -100,6 +100,16 @@
           <Property Name="quantity_per_unit" Type="float" Nullable="false" />
           <Property Name="purchase_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <Association Name="FK_bill_id">
           <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
           <End Role="Bill_info" Type="Self.Bill_info" Multiplicity="*" />
@@ -232,6 +242,7 @@
           <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SupplyPurchase" EntityType="Self.SupplyPurchase" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SupplyPurchaseInfo" EntityType="Self.SupplyPurchaseInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_bill_id" Association="Self.FK_bill_id">
             <End Role="Bill" EntitySet="Bill" />
             <End Role="Bill_info" EntitySet="Bill_info" />
@@ -393,6 +404,16 @@
           <NavigationProperty Name="Ingredient" Relationship="Self.FK_SupplyPurchaseInfon_ingredient_id" FromRole="SupplyPurchaseInfo" ToRole="Ingredient" />
           <NavigationProperty Name="SupplyPurchase" Relationship="Self.FK_SupplyPurchaseInfon_purchase_id" FromRole="SupplyPurchaseInfo" ToRole="SupplyPurchase" />
         </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <Association Name="FK_bill_id">
           <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
           <End Role="Bill_info" Type="Self.Bill_info" Multiplicity="*" />
@@ -513,7 +534,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Coffee_ShopEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CoffeeShopEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bills" EntityType="Self.Bill" />
           <EntitySet Name="Bill_info" EntityType="Self.Bill_info" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
@@ -525,6 +546,7 @@
           <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
           <EntitySet Name="SupplyPurchases" EntityType="Self.SupplyPurchase" />
           <EntitySet Name="SupplyPurchaseInfoes" EntityType="Self.SupplyPurchaseInfo" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <AssociationSet Name="FK_bill_id" Association="Self.FK_bill_id">
             <End Role="Bill" EntitySet="Bills" />
             <End Role="Bill_info" EntitySet="Bill_info" />
@@ -571,7 +593,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Coffee_ShopModelStoreContainer" CdmEntityContainer="Coffee_ShopEntities">
+        <EntityContainerMapping StorageEntityContainer="Coffee_ShopModelStoreContainer" CdmEntityContainer="CoffeeShopEntities">
           <EntitySetMapping Name="Bills">
             <EntityTypeMapping TypeName="Coffee_ShopModel.Bill">
               <MappingFragment StoreEntitySet="Bill">
@@ -672,6 +694,17 @@
                 <ScalarProperty Name="ingredient_id" ColumnName="ingredient_id" />
                 <ScalarProperty Name="quantity_per_unit" ColumnName="quantity_per_unit" />
                 <ScalarProperty Name="purchase_price" ColumnName="purchase_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Coffee_ShopModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.Entity.Migrations.Model;
+using FinalProject_CoffeeShop_EntityFramework;
 
 namespace FinalProject_CoffeeShop.BS_Layer
 {
@@ -12,7 +13,7 @@ namespace FinalProject_CoffeeShop.BS_Layer
     {
         public DataTable GetBill_Info ()
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities ();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities ();
             var bis =
                 from i in csEntity.Bill_info
                 select i;
@@ -29,7 +30,7 @@ namespace FinalProject_CoffeeShop.BS_Layer
         }
         public bool AddBill_Info(int Bill_Id, int Item_Id, int Quantity, ref string err)
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities();
             Bill_info bi = new Bill_info ();
             bi.bill_id = Bill_Id;
             bi.item_id = Item_Id;
@@ -42,7 +43,7 @@ namespace FinalProject_CoffeeShop.BS_Layer
         }
         public bool DeleteBill_Info(int Bill_Id , ref string err)
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities();
             Bill_info bi = new Bill_info();
             bi.bill_id = Bill_Id;
             csEntity.Bill_info.Attach (bi);
@@ -53,7 +54,7 @@ namespace FinalProject_CoffeeShop.BS_Layer
         }
         public bool UpdateBill_Info(int Bill_Id, int Item_Id, int Quantity, ref string err) 
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities ();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities ();
            
             var biQuery = (from bi in csEntity.Bill_info
                            where bi.bill_id == Bill_Id

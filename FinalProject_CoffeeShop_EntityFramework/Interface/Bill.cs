@@ -8,8 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using FinalProject_CoffeeShop.BS_Layer;
+
 namespace FinalProject_CoffeeShop.Interface
 {
+
     public partial class Bill : Form
     {
         //disable exit button on top right
@@ -24,9 +27,30 @@ namespace FinalProject_CoffeeShop.Interface
             }
         }
 
+
+        bool Add;
+        string err;
+        BL_Bill db_Bill = new BL_Bill();
+
+
+
         public Bill()
         {
             InitializeComponent();
+        }
+        void LoadData()
+        {
+            try
+            {
+                dgv_Bill.DataSource = db_Bill.GetBill();
+
+                dgv_Bill.AutoResizeColumns();
+
+                setInputOff();
+
+                dgv_Bill_CellClick(null, null);
+            }
+            catch { MessageBox.Show("Can not get the content in the Bill table. Error !!!"); }
         }
 
         private void btn_OpenBillInfo_Click(object sender, EventArgs e)
@@ -43,41 +67,151 @@ namespace FinalProject_CoffeeShop.Interface
             this.Hide();
         }
 
+        private void dgv_Bill_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_Bill.RowCount >= 2)
+            {
+                int r = dgv_Bill.CurrentCell.RowIndex;
+
+                //int billid = int.Parse(this.Bill_txt_Bill_Id.Text);
+                this.Bill_txt_Bill_Id.Text = dgv_Bill.Rows[r].Cells[0].Value.ToString();
+
+
+                //DateTime createdat = DateTime.Parse(this.Bill_dtp_CreatedAt.Text);
+                this.Bill_dtp_CreatedAt.Text = (dgv_Bill.Rows[r].Cells[1].Value.ToString());
+            }
+        }
+
+        private void Bill_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btn_Reload_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            Add = true;
 
+            setInputOn();
+
+            this.Bill_txt_Bill_Id.Focus();
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
+            if(dgv_Bill.RowCount >= 2)
+            {
+                Add = false;
 
+                setInputOn();
+                dgv_Bill_CellClick(null, null);
+
+                //this.Bill_txt_Bill_Id.Enabled = false;
+                this.Bill_dtp_CreatedAt.Focus();
+            }
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            setInputOff();
+
+            dgv_Bill_CellClick(null, null);
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            if (Add)
+            {
+                try
+                {
+                    BL_Bill blBill = new BL_Bill();
+                    //Convert bill id from 'string' to 'int'
+                    //int billId = int.Parse(this.Bill_txt_Bill_Id.Text);
+                    //Convert created at from 'string' to 'System.DateTime'
+                    //DateTime createdAt = DateTime.Parse(this.Bill_dtp_CreatedAt.Text);
+                    blBill.AddBill(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
+
+                    LoadData();
+                    MessageBox.Show("Done added !");
+                }
+                catch { MessageBox.Show("Can not add. Error !!!"); }
+            }
+            else
+            {
+                BL_Bill blBill = new BL_Bill();
+                //int billid = int.Parse(this.Bill_txt_Bill_Id.Text);
+                //DateTime createdat = DateTime.Parse(this.Bill_dtp_CreatedAt.Text);
+                blBill.UpdateBill(this.Bill_txt_Bill_Id.Text, this.Bill_dtp_CreatedAt.Text, ref err);
+
+                LoadData();
+
+                MessageBox.Show("Done editted !");
+            }
 
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if(dgv_Bill.RowCount >= 2)
+                {
+                    int r = dgv_Bill.CurrentCell.RowIndex;
 
+                    string strBill =
+                    dgv_Bill.Rows[r].Cells[0].Value.ToString();
+
+
+                    DialogResult reply;
+
+                    reply = MessageBox.Show("Are you sure you want to delete this post ?", "Reply",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (reply == DialogResult.Yes)
+                    {
+                        //int strbill = int.Parse(this.strBill.Text);
+                        db_Bill.DeleteBill(strBill, ref err);
+                        LoadData();
+                        MessageBox.Show("Done deleted !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to delete records !");
+                    }
+                }
+            }
+            catch { MessageBox.Show("Can not delete. Error !!!"); }
         }
 
-        private void btn_Reload_Click(object sender, EventArgs e)
+        private void setInputOff()
         {
+            this.Bill_txt_Bill_Id.ResetText();
+            this.Bill_dtp_CreatedAt.ResetText();
 
+            this.btn_Save.Enabled = false;
+            this.btn_Cancel.Enabled = false;
+            this.Bill_pl_Input.Enabled = false;
+
+            this.btn_Add.Enabled = true;
+            this.btn_Edit.Enabled = true;
+            this.btn_Delete.Enabled = true;
         }
-
-        private void btn_Cancel_Click(object sender, EventArgs e)
+        private void setInputOn()
         {
+            this.Bill_txt_Bill_Id.ResetText();
+            this.Bill_dtp_CreatedAt.ResetText();
 
+            this.btn_Save.Enabled = true;
+            this.btn_Cancel.Enabled = true;
+            this.Bill_pl_Input.Enabled = true;
+
+            this.btn_Add.Enabled = false;
+            this.btn_Edit.Enabled = false;
+            this.btn_Delete.Enabled = false;
         }
-
-        private void Bill_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        
     }
 }

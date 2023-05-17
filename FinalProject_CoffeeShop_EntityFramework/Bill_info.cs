@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinalProject_CoffeeShop
+namespace FinalProject_CoffeeShop_EntityFramework
 {
     using System;
     using System.Collections.Generic;

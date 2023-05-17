@@ -163,7 +163,7 @@
             this.Bill_dtp_CreatedAt.CustomFormat = "hh:mm:ss  dd/MM/yyyy";
             this.Bill_dtp_CreatedAt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Bill_dtp_CreatedAt.Location = new System.Drawing.Point(192, 72);
-            this.Bill_dtp_CreatedAt.MinDate = new System.DateTime(2023, 4, 5, 0, 0, 0, 0);
+            this.Bill_dtp_CreatedAt.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.Bill_dtp_CreatedAt.Name = "Bill_dtp_CreatedAt";
             this.Bill_dtp_CreatedAt.RightToLeftLayout = true;
             this.Bill_dtp_CreatedAt.ShowUpDown = true;

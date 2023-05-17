@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinalProject_CoffeeShop
+namespace FinalProject_CoffeeShop_EntityFramework
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Coffee_ShopEntities : DbContext
+    public partial class CoffeeShopEntities : DbContext
     {
-        public Coffee_ShopEntities()
-            : base("name=Coffee_ShopEntities")
+        public CoffeeShopEntities()
+            : base("name=CoffeeShopEntities")
         {
         }
     
@@ -36,5 +36,6 @@ namespace FinalProject_CoffeeShop
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<SupplyPurchase> SupplyPurchases { get; set; }
         public virtual DbSet<SupplyPurchaseInfo> SupplyPurchaseInfoes { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

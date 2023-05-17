@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Globalization;
+using FinalProject_CoffeeShop_EntityFramework;
 
 namespace FinalProject_CoffeeShop.BS_Layer
 {
@@ -11,7 +13,7 @@ namespace FinalProject_CoffeeShop.BS_Layer
     {
         public DataTable GetBill()
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities();
             var bs =
                 from s in csEntity.Bills
                 select s; 
@@ -19,19 +21,29 @@ namespace FinalProject_CoffeeShop.BS_Layer
             dt.Columns.Add("Bill Id ");
             dt.Columns.Add("Created At ");
 
+
             foreach (var s in bs)
-            {
+            {   
                 dt.Rows.Add(s.bill_id, s.created_at);
             }
             return dt;
         }
-        public bool AddBill (int Bill_Id, DateTime Created_At, ref string err)
+
+        public bool AddBill (string Bill_Id, string Created_At, ref string err)
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities ();
+            int bill_id;
+            DateTime created_at;
+            if(!int.TryParse(Bill_Id, out bill_id) ||
+            !DateTime.TryParseExact(Created_At, "hh:mm:ss  dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out created_at))
+            {
+                return false;
+            }
+
+            CoffeeShopEntities csEntity = new CoffeeShopEntities ();
             
             Bill b = new Bill();
-            b.bill_id = Bill_Id; 
-            b.created_at = Created_At;
+            b.bill_id = bill_id; 
+            b.created_at = created_at;
 
             csEntity.Bills.Add(b);
             csEntity.SaveChanges();
@@ -39,12 +51,18 @@ namespace FinalProject_CoffeeShop.BS_Layer
             return true;
         }
 
-        public bool DeleteBill(int Bill_Id, ref string err) 
+        public bool DeleteBill(string Bill_Id, ref string err) 
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities();
+            int bill_id;
+            if (!int.TryParse(Bill_Id, out bill_id))
+            {
+                return false;
+            }
+
+            CoffeeShopEntities csEntity = new CoffeeShopEntities();
             
             Bill b = new Bill();
-            b.bill_id = Bill_Id; 
+            b.bill_id = bill_id; 
             csEntity.Bills.Attach(b);
             csEntity.Bills.Remove(b);
 
@@ -54,15 +72,23 @@ namespace FinalProject_CoffeeShop.BS_Layer
             return true;
 
         }
-        public bool UpdateBill(int Bill_Id, DateTime Created_At, ref string err) 
+        public bool UpdateBill(string Bill_Id, string Created_At, ref string err) 
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities();
+            int bill_id;
+            DateTime created_at;
+            if (!int.TryParse(Bill_Id, out bill_id) ||
+            !DateTime.TryParseExact(Created_At, "hh:mm:ss  dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out created_at))
+            {
+                return false;
+            }
+
+            CoffeeShopEntities csEntity = new CoffeeShopEntities();
             var bQuery = (from b in csEntity.Bills
-                          where b.bill_id == Bill_Id
+                          where b.bill_id == bill_id
                           select b).SingleOrDefault();
             if(bQuery != null) 
             {
-                bQuery.created_at = Created_At;
+                bQuery.created_at = created_at;
                 csEntity.SaveChanges();
             }
             return true;

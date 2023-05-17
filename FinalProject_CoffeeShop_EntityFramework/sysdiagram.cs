@@ -12,14 +12,12 @@ namespace FinalProject_CoffeeShop_EntityFramework
     using System;
     using System.Collections.Generic;
     
-    public partial class SupplyPurchaseInfo
+    public partial class sysdiagram
     {
-        public int purchase_id { get; set; }
-        public int ingredient_id { get; set; }
-        public double quantity_per_unit { get; set; }
-        public decimal purchase_price { get; set; }
-    
-        public virtual Ingredient Ingredient { get; set; }
-        public virtual SupplyPurchase SupplyPurchase { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

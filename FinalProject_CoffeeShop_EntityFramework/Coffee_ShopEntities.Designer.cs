@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\WINDOW PRO\FinalProject_CoffeeShop_EntityFramework\FinalProject_CoffeeShop_EntityFramework\CoffeeShopModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Classes\year 2\2nd semester\window programming\final\project\FinalProject_CoffeeShop\FinalProject_CoffeeShop_EntityFramework\Coffee_ShopEntities.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

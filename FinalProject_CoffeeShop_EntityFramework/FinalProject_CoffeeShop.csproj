@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,10 +37,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -59,41 +62,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bill.cs">
-      <DependentUpon>CoffeeShopModel.tt</DependentUpon>
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Bill_info.cs">
-      <DependentUpon>CoffeeShopModel.tt</DependentUpon>
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coffee_ShopEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coffee_ShopEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coffee_ShopEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coffee_ShopEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coffee_ShopEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity_Framework\BS_Layer\BL_Bill.cs" />
     <Compile Include="Entity_Framework\BS_Layer\BL_Bill_Info.cs" />
     <Compile Include="Entity_Framework\BS_Layer\BL_Employee.cs" />
     <Compile Include="Entity_Framework\BS_Layer\BL_Supplier.cs" />
-    <Compile Include="CoffeeShopModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CoffeeShopModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CoffeeShopModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CoffeeShopModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CoffeeShopModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CoffeeShopModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Employee.cs">
-      <DependentUpon>CoffeeShopModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ingredient.cs">
-      <DependentUpon>CoffeeShopModel.tt</DependentUpon>
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Interface\Bill.cs">
       <SubType>Form</SubType>
@@ -174,27 +171,30 @@
       <DependentUpon>Supply_Purchase_Info.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventory.cs">
-      <DependentUpon>CoffeeShopModel.tt</DependentUpon>
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Inventory_info.cs">
-      <DependentUpon>CoffeeShopModel.tt</DependentUpon>
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Item.cs">
-      <DependentUpon>CoffeeShopModel.tt</DependentUpon>
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="remainingItem.cs">
-      <DependentUpon>CoffeeShopModel.tt</DependentUpon>
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Supplier.cs">
-      <DependentUpon>CoffeeShopModel.tt</DependentUpon>
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="SupplyPurchase.cs">
-      <DependentUpon>CoffeeShopModel.tt</DependentUpon>
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="SupplyPurchaseInfo.cs">
-      <DependentUpon>CoffeeShopModel.tt</DependentUpon>
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Coffee_ShopEntities.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Interface\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
@@ -244,12 +244,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="CoffeeShopModel.edmx">
+    <EntityDeploy Include="Coffee_ShopEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CoffeeShopModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Coffee_ShopEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="CoffeeShopModel.edmx.diagram">
-      <DependentUpon>CoffeeShopModel.edmx</DependentUpon>
+    <None Include="Coffee_ShopEntities.edmx.diagram">
+      <DependentUpon>Coffee_ShopEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -269,16 +269,24 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CoffeeShopModel.Context.tt">
+    <Content Include="Coffee_ShopEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CoffeeShopModel.edmx</DependentUpon>
-      <LastGenOutput>CoffeeShopModel.Context.cs</LastGenOutput>
+      <DependentUpon>Coffee_ShopEntities.edmx</DependentUpon>
+      <LastGenOutput>Coffee_ShopEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="CoffeeShopModel.tt">
+    <Content Include="Coffee_ShopEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CoffeeShopModel.edmx</DependentUpon>
-      <LastGenOutput>CoffeeShopModel.cs</LastGenOutput>
+      <DependentUpon>Coffee_ShopEntities.edmx</DependentUpon>
+      <LastGenOutput>Coffee_ShopEntities.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

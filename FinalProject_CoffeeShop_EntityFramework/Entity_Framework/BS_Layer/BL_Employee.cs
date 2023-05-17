@@ -7,6 +7,8 @@ using System.Data;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Data.Entity.Infrastructure;
+using System.Globalization;
+using FinalProject_CoffeeShop_EntityFramework;
 
 namespace FinalProject_CoffeeShop.BS_Layer
 {
@@ -14,7 +16,7 @@ namespace FinalProject_CoffeeShop.BS_Layer
     {
         public DataTable GetEmployee()
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities();
             var es =
                 from p in csEntity.Employees
                 select p;
@@ -31,16 +33,25 @@ namespace FinalProject_CoffeeShop.BS_Layer
             }
             return dt;
         }
-        public bool AddEmployee(int Employee_Id , string First_Name , string Last_Name, DateTime Date_Join, DateTime Date_Left, ref string err)
+        public bool AddEmployee(int Employee_Id , string First_Name , string Last_Name, string Date_Join, string Date_Left, ref string err)
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities();
 
             Employee em = new Employee();
+
             em.employee_id = Employee_Id;
-            em.first_name = First_Name; 
+            em.first_name = First_Name;
             em.last_name = Last_Name;
-            em.date_join = Date_Join;
-            em.date_left = Date_Left;
+            
+            DateTime temp;
+            if (DateTime.TryParseExact(Date_Join, "hh:mm:ss  dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out temp))
+                em.date_join = temp;
+            else
+                return false;
+            if (DateTime.TryParseExact(Date_Left, "hh:mm:ss  dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out temp))
+                em.date_left = temp;
+            else
+                return false;
 
             csEntity.Employees.Add(em);
             csEntity.SaveChanges();
@@ -49,7 +60,7 @@ namespace FinalProject_CoffeeShop.BS_Layer
         }
         public bool DeleteEmployee (int  Employee_Id, ref string err) 
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities ();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities ();
             Employee em = new Employee();
             em.employee_id = Employee_Id;
             csEntity.Employees.Attach (em);
@@ -58,9 +69,9 @@ namespace FinalProject_CoffeeShop.BS_Layer
             csEntity.SaveChanges();
             return true;
         }
-        public bool UpdateEmployee(int Employee_Id, string First_Name, string Last_Name, DateTime Date_Join, DateTime Date_Left, ref string err)
+        public bool UpdateEmployee(int Employee_Id, string First_Name, string Last_Name, string Date_Join, string Date_Left, ref string err)
         {
-            Coffee_ShopEntities csEntity = new Coffee_ShopEntities();
+            CoffeeShopEntities csEntity = new CoffeeShopEntities();
             var emQuery = (from em in csEntity.Employees
                            where em.employee_id == Employee_Id
                            select em).SingleOrDefault();
@@ -69,8 +80,17 @@ namespace FinalProject_CoffeeShop.BS_Layer
             {
                 emQuery.first_name = First_Name;
                 emQuery.last_name = Last_Name;
-                emQuery.date_join = Date_Join;
-                emQuery.date_left = Date_Left;
+
+                DateTime temp;
+                if (DateTime.TryParseExact(Date_Join, "hh:mm:ss  dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out temp))
+                    emQuery.date_join = temp;
+                else
+                    return false;
+                if (DateTime.TryParseExact(Date_Left, "hh:mm:ss  dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out temp))
+                    emQuery.date_left = temp;
+                else
+                    return false;
+
                 csEntity.SaveChanges();
             }
             return true;
