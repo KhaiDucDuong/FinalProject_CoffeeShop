@@ -179,8 +179,9 @@ namespace FinalProject_CoffeeShop.Interface
                 {
                     int r = dgv_Bill_Info.CurrentCell.RowIndex;
 
-                    string strBillInfo =
-                    dgv_Bill_Info.Rows[r].Cells[0].Value.ToString();
+                    string Bill_id = dgv_Bill_Info.Rows[r].Cells[0].Value.ToString();
+                    string Item_id = dgv_Bill_Info.Rows[r].Cells[1].Value.ToString();
+
 
 
                     DialogResult reply;
@@ -191,7 +192,7 @@ namespace FinalProject_CoffeeShop.Interface
                     if (reply == DialogResult.Yes)
                     {
 
-                        db_BillInfo.removeRow(strBillInfo, ref err);
+                        db_BillInfo.removeRow(Bill_id, Item_id, ref err);
                         LoadData();
                         if (!printError())
                             MessageBox.Show("Done deleted !");

@@ -43,9 +43,9 @@ namespace FinalProject_CoffeeShop.Ado_Net.BL
         }
 
         //remove a row in Item table that has a specified itemID
-        public bool removeRow(string bill_id, ref string error)
+        public bool removeRow(string bill_id, string item_id, ref string error)
         {
-            string sqlString = "DELETE FROM " + databaseName + " WHERE " + primaryKeyCol + " = " + bill_id;
+            string sqlString = "DELETE FROM " + databaseName + " WHERE " + primaryKeyCol + " = " + bill_id + " AND " + secondCol + " = " + item_id;
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref error);
         }
 
