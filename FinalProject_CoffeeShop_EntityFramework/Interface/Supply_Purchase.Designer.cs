@@ -210,7 +210,7 @@
             // 
             // SupplyPurchase_txt_PurchaseDate
             // 
-            this.SupplyPurchase_txt_PurchaseDate.CustomFormat = "hh:mm:ss  dd/MM/yyyy";
+            this.SupplyPurchase_txt_PurchaseDate.CustomFormat = "HH:mm:ss  dd/MM/yyyy";
             this.SupplyPurchase_txt_PurchaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.SupplyPurchase_txt_PurchaseDate.Location = new System.Drawing.Point(160, 101);
             this.SupplyPurchase_txt_PurchaseDate.Margin = new System.Windows.Forms.Padding(2);

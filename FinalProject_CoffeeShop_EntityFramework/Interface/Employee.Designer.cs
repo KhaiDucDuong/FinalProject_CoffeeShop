@@ -205,7 +205,7 @@
             // 
             // Employee_dtp_DateLeft
             // 
-            this.Employee_dtp_DateLeft.CustomFormat = "hh:mm:ss  dd/MM/yyyy";
+            this.Employee_dtp_DateLeft.CustomFormat = "HH:mm:ss  dd/MM/yyyy";
             this.Employee_dtp_DateLeft.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Employee_dtp_DateLeft.Location = new System.Drawing.Point(154, 166);
             this.Employee_dtp_DateLeft.Margin = new System.Windows.Forms.Padding(2);
@@ -216,7 +216,7 @@
             // 
             // Employee_dtp_DateJoin
             // 
-            this.Employee_dtp_DateJoin.CustomFormat = "hh:mm:ss  dd/MM/yyyy";
+            this.Employee_dtp_DateJoin.CustomFormat = "HH:mm:ss  dd/MM/yyyy";
             this.Employee_dtp_DateJoin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Employee_dtp_DateJoin.Location = new System.Drawing.Point(154, 126);
             this.Employee_dtp_DateJoin.Margin = new System.Windows.Forms.Padding(2);

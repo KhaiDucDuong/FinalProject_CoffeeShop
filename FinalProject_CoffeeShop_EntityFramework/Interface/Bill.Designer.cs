@@ -179,7 +179,7 @@
             // 
             // Bill_dtp_CreatedAt
             // 
-            this.Bill_dtp_CreatedAt.CustomFormat = "hh:mm:ss  dd/MM/yyyy";
+            this.Bill_dtp_CreatedAt.CustomFormat = "HH:mm:ss  dd/MM/yyyy";
             this.Bill_dtp_CreatedAt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Bill_dtp_CreatedAt.Location = new System.Drawing.Point(144, 58);
             this.Bill_dtp_CreatedAt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);

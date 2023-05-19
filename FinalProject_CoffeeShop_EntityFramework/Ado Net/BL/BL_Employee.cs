@@ -93,7 +93,7 @@ namespace FinalProject_CoffeeShop.Ado_Net.BL
         private string convertInterfaceDateTimeFormatToSqlFormat(string interface_format)
         {
             DateTime convertedFormat;
-            DateTime.TryParseExact(interface_format, "hh:mm:ss  dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out convertedFormat);
+            DateTime.TryParseExact(interface_format, "HH:mm:ss  dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out convertedFormat);
             return convertedFormat.ToString();
         }
     }
