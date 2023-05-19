@@ -39,11 +39,23 @@ namespace FinalProject_CoffeeShop.Ado_Net.BL
         //add a new row to Item table
         public bool addNewRow(string employee_id, string first_name, string last_name, string date_join, string date_left, ref string error)
         {
-            string converted_date_join = convertInterfaceDateTimeFormatToSqlFormat(date_join);
-            string converted_date_left = convertInterfaceDateTimeFormatToSqlFormat(date_left);
+            string sqlString;
+            if (date_left == "NULL")
+            {
+                string converted_date_join = convertInterfaceDateTimeFormatToSqlFormat(date_join);
 
-            string sqlString = "INSERT INTO " + databaseName +
-                " VALUES (" + employee_id + ", N'" + first_name + "', N'" + last_name + "', '" + converted_date_join + "', '" + converted_date_left + "')"; 
+                sqlString = "INSERT INTO " + databaseName +
+                    " VALUES (" + employee_id + ", N'" + first_name + "', N'" + last_name + "', '" + converted_date_join + "', " + date_left + ")";
+            }
+            else
+            {
+                string converted_date_join = convertInterfaceDateTimeFormatToSqlFormat(date_join);
+                string converted_date_left = convertInterfaceDateTimeFormatToSqlFormat(date_left);
+
+                sqlString = "INSERT INTO " + databaseName +
+                    " VALUES (" + employee_id + ", N'" + first_name + "', N'" + last_name + "', '" + converted_date_join + "', '" + converted_date_left + "')";
+            }
+             
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref error);
         }
 
@@ -57,12 +69,24 @@ namespace FinalProject_CoffeeShop.Ado_Net.BL
         //update a row in Item table that has a specified itemID
         public bool updateRow(string employee_id, string first_name, string last_name, string date_join, string date_left, ref string error)
         {
-            string converted_date_join = convertInterfaceDateTimeFormatToSqlFormat(date_join);
-            string converted_date_left = convertInterfaceDateTimeFormatToSqlFormat(date_left);
+            string sqlString;
+            if (date_left == "NULL")
+            {
+                string converted_date_join = convertInterfaceDateTimeFormatToSqlFormat(date_join);
 
-            string sqlString = "UPDATE " + databaseName + 
-                " SET " + secondCol + " = N'" + first_name + "', " + thirdCol + " = N'" + last_name + "', " + fourthCol + " = '" + converted_date_join + "', " + fifthCol + " = '" + converted_date_left + "' " +
-                "WHERE " + primaryKeyCol + " = '" + employee_id + "'";
+                sqlString = "UPDATE " + databaseName +
+                    " SET " + secondCol + " = N'" + first_name + "', " + thirdCol + " = N'" + last_name + "', " + fourthCol + " = '" + converted_date_join + "', " + fifthCol + " = " + date_left + " " +
+                    "WHERE " + primaryKeyCol + " = '" + employee_id + "'";
+            }
+            else
+            {
+                string converted_date_join = convertInterfaceDateTimeFormatToSqlFormat(date_join);
+                string converted_date_left = convertInterfaceDateTimeFormatToSqlFormat(date_left);
+
+                sqlString = "UPDATE " + databaseName +
+                    " SET " + secondCol + " = N'" + first_name + "', " + thirdCol + " = N'" + last_name + "', " + fourthCol + " = '" + converted_date_join + "', " + fifthCol + " = '" + converted_date_left + "' " +
+                    "WHERE " + primaryKeyCol + " = '" + employee_id + "'";
+            }
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref error);
         }
 
