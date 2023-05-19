@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using FinalProject_CoffeeShop.Ado_Net.BL;
-using FinalProject_CoffeeShop.Ado_Net.BL;
 
 namespace FinalProject_CoffeeShop.Interface
 {
@@ -208,7 +207,7 @@ namespace FinalProject_CoffeeShop.Interface
         private void setInputButtonsOff()
         {
             this.Inventory_txt_CheckId.ResetText();
-            this.Inventory_txt_DateCheck.ResetText();
+            this.Inventory_txt_DateCheck.Value = DateTime.Today;
             this.Inventory_txt_CheckerId.ResetText();
 
             this.btn_Add.Enabled = false;
@@ -225,7 +224,7 @@ namespace FinalProject_CoffeeShop.Interface
         private void setInputButtonsOn()
         {
             this.Inventory_txt_CheckId.ResetText();
-            this.Inventory_txt_DateCheck.ResetText();
+            this.Inventory_txt_DateCheck.Value = DateTime.Today;
             this.Inventory_txt_CheckerId.ResetText();
 
             this.btn_Add.Enabled = true;

@@ -42,7 +42,7 @@
             this.SupplyPurchase_txt_EmployeeInCharge = new System.Windows.Forms.TextBox();
             this.employee_in_chargeLb = new System.Windows.Forms.Label();
             this.pl_Input = new System.Windows.Forms.Panel();
-            this.SupplierPurchase_txt_PurchaseDate = new System.Windows.Forms.TextBox();
+            this.SupplyPurchase_txt_PurchaseDate = new System.Windows.Forms.DateTimePicker();
             this.purchase_label = new System.Windows.Forms.Label();
             this.SupplyPurchase_txt_PurchaseId = new System.Windows.Forms.TextBox();
             this.dgv_SupplyPurchase = new System.Windows.Forms.DataGridView();
@@ -195,9 +195,9 @@
             // 
             // pl_Input
             // 
+            this.pl_Input.Controls.Add(this.SupplyPurchase_txt_PurchaseDate);
             this.pl_Input.Controls.Add(this.SupplyPurchase_txt_SupplierId);
             this.pl_Input.Controls.Add(this.SupplierLb);
-            this.pl_Input.Controls.Add(this.SupplierPurchase_txt_PurchaseDate);
             this.pl_Input.Controls.Add(this.purchase_dateLb);
             this.pl_Input.Controls.Add(this.SupplyPurchase_txt_EmployeeInCharge);
             this.pl_Input.Controls.Add(this.purchase_label);
@@ -208,13 +208,19 @@
             this.pl_Input.Size = new System.Drawing.Size(343, 136);
             this.pl_Input.TabIndex = 36;
             // 
-            // SupplierPurchase_txt_PurchaseDate
+            // SupplyPurchase_txt_PurchaseDate
             // 
-            this.SupplierPurchase_txt_PurchaseDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SupplierPurchase_txt_PurchaseDate.Location = new System.Drawing.Point(160, 101);
-            this.SupplierPurchase_txt_PurchaseDate.Name = "SupplierPurchase_txt_PurchaseDate";
-            this.SupplierPurchase_txt_PurchaseDate.Size = new System.Drawing.Size(165, 24);
-            this.SupplierPurchase_txt_PurchaseDate.TabIndex = 3;
+            this.SupplyPurchase_txt_PurchaseDate.CustomFormat = "hh:mm:ss  dd/MM/yyyy";
+            this.SupplyPurchase_txt_PurchaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.SupplyPurchase_txt_PurchaseDate.Location = new System.Drawing.Point(160, 101);
+            this.SupplyPurchase_txt_PurchaseDate.Margin = new System.Windows.Forms.Padding(2);
+            this.SupplyPurchase_txt_PurchaseDate.MaxDate = new System.DateTime(2023, 5, 19, 16, 28, 3, 0);
+            this.SupplyPurchase_txt_PurchaseDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.SupplyPurchase_txt_PurchaseDate.Name = "SupplyPurchase_txt_PurchaseDate";
+            this.SupplyPurchase_txt_PurchaseDate.ShowUpDown = true;
+            this.SupplyPurchase_txt_PurchaseDate.Size = new System.Drawing.Size(165, 20);
+            this.SupplyPurchase_txt_PurchaseDate.TabIndex = 3;
+            this.SupplyPurchase_txt_PurchaseDate.Value = new System.DateTime(2023, 5, 19, 0, 0, 0, 0);
             // 
             // purchase_label
             // 
@@ -273,7 +279,7 @@
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.pl_Input);
             this.Controls.Add(this.dgv_SupplyPurchase);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Supply_Purchase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Supply_Purchase";
@@ -302,10 +308,10 @@
         private System.Windows.Forms.TextBox SupplyPurchase_txt_EmployeeInCharge;
         private System.Windows.Forms.Label employee_in_chargeLb;
         private System.Windows.Forms.Panel pl_Input;
-        private System.Windows.Forms.TextBox SupplierPurchase_txt_PurchaseDate;
         private System.Windows.Forms.Label purchase_label;
         private System.Windows.Forms.TextBox SupplyPurchase_txt_PurchaseId;
         private System.Windows.Forms.DataGridView dgv_SupplyPurchase;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker SupplyPurchase_txt_PurchaseDate;
     }
 }

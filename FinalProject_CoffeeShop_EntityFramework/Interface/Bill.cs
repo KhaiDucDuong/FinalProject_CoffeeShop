@@ -40,8 +40,10 @@ namespace FinalProject_CoffeeShop.Interface
         }
         void LoadData()
         {
+
             try
             {
+
                 dgv_Bill.DataSource = db_Bill.getData();
 
                 dgv_Bill.AutoResizeColumns();
@@ -209,7 +211,7 @@ namespace FinalProject_CoffeeShop.Interface
         private void setInputOff()
         {
             this.Bill_txt_Bill_Id.ResetText();
-            this.Bill_dtp_CreatedAt.ResetText();
+            this.Bill_dtp_CreatedAt.Value = DateTime.Now;
 
             this.btn_Save.Enabled = false;
             this.btn_Cancel.Enabled = false;
@@ -224,7 +226,7 @@ namespace FinalProject_CoffeeShop.Interface
             this.Bill_txt_Bill_Id.Enabled = true;
 
             this.Bill_txt_Bill_Id.ResetText();
-            this.Bill_dtp_CreatedAt.ResetText();
+            this.Bill_dtp_CreatedAt.Value = DateTime.Now;
 
             this.btn_Save.Enabled = true;
             this.btn_Cancel.Enabled = true;

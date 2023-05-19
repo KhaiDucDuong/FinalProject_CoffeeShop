@@ -70,6 +70,7 @@
     <Compile Include="Ado Net\BL\BL_item.cs" />
     <Compile Include="Ado Net\BL\BL_remainingItem.cs" />
     <Compile Include="Ado Net\BL\BL_Supplier.cs" />
+    <Compile Include="Ado Net\BL\BL_supplypurchase.cs" />
     <Compile Include="Ado Net\DB\DB_Main.cs" />
     <Compile Include="Interface\Bill.cs">
       <SubType>Form</SubType>

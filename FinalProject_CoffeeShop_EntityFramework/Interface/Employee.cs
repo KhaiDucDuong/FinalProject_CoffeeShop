@@ -46,6 +46,7 @@ namespace FinalProject_CoffeeShop.Interface
         {
             this.workStatusComboBox.SelectedIndex = 0;
 
+
             try
             {
                 dgv_Employee.DataSource = db_Employee.getData();
@@ -199,8 +200,8 @@ namespace FinalProject_CoffeeShop.Interface
             this.Employee_txt_EmployeeId.ResetText();
             this.Employee_txt_FirstName.ResetText();
             this.Employee_txt_LastName.ResetText();
-            this.Employee_dtp_DateJoin.ResetText();
-            this.Employee_dtp_DateLeft.ResetText();
+            this.Employee_dtp_DateJoin.Value = DateTime.Today;
+            this.Employee_dtp_DateLeft.Value = DateTime.Today;
 
             this.btn_Save.Enabled = false;
             this.btn_Cancel.Enabled = false;
@@ -217,8 +218,8 @@ namespace FinalProject_CoffeeShop.Interface
             this.Employee_txt_EmployeeId.ResetText();
             this.Employee_txt_FirstName.ResetText();
             this.Employee_txt_LastName.ResetText();
-            this.Employee_dtp_DateJoin.ResetText();
-            this.Employee_dtp_DateLeft.ResetText();
+            this.Employee_dtp_DateJoin.Value = DateTime.Today;
+            this.Employee_dtp_DateLeft.Value = DateTime.Today;
 
             this.btn_Save.Enabled = true;
             this.btn_Cancel.Enabled = true;
