@@ -109,7 +109,10 @@ namespace FinalProject_CoffeeShop.Interface
 
                 dgv_InventoryInfo_CellClick(null, null);
 
-                this.InventoryInfo_IngredientId.Focus();
+                this.InventoryInfo_txt_CheckId.Enabled = false;
+                this.InventoryInfo_IngredientId.Enabled = false;
+
+                this.InventoryInfo_txt_QuantityPerUnit.Focus();
             }
         }
 
@@ -226,6 +229,9 @@ namespace FinalProject_CoffeeShop.Interface
 
         private void setInputButtonsOn()
         {
+            this.InventoryInfo_txt_CheckId.Enabled = true;
+            this.InventoryInfo_IngredientId.Enabled = true;
+
             this.InventoryInfo_txt_CheckId.ResetText();
             this.InventoryInfo_IngredientId.ResetText();
             this.InventoryInfo_txt_QuantityPerUnit.ResetText();

@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 
 namespace FinalProject_CoffeeShop.Ado_Net.BL
 {
-    internal class BL_InventoryInfo
+    internal class BL_supplypurchaseinfo
     {
-        string databaseName = "Inventory_info";
-        string primaryKeyCol = "check_id";
+        string databaseName = "SupplyPurchaseInfo";
+        string firstCol = "purchase_id";
         string secondCol = "ingredient_id";
         string thirdCol = "quantity_per_unit";
+        string fourthCol = "purchase_price";
 
         DB_Main db = null;
-        public BL_InventoryInfo()
+        public BL_supplypurchaseinfo()
         {
             db = new DB_Main();
         }
@@ -33,26 +34,26 @@ namespace FinalProject_CoffeeShop.Ado_Net.BL
         }
 
         //add a new row to Item table
-        public bool addNewRow(string check_id, string ingredient_id, string quantity_per_unit, ref string error)
+        public bool addNewRow(string purchase_id, string ingredient_id, string quantity_per_unit, string purchase_price, ref string error)
         {
             string sqlString = "INSERT INTO " + databaseName +
-                " VALUES (" + check_id + ", " + ingredient_id + ", " + quantity_per_unit + ")";
+                " VALUES (" + purchase_id + ", " + ingredient_id + ", " + quantity_per_unit + ", " + purchase_price + ")";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref error);
         }
 
         //remove a row in Item table that has a specified itemID
-        public bool removeRow(string check_id, ref string error)
+        public bool removeRow(string purchase_id, string ingredient_id, ref string error)
         {
-            string sqlString = "DELETE FROM " + databaseName + " WHERE " + primaryKeyCol + " = " + check_id;
+            string sqlString = "DELETE FROM " + databaseName + " WHERE " + firstCol + " = " + purchase_id + " AND " + secondCol + " = " + ingredient_id;
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref error);
         }
 
         //update a row in Item table that has a specified itemID
-        public bool updateRow(string check_id, string ingredient_id, string quantity_per_unit, ref string error)
+        public bool updateRow(string purchase_id, string ingredient_id, string quantity_per_unit, string purchase_price, ref string error)
         {
             string sqlString = "UPDATE " + databaseName +
-                " SET " + thirdCol + " = " + quantity_per_unit +
-                "WHERE " + primaryKeyCol + " = " + check_id + " AND " + secondCol + " = " + ingredient_id;
+                " SET " + thirdCol + " = " + quantity_per_unit + ", " + fourthCol + " = " + purchase_price +
+                "WHERE " + firstCol + " = " + purchase_id + " AND " + secondCol + " = " + ingredient_id;
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref error);
         }
     }

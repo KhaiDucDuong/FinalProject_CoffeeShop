@@ -60,6 +60,7 @@
             this.dgv_Purchase_Info.Size = new System.Drawing.Size(343, 182);
             this.dgv_Purchase_Info.TabIndex = 25;
             this.dgv_Purchase_Info.TabStop = false;
+            this.dgv_Purchase_Info.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SupplypurchaseDGV_CellClick);
             // 
             // PurchaseInfo_txt_QuantityPerUnit
             // 
@@ -273,7 +274,7 @@
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_Delete);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Supply_Purchase_Info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Supply_Purchase_Info";

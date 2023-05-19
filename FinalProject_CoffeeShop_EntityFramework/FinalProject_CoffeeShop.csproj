@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{725A7051-D145-4EE7-A5E4-6CE96D3A3159}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>FinalProject_CoffeeShop_EntityFramework</RootNamespace>
-    <AssemblyName>FinalProject_CoffeeShop_EntityFramework</AssemblyName>
+    <RootNamespace>FinalProject_CoffeeSho</RootNamespace>
+    <AssemblyName>FinalProject_CoffeeShop</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -71,6 +71,7 @@
     <Compile Include="Ado Net\BL\BL_remainingItem.cs" />
     <Compile Include="Ado Net\BL\BL_Supplier.cs" />
     <Compile Include="Ado Net\BL\BL_supplypurchase.cs" />
+    <Compile Include="Ado Net\BL\BL_supplypurchaseinfo.cs" />
     <Compile Include="Ado Net\DB\DB_Main.cs" />
     <Compile Include="Interface\Bill.cs">
       <SubType>Form</SubType>
@@ -199,6 +200,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
