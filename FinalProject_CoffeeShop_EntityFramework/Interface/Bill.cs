@@ -116,6 +116,8 @@ namespace FinalProject_CoffeeShop.Interface
                 setInputOn();
                 dgv_Bill_CellClick(null, null);
 
+                this.Bill_txt_Bill_Id.Enabled = false;
+
                 this.Bill_dtp_CreatedAt.Focus();
 
             }
@@ -219,6 +221,8 @@ namespace FinalProject_CoffeeShop.Interface
         }
         private void setInputOn()
         {
+            this.Bill_txt_Bill_Id.Enabled = true;
+
             this.Bill_txt_Bill_Id.ResetText();
             this.Bill_dtp_CreatedAt.ResetText();
 

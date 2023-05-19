@@ -58,21 +58,23 @@
             // 
             this.dgv_Supplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Supplier.Location = new System.Drawing.Point(9, 236);
-            this.dgv_Supplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_Supplier.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Supplier.Name = "dgv_Supplier";
             this.dgv_Supplier.RowHeadersWidth = 51;
             this.dgv_Supplier.RowTemplate.Height = 24;
             this.dgv_Supplier.Size = new System.Drawing.Size(492, 226);
             this.dgv_Supplier.TabIndex = 63;
+            this.dgv_Supplier.TabStop = false;
             // 
             // btn_GoBack
             // 
             this.btn_GoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GoBack.Location = new System.Drawing.Point(394, 488);
-            this.btn_GoBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_GoBack.Margin = new System.Windows.Forms.Padding(2);
             this.btn_GoBack.Name = "btn_GoBack";
             this.btn_GoBack.Size = new System.Drawing.Size(107, 82);
             this.btn_GoBack.TabIndex = 62;
+            this.btn_GoBack.TabStop = false;
             this.btn_GoBack.Text = "Go back";
             this.btn_GoBack.UseVisualStyleBackColor = true;
             this.btn_GoBack.Click += new System.EventHandler(this.btn_GoBack_Click);
@@ -81,10 +83,11 @@
             // 
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.Location = new System.Drawing.Point(127, 534);
-            this.btn_Delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(77, 35);
             this.btn_Delete.TabIndex = 61;
+            this.btn_Delete.TabStop = false;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
@@ -93,10 +96,11 @@
             // 
             this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.Location = new System.Drawing.Point(251, 535);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(80, 35);
             this.btn_Cancel.TabIndex = 60;
+            this.btn_Cancel.TabStop = false;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
@@ -105,10 +109,11 @@
             // 
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.Location = new System.Drawing.Point(128, 488);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(76, 35);
             this.btn_Save.TabIndex = 59;
+            this.btn_Save.TabStop = false;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
@@ -117,10 +122,11 @@
             // 
             this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Edit.Location = new System.Drawing.Point(8, 534);
-            this.btn_Edit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Edit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(77, 35);
             this.btn_Edit.TabIndex = 58;
+            this.btn_Edit.TabStop = false;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
@@ -129,10 +135,11 @@
             // 
             this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.Location = new System.Drawing.Point(5, 488);
-            this.btn_Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Add.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(80, 35);
             this.btn_Add.TabIndex = 57;
+            this.btn_Add.TabStop = false;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
@@ -141,10 +148,11 @@
             // 
             this.btn_Reload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Reload.Location = new System.Drawing.Point(251, 488);
-            this.btn_Reload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Reload.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.Size = new System.Drawing.Size(80, 37);
             this.btn_Reload.TabIndex = 56;
+            this.btn_Reload.TabStop = false;
             this.btn_Reload.Text = "Reload";
             this.btn_Reload.UseVisualStyleBackColor = true;
             this.btn_Reload.Click += new System.EventHandler(this.btn_Reload_Click);
@@ -164,7 +172,7 @@
             this.Supplier_pl_Input.Controls.Add(this.LbSupplierID);
             this.Supplier_pl_Input.Controls.Add(this.label2);
             this.Supplier_pl_Input.Location = new System.Drawing.Point(9, 37);
-            this.Supplier_pl_Input.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Supplier_pl_Input.Margin = new System.Windows.Forms.Padding(2);
             this.Supplier_pl_Input.Name = "Supplier_pl_Input";
             this.Supplier_pl_Input.Size = new System.Drawing.Size(492, 194);
             this.Supplier_pl_Input.TabIndex = 55;
@@ -172,7 +180,7 @@
             // Supplier_txt_Email
             // 
             this.Supplier_txt_Email.Location = new System.Drawing.Point(144, 167);
-            this.Supplier_txt_Email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Supplier_txt_Email.Margin = new System.Windows.Forms.Padding(2);
             this.Supplier_txt_Email.Name = "Supplier_txt_Email";
             this.Supplier_txt_Email.Size = new System.Drawing.Size(335, 20);
             this.Supplier_txt_Email.TabIndex = 11;
@@ -180,7 +188,7 @@
             // Supplier_txt_PhoneNumber
             // 
             this.Supplier_txt_PhoneNumber.Location = new System.Drawing.Point(144, 126);
-            this.Supplier_txt_PhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Supplier_txt_PhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.Supplier_txt_PhoneNumber.Name = "Supplier_txt_PhoneNumber";
             this.Supplier_txt_PhoneNumber.Size = new System.Drawing.Size(335, 20);
             this.Supplier_txt_PhoneNumber.TabIndex = 10;
@@ -188,7 +196,7 @@
             // Supplier_txt_Address
             // 
             this.Supplier_txt_Address.Location = new System.Drawing.Point(144, 87);
-            this.Supplier_txt_Address.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Supplier_txt_Address.Margin = new System.Windows.Forms.Padding(2);
             this.Supplier_txt_Address.Name = "Supplier_txt_Address";
             this.Supplier_txt_Address.Size = new System.Drawing.Size(335, 20);
             this.Supplier_txt_Address.TabIndex = 9;
@@ -196,7 +204,7 @@
             // Supplier_txt_Name
             // 
             this.Supplier_txt_Name.Location = new System.Drawing.Point(144, 49);
-            this.Supplier_txt_Name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Supplier_txt_Name.Margin = new System.Windows.Forms.Padding(2);
             this.Supplier_txt_Name.Name = "Supplier_txt_Name";
             this.Supplier_txt_Name.Size = new System.Drawing.Size(335, 20);
             this.Supplier_txt_Name.TabIndex = 8;
@@ -257,7 +265,7 @@
             // Supplier_txt_SupplierId
             // 
             this.Supplier_txt_SupplierId.Location = new System.Drawing.Point(144, 7);
-            this.Supplier_txt_SupplierId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Supplier_txt_SupplierId.Margin = new System.Windows.Forms.Padding(2);
             this.Supplier_txt_SupplierId.Name = "Supplier_txt_SupplierId";
             this.Supplier_txt_SupplierId.Size = new System.Drawing.Size(335, 20);
             this.Supplier_txt_SupplierId.TabIndex = 2;
@@ -310,7 +318,7 @@
             this.Controls.Add(this.btn_Reload);
             this.Controls.Add(this.Supplier_pl_Input);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Supplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Supplier";
