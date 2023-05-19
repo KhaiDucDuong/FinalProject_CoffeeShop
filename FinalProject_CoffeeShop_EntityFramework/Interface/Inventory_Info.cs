@@ -277,35 +277,18 @@ namespace FinalProject_CoffeeShop.Interface
         {
             if (str.Contains("!") ||
                str.Contains("\"") ||
-               str.Contains("#") ||
-               str.Contains("$") ||
-               str.Contains("%") ||
                str.Contains("&") ||
                str.Contains("’") ||
-               str.Contains("(") ||
-               str.Contains(")") ||
-               str.Contains("*") ||
-               str.Contains("+") ||
-               str.Contains(",") ||
-               str.Contains("-") ||
-               str.Contains("/") ||
                str.Contains(":") ||
                str.Contains(";") ||
                str.Contains("<") ||
-               str.Contains("=") ||
                str.Contains(">") ||
-               str.Contains("?") ||
-               str.Contains("@") ||
                str.Contains("[") ||
                str.Contains("\\") ||
                str.Contains("]") ||
-               str.Contains("^") ||
-               str.Contains("_") ||
                str.Contains("`") ||
-               str.Contains("{") ||
                str.Contains("|") ||
-               str.Contains(">") ||
-               str.Contains("~")
+               str.Contains(">")
                 )
                 return true;
 

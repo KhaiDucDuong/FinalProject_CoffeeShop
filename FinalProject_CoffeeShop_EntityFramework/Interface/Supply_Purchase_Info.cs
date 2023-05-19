@@ -273,8 +273,6 @@ namespace FinalProject_CoffeeShop.Interface
                str.Contains("\"") ||
                str.Contains("&") ||
                str.Contains("’") ||
-               str.Contains("(") ||
-               str.Contains(")") ||
                str.Contains(":") ||
                str.Contains(";") ||
                str.Contains("<") ||

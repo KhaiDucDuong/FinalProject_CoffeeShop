@@ -264,37 +264,20 @@ namespace FinalProject_CoffeeShop.Interface
         //check if there's a special character in the string, return true if yes
         private bool checkSpecialCharactersForString(string str )
         {
-            if (str.Contains("!")||
-               str.Contains("\"")||
-               str.Contains("#") ||
-               str.Contains("$") ||
-               str.Contains("%") ||
+            if (str.Contains("!") ||
+               str.Contains("\"") ||
                str.Contains("&") ||
                str.Contains("’") ||
-               str.Contains("(") ||
-               str.Contains(")") ||
-               str.Contains("*") ||
-               str.Contains("+") ||
-               str.Contains(",") ||
-               str.Contains("-") ||
-               str.Contains("/") ||
                str.Contains(":") ||
                str.Contains(";") ||
                str.Contains("<") ||
-               str.Contains("=") ||
                str.Contains(">") ||
-               str.Contains("?") ||
-               str.Contains("@") ||
                str.Contains("[") ||
-               str.Contains("\\")||
+               str.Contains("\\") ||
                str.Contains("]") ||
-               str.Contains("^") ||
-               str.Contains("_") ||
                str.Contains("`") ||
-               str.Contains("{") ||
                str.Contains("|") ||
-               str.Contains(">") ||
-               str.Contains("~")
+               str.Contains(">")
                 )
                 return true;
 

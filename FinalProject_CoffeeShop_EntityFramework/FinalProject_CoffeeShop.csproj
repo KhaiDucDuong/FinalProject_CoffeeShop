@@ -7,7 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{725A7051-D145-4EE7-A5E4-6CE96D3A3159}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>FinalProject_CoffeeSho</RootNamespace>
+    <RootNamespace>FinalProject_CoffeeShop</RootNamespace>
     <AssemblyName>FinalProject_CoffeeShop</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
