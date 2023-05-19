@@ -135,7 +135,6 @@ namespace FinalProject_CoffeeShop.Interface
 
                 this.Ingredient_txt_IngredientId.Enabled = false;
 
-                this.Ingredient_txt_IngredientName.Focus();
             }
         }
 

@@ -54,41 +54,38 @@
             // dgv_Purchase_Info
             // 
             this.dgv_Purchase_Info.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Purchase_Info.Location = new System.Drawing.Point(13, 227);
-            this.dgv_Purchase_Info.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_Purchase_Info.Location = new System.Drawing.Point(10, 184);
             this.dgv_Purchase_Info.Name = "dgv_Purchase_Info";
             this.dgv_Purchase_Info.RowHeadersWidth = 51;
-            this.dgv_Purchase_Info.Size = new System.Drawing.Size(457, 224);
+            this.dgv_Purchase_Info.Size = new System.Drawing.Size(343, 182);
             this.dgv_Purchase_Info.TabIndex = 25;
+            this.dgv_Purchase_Info.TabStop = false;
             // 
             // PurchaseInfo_txt_QuantityPerUnit
             // 
             this.PurchaseInfo_txt_QuantityPerUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PurchaseInfo_txt_QuantityPerUnit.Location = new System.Drawing.Point(229, 90);
-            this.PurchaseInfo_txt_QuantityPerUnit.Margin = new System.Windows.Forms.Padding(4);
+            this.PurchaseInfo_txt_QuantityPerUnit.Location = new System.Drawing.Point(172, 73);
             this.PurchaseInfo_txt_QuantityPerUnit.Name = "PurchaseInfo_txt_QuantityPerUnit";
-            this.PurchaseInfo_txt_QuantityPerUnit.Size = new System.Drawing.Size(219, 29);
-            this.PurchaseInfo_txt_QuantityPerUnit.TabIndex = 3;
+            this.PurchaseInfo_txt_QuantityPerUnit.Size = new System.Drawing.Size(165, 24);
+            this.PurchaseInfo_txt_QuantityPerUnit.TabIndex = 2;
             // 
             // ingredient_label
             // 
             this.ingredient_label.AutoSize = true;
             this.ingredient_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ingredient_label.Location = new System.Drawing.Point(19, 53);
-            this.ingredient_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ingredient_label.Location = new System.Drawing.Point(14, 43);
             this.ingredient_label.Name = "ingredient_label";
-            this.ingredient_label.Size = new System.Drawing.Size(128, 25);
+            this.ingredient_label.Size = new System.Drawing.Size(106, 20);
             this.ingredient_label.TabIndex = 2;
             this.ingredient_label.Text = "Ingredient ID:";
             // 
             // PurchaseInfo_txt_PurchasePrice
             // 
             this.PurchaseInfo_txt_PurchasePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PurchaseInfo_txt_PurchasePrice.Location = new System.Drawing.Point(229, 125);
-            this.PurchaseInfo_txt_PurchasePrice.Margin = new System.Windows.Forms.Padding(4);
+            this.PurchaseInfo_txt_PurchasePrice.Location = new System.Drawing.Point(172, 102);
             this.PurchaseInfo_txt_PurchasePrice.Name = "PurchaseInfo_txt_PurchasePrice";
-            this.PurchaseInfo_txt_PurchasePrice.Size = new System.Drawing.Size(219, 29);
-            this.PurchaseInfo_txt_PurchasePrice.TabIndex = 0;
+            this.PurchaseInfo_txt_PurchasePrice.Size = new System.Drawing.Size(165, 24);
+            this.PurchaseInfo_txt_PurchasePrice.TabIndex = 3;
             // 
             // pl_Input
             // 
@@ -100,20 +97,18 @@
             this.pl_Input.Controls.Add(this.PurchaseInfo_txt_IngredientId);
             this.pl_Input.Controls.Add(this.purchase_label);
             this.pl_Input.Controls.Add(this.PurchaseInfo_txt_PurchaseId);
-            this.pl_Input.Location = new System.Drawing.Point(13, 52);
-            this.pl_Input.Margin = new System.Windows.Forms.Padding(4);
+            this.pl_Input.Location = new System.Drawing.Point(10, 42);
             this.pl_Input.Name = "pl_Input";
-            this.pl_Input.Size = new System.Drawing.Size(457, 167);
+            this.pl_Input.Size = new System.Drawing.Size(343, 136);
             this.pl_Input.TabIndex = 26;
             // 
             // quantity_per_unitLb
             // 
             this.quantity_per_unitLb.AutoSize = true;
             this.quantity_per_unitLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantity_per_unitLb.Location = new System.Drawing.Point(19, 90);
-            this.quantity_per_unitLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.quantity_per_unitLb.Location = new System.Drawing.Point(14, 73);
             this.quantity_per_unitLb.Name = "quantity_per_unitLb";
-            this.quantity_per_unitLb.Size = new System.Drawing.Size(163, 25);
+            this.quantity_per_unitLb.Size = new System.Drawing.Size(132, 20);
             this.quantity_per_unitLb.TabIndex = 1;
             this.quantity_per_unitLb.Text = "Quantity per Unit:";
             // 
@@ -121,50 +116,46 @@
             // 
             this.purchase_price.AutoSize = true;
             this.purchase_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.purchase_price.Location = new System.Drawing.Point(19, 125);
-            this.purchase_price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.purchase_price.Location = new System.Drawing.Point(14, 102);
             this.purchase_price.Name = "purchase_price";
-            this.purchase_price.Size = new System.Drawing.Size(142, 25);
+            this.purchase_price.Size = new System.Drawing.Size(114, 20);
             this.purchase_price.TabIndex = 1;
             this.purchase_price.Text = "Purchase price";
             // 
             // PurchaseInfo_txt_IngredientId
             // 
             this.PurchaseInfo_txt_IngredientId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PurchaseInfo_txt_IngredientId.Location = new System.Drawing.Point(229, 53);
-            this.PurchaseInfo_txt_IngredientId.Margin = new System.Windows.Forms.Padding(4);
+            this.PurchaseInfo_txt_IngredientId.Location = new System.Drawing.Point(172, 43);
             this.PurchaseInfo_txt_IngredientId.Name = "PurchaseInfo_txt_IngredientId";
-            this.PurchaseInfo_txt_IngredientId.Size = new System.Drawing.Size(219, 29);
-            this.PurchaseInfo_txt_IngredientId.TabIndex = 0;
+            this.PurchaseInfo_txt_IngredientId.Size = new System.Drawing.Size(165, 24);
+            this.PurchaseInfo_txt_IngredientId.TabIndex = 1;
             // 
             // purchase_label
             // 
             this.purchase_label.AutoSize = true;
             this.purchase_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.purchase_label.Location = new System.Drawing.Point(19, 18);
-            this.purchase_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.purchase_label.Location = new System.Drawing.Point(14, 15);
             this.purchase_label.Name = "purchase_label";
-            this.purchase_label.Size = new System.Drawing.Size(125, 25);
+            this.purchase_label.Size = new System.Drawing.Size(101, 20);
             this.purchase_label.TabIndex = 1;
             this.purchase_label.Text = "Purchase ID:";
             // 
             // PurchaseInfo_txt_PurchaseId
             // 
             this.PurchaseInfo_txt_PurchaseId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PurchaseInfo_txt_PurchaseId.Location = new System.Drawing.Point(229, 12);
-            this.PurchaseInfo_txt_PurchaseId.Margin = new System.Windows.Forms.Padding(4);
+            this.PurchaseInfo_txt_PurchaseId.Location = new System.Drawing.Point(172, 10);
             this.PurchaseInfo_txt_PurchaseId.Name = "PurchaseInfo_txt_PurchaseId";
-            this.PurchaseInfo_txt_PurchaseId.Size = new System.Drawing.Size(219, 29);
+            this.PurchaseInfo_txt_PurchaseId.Size = new System.Drawing.Size(165, 24);
             this.PurchaseInfo_txt_PurchaseId.TabIndex = 0;
             // 
             // btn_Reload
             // 
             this.btn_Reload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Reload.Location = new System.Drawing.Point(726, 52);
-            this.btn_Reload.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Reload.Location = new System.Drawing.Point(544, 42);
             this.btn_Reload.Name = "btn_Reload";
-            this.btn_Reload.Size = new System.Drawing.Size(100, 59);
+            this.btn_Reload.Size = new System.Drawing.Size(75, 48);
             this.btn_Reload.TabIndex = 34;
+            this.btn_Reload.TabStop = false;
             this.btn_Reload.Text = "Reload";
             this.btn_Reload.UseVisualStyleBackColor = true;
             this.btn_Reload.Click += new System.EventHandler(this.btn_Reload_Click);
@@ -172,11 +163,11 @@
             // btn_Save
             // 
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.Location = new System.Drawing.Point(603, 49);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Save.Location = new System.Drawing.Point(452, 40);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(100, 59);
+            this.btn_Save.Size = new System.Drawing.Size(75, 48);
             this.btn_Save.TabIndex = 28;
+            this.btn_Save.TabStop = false;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
@@ -184,11 +175,11 @@
             // btn_OpenSupplyPurchase
             // 
             this.btn_OpenSupplyPurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_OpenSupplyPurchase.Location = new System.Drawing.Point(486, 258);
-            this.btn_OpenSupplyPurchase.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_OpenSupplyPurchase.Location = new System.Drawing.Point(364, 210);
             this.btn_OpenSupplyPurchase.Name = "btn_OpenSupplyPurchase";
-            this.btn_OpenSupplyPurchase.Size = new System.Drawing.Size(340, 68);
+            this.btn_OpenSupplyPurchase.Size = new System.Drawing.Size(255, 55);
             this.btn_OpenSupplyPurchase.TabIndex = 29;
+            this.btn_OpenSupplyPurchase.TabStop = false;
             this.btn_OpenSupplyPurchase.Text = "Open Supply Purchase";
             this.btn_OpenSupplyPurchase.UseVisualStyleBackColor = true;
             this.btn_OpenSupplyPurchase.Click += new System.EventHandler(this.btn_OpenSupplyPurchase_Click);
@@ -196,11 +187,11 @@
             // btn_GoBack
             // 
             this.btn_GoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_GoBack.Location = new System.Drawing.Point(486, 384);
-            this.btn_GoBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_GoBack.Location = new System.Drawing.Point(364, 312);
             this.btn_GoBack.Name = "btn_GoBack";
-            this.btn_GoBack.Size = new System.Drawing.Size(340, 68);
+            this.btn_GoBack.Size = new System.Drawing.Size(255, 55);
             this.btn_GoBack.TabIndex = 30;
+            this.btn_GoBack.TabStop = false;
             this.btn_GoBack.Text = "Go back";
             this.btn_GoBack.UseVisualStyleBackColor = true;
             this.btn_GoBack.Click += new System.EventHandler(this.btn_GoBack_Click);
@@ -208,11 +199,11 @@
             // btn_Add
             // 
             this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add.Location = new System.Drawing.Point(486, 49);
-            this.btn_Add.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Add.Location = new System.Drawing.Point(364, 40);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(100, 59);
+            this.btn_Add.Size = new System.Drawing.Size(75, 48);
             this.btn_Add.TabIndex = 31;
+            this.btn_Add.TabStop = false;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
@@ -220,11 +211,11 @@
             // btn_Cancel
             // 
             this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cancel.Location = new System.Drawing.Point(726, 132);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Cancel.Location = new System.Drawing.Point(544, 107);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(100, 59);
+            this.btn_Cancel.Size = new System.Drawing.Size(75, 48);
             this.btn_Cancel.TabIndex = 32;
+            this.btn_Cancel.TabStop = false;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
@@ -232,11 +223,11 @@
             // btn_Edit
             // 
             this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Edit.Location = new System.Drawing.Point(486, 132);
-            this.btn_Edit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Edit.Location = new System.Drawing.Point(364, 107);
             this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(100, 59);
+            this.btn_Edit.Size = new System.Drawing.Size(75, 48);
             this.btn_Edit.TabIndex = 33;
+            this.btn_Edit.TabStop = false;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
@@ -244,11 +235,11 @@
             // btn_Delete
             // 
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Delete.Location = new System.Drawing.Point(603, 132);
-            this.btn_Delete.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Delete.Location = new System.Drawing.Point(452, 107);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(100, 59);
+            this.btn_Delete.Size = new System.Drawing.Size(75, 48);
             this.btn_Delete.TabIndex = 27;
+            this.btn_Delete.TabStop = false;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
@@ -259,17 +250,18 @@
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(9, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(279, 27);
+            this.label1.Size = new System.Drawing.Size(230, 22);
             this.label1.TabIndex = 67;
             this.label1.Text = "SUPPLY PURCHASE INFO";
             // 
             // Supply_Purchase_Info
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 469);
+            this.ClientSize = new System.Drawing.Size(632, 381);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_Purchase_Info);
             this.Controls.Add(this.pl_Input);
@@ -281,6 +273,7 @@
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_Delete);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Supply_Purchase_Info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Supply_Purchase_Info";

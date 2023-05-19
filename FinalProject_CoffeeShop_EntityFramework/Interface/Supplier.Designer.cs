@@ -183,7 +183,7 @@
             this.Supplier_txt_Email.Margin = new System.Windows.Forms.Padding(2);
             this.Supplier_txt_Email.Name = "Supplier_txt_Email";
             this.Supplier_txt_Email.Size = new System.Drawing.Size(335, 20);
-            this.Supplier_txt_Email.TabIndex = 11;
+            this.Supplier_txt_Email.TabIndex = 5;
             // 
             // Supplier_txt_PhoneNumber
             // 
@@ -191,7 +191,7 @@
             this.Supplier_txt_PhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.Supplier_txt_PhoneNumber.Name = "Supplier_txt_PhoneNumber";
             this.Supplier_txt_PhoneNumber.Size = new System.Drawing.Size(335, 20);
-            this.Supplier_txt_PhoneNumber.TabIndex = 10;
+            this.Supplier_txt_PhoneNumber.TabIndex = 4;
             // 
             // Supplier_txt_Address
             // 
@@ -199,7 +199,7 @@
             this.Supplier_txt_Address.Margin = new System.Windows.Forms.Padding(2);
             this.Supplier_txt_Address.Name = "Supplier_txt_Address";
             this.Supplier_txt_Address.Size = new System.Drawing.Size(335, 20);
-            this.Supplier_txt_Address.TabIndex = 9;
+            this.Supplier_txt_Address.TabIndex = 3;
             // 
             // Supplier_txt_Name
             // 
@@ -207,7 +207,7 @@
             this.Supplier_txt_Name.Margin = new System.Windows.Forms.Padding(2);
             this.Supplier_txt_Name.Name = "Supplier_txt_Name";
             this.Supplier_txt_Name.Size = new System.Drawing.Size(335, 20);
-            this.Supplier_txt_Name.TabIndex = 8;
+            this.Supplier_txt_Name.TabIndex = 2;
             // 
             // LbEmail
             // 
@@ -268,7 +268,7 @@
             this.Supplier_txt_SupplierId.Margin = new System.Windows.Forms.Padding(2);
             this.Supplier_txt_SupplierId.Name = "Supplier_txt_SupplierId";
             this.Supplier_txt_SupplierId.Size = new System.Drawing.Size(335, 20);
-            this.Supplier_txt_SupplierId.TabIndex = 2;
+            this.Supplier_txt_SupplierId.TabIndex = 1;
             // 
             // LbSupplierID
             // 

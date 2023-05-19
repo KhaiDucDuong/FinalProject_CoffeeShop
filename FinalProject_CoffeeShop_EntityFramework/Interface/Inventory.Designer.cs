@@ -56,6 +56,7 @@
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(75, 48);
             this.btn_Delete.TabIndex = 5;
+            this.btn_Delete.TabStop = false;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
@@ -67,6 +68,7 @@
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(75, 48);
             this.btn_Save.TabIndex = 6;
+            this.btn_Save.TabStop = false;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
@@ -78,6 +80,7 @@
             this.btn_GoBack.Name = "btn_GoBack";
             this.btn_GoBack.Size = new System.Drawing.Size(255, 55);
             this.btn_GoBack.TabIndex = 7;
+            this.btn_GoBack.TabStop = false;
             this.btn_GoBack.Text = "Go back";
             this.btn_GoBack.UseVisualStyleBackColor = true;
             this.btn_GoBack.Click += new System.EventHandler(this.btn_GoBack_Click);
@@ -89,6 +92,7 @@
             this.btn_CheckInventoryInfo.Name = "btn_CheckInventoryInfo";
             this.btn_CheckInventoryInfo.Size = new System.Drawing.Size(255, 55);
             this.btn_CheckInventoryInfo.TabIndex = 8;
+            this.btn_CheckInventoryInfo.TabStop = false;
             this.btn_CheckInventoryInfo.Text = "Check Inventory Info";
             this.btn_CheckInventoryInfo.UseVisualStyleBackColor = true;
             this.btn_CheckInventoryInfo.Click += new System.EventHandler(this.btn_CheckInventoryInfo_Click);
@@ -100,6 +104,7 @@
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 48);
             this.btn_Add.TabIndex = 9;
+            this.btn_Add.TabStop = false;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
@@ -111,6 +116,7 @@
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 48);
             this.btn_Cancel.TabIndex = 10;
+            this.btn_Cancel.TabStop = false;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
@@ -122,6 +128,7 @@
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(75, 48);
             this.btn_Edit.TabIndex = 11;
+            this.btn_Edit.TabStop = false;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
@@ -133,6 +140,7 @@
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.Size = new System.Drawing.Size(75, 48);
             this.btn_Reload.TabIndex = 12;
+            this.btn_Reload.TabStop = false;
             this.btn_Reload.Text = "Reload";
             this.btn_Reload.UseVisualStyleBackColor = true;
             this.btn_Reload.Click += new System.EventHandler(this.btn_Reload_Click);
@@ -187,7 +195,7 @@
             this.Inventory_txt_CheckId.Location = new System.Drawing.Point(166, 9);
             this.Inventory_txt_CheckId.Name = "Inventory_txt_CheckId";
             this.Inventory_txt_CheckId.Size = new System.Drawing.Size(160, 24);
-            this.Inventory_txt_CheckId.TabIndex = 0;
+            this.Inventory_txt_CheckId.TabIndex = 1;
             // 
             // date_checkLb
             // 
@@ -205,7 +213,7 @@
             this.Inventory_txt_CheckerId.Location = new System.Drawing.Point(195, 89);
             this.Inventory_txt_CheckerId.Name = "Inventory_txt_CheckerId";
             this.Inventory_txt_CheckerId.Size = new System.Drawing.Size(131, 24);
-            this.Inventory_txt_CheckerId.TabIndex = 0;
+            this.Inventory_txt_CheckerId.TabIndex = 3;
             // 
             // dgv_Inventory
             // 
@@ -215,6 +223,7 @@
             this.dgv_Inventory.RowHeadersWidth = 51;
             this.dgv_Inventory.Size = new System.Drawing.Size(343, 194);
             this.dgv_Inventory.TabIndex = 3;
+            this.dgv_Inventory.TabStop = false;
             this.dgv_Inventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Inventory_CellClick);
             // 
             // label1
@@ -246,7 +255,7 @@
             this.Controls.Add(this.btn_Reload);
             this.Controls.Add(this.InputPanel);
             this.Controls.Add(this.dgv_Inventory);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Inventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory";

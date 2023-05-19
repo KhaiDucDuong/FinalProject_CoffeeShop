@@ -56,6 +56,7 @@
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(75, 48);
             this.btn_Delete.TabIndex = 16;
+            this.btn_Delete.TabStop = false;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
@@ -67,6 +68,7 @@
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(75, 48);
             this.btn_Save.TabIndex = 17;
+            this.btn_Save.TabStop = false;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
@@ -78,6 +80,7 @@
             this.btn_GoBack.Name = "btn_GoBack";
             this.btn_GoBack.Size = new System.Drawing.Size(255, 55);
             this.btn_GoBack.TabIndex = 18;
+            this.btn_GoBack.TabStop = false;
             this.btn_GoBack.Text = "Go back";
             this.btn_GoBack.UseVisualStyleBackColor = true;
             this.btn_GoBack.Click += new System.EventHandler(this.btn_GoBack_Click);
@@ -89,6 +92,7 @@
             this.btn_CheckInventory.Name = "btn_CheckInventory";
             this.btn_CheckInventory.Size = new System.Drawing.Size(255, 55);
             this.btn_CheckInventory.TabIndex = 19;
+            this.btn_CheckInventory.TabStop = false;
             this.btn_CheckInventory.Text = "Check Inventory";
             this.btn_CheckInventory.UseVisualStyleBackColor = true;
             this.btn_CheckInventory.Click += new System.EventHandler(this.btn_CheckInventory_Click);
@@ -100,6 +104,7 @@
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 48);
             this.btn_Add.TabIndex = 20;
+            this.btn_Add.TabStop = false;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
@@ -111,6 +116,7 @@
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 48);
             this.btn_Cancel.TabIndex = 21;
+            this.btn_Cancel.TabStop = false;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
@@ -122,6 +128,7 @@
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(75, 48);
             this.btn_Edit.TabIndex = 22;
+            this.btn_Edit.TabStop = false;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
@@ -133,6 +140,7 @@
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.Size = new System.Drawing.Size(75, 48);
             this.btn_Reload.TabIndex = 23;
+            this.btn_Reload.TabStop = false;
             this.btn_Reload.Text = "Reload";
             this.btn_Reload.UseVisualStyleBackColor = true;
             this.btn_Reload.Click += new System.EventHandler(this.reloadBt_Click);
@@ -166,7 +174,7 @@
             this.InventoryInfo_txt_QuantityPerUnit.Location = new System.Drawing.Point(141, 93);
             this.InventoryInfo_txt_QuantityPerUnit.Name = "InventoryInfo_txt_QuantityPerUnit";
             this.InventoryInfo_txt_QuantityPerUnit.Size = new System.Drawing.Size(185, 24);
-            this.InventoryInfo_txt_QuantityPerUnit.TabIndex = 0;
+            this.InventoryInfo_txt_QuantityPerUnit.TabIndex = 2;
             // 
             // ingredient_idLb
             // 
@@ -184,7 +192,7 @@
             this.InventoryInfo_IngredientId.Location = new System.Drawing.Point(141, 54);
             this.InventoryInfo_IngredientId.Name = "InventoryInfo_IngredientId";
             this.InventoryInfo_IngredientId.Size = new System.Drawing.Size(185, 24);
-            this.InventoryInfo_IngredientId.TabIndex = 0;
+            this.InventoryInfo_IngredientId.TabIndex = 1;
             // 
             // check_idLb
             // 
@@ -212,6 +220,7 @@
             this.dgv_InventoryInfo.RowHeadersWidth = 51;
             this.dgv_InventoryInfo.Size = new System.Drawing.Size(343, 194);
             this.dgv_InventoryInfo.TabIndex = 14;
+            this.dgv_InventoryInfo.TabStop = false;
             this.dgv_InventoryInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_InventoryInfo_CellClick);
             // 
             // label1
@@ -243,7 +252,7 @@
             this.Controls.Add(this.btn_Reload);
             this.Controls.Add(this.pl_Input);
             this.Controls.Add(this.dgv_InventoryInfo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Inventory_Info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory_Info";

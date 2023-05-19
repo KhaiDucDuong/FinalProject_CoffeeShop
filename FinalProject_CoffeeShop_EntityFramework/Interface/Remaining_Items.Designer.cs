@@ -52,6 +52,7 @@
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.Size = new System.Drawing.Size(75, 48);
             this.btn_Reload.TabIndex = 62;
+            this.btn_Reload.TabStop = false;
             this.btn_Reload.Text = "Reload";
             this.btn_Reload.UseVisualStyleBackColor = true;
             this.btn_Reload.Click += new System.EventHandler(this.btn_Reload_Click);
@@ -63,6 +64,7 @@
             this.goBackBt.Name = "goBackBt";
             this.goBackBt.Size = new System.Drawing.Size(255, 55);
             this.goBackBt.TabIndex = 58;
+            this.goBackBt.TabStop = false;
             this.goBackBt.Text = "Go back";
             this.goBackBt.UseVisualStyleBackColor = true;
             this.goBackBt.Click += new System.EventHandler(this.goBackBt_Click);
@@ -74,6 +76,7 @@
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 48);
             this.btn_Add.TabIndex = 59;
+            this.btn_Add.TabStop = false;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
@@ -85,6 +88,7 @@
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 48);
             this.btn_Cancel.TabIndex = 60;
+            this.btn_Cancel.TabStop = false;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
@@ -96,6 +100,7 @@
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(75, 48);
             this.btn_Delete.TabIndex = 56;
+            this.btn_Delete.TabStop = false;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
@@ -107,6 +112,7 @@
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(75, 48);
             this.btn_Save.TabIndex = 57;
+            this.btn_Save.TabStop = false;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
@@ -118,6 +124,7 @@
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(75, 48);
             this.btn_Edit.TabIndex = 61;
+            this.btn_Edit.TabStop = false;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
@@ -139,7 +146,7 @@
             this.RemainingItem_txt_Quantity.Location = new System.Drawing.Point(160, 65);
             this.RemainingItem_txt_Quantity.Name = "RemainingItem_txt_Quantity";
             this.RemainingItem_txt_Quantity.Size = new System.Drawing.Size(165, 24);
-            this.RemainingItem_txt_Quantity.TabIndex = 0;
+            this.RemainingItem_txt_Quantity.TabIndex = 1;
             // 
             // quantityLB
             // 
@@ -177,6 +184,7 @@
             this.dgv_RemainingItem.RowHeadersWidth = 51;
             this.dgv_RemainingItem.Size = new System.Drawing.Size(343, 182);
             this.dgv_RemainingItem.TabIndex = 54;
+            this.dgv_RemainingItem.TabStop = false;
             this.dgv_RemainingItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_RemainingItem_CellClick);
             // 
             // Remaining_Items
@@ -193,7 +201,7 @@
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.pl_Input);
             this.Controls.Add(this.dgv_RemainingItem);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Remaining_Items";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Remaining_Item";

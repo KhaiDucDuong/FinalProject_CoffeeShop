@@ -37,6 +37,8 @@
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Reload = new System.Windows.Forms.Button();
             this.Employee_pl_Input = new System.Windows.Forms.Panel();
+            this.workStatusComboBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.Employee_dtp_DateLeft = new System.Windows.Forms.DateTimePicker();
             this.Employee_dtp_DateJoin = new System.Windows.Forms.DateTimePicker();
             this.Employee_txt_LastName = new System.Windows.Forms.TextBox();
@@ -50,8 +52,6 @@
             this.Lb_EmployeeID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.workStatusComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Employee)).BeginInit();
             this.Employee_pl_Input.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +66,7 @@
             this.dgv_Employee.RowTemplate.Height = 24;
             this.dgv_Employee.Size = new System.Drawing.Size(571, 213);
             this.dgv_Employee.TabIndex = 52;
+            this.dgv_Employee.TabStop = false;
             // 
             // btn_GoBack
             // 
@@ -75,6 +76,7 @@
             this.btn_GoBack.Name = "btn_GoBack";
             this.btn_GoBack.Size = new System.Drawing.Size(79, 64);
             this.btn_GoBack.TabIndex = 51;
+            this.btn_GoBack.TabStop = false;
             this.btn_GoBack.Text = "Go back";
             this.btn_GoBack.UseVisualStyleBackColor = true;
             this.btn_GoBack.Click += new System.EventHandler(this.btn_GoBack_Click);
@@ -87,6 +89,7 @@
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(79, 36);
             this.btn_Delete.TabIndex = 50;
+            this.btn_Delete.TabStop = false;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
@@ -99,6 +102,7 @@
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(79, 36);
             this.btn_Cancel.TabIndex = 49;
+            this.btn_Cancel.TabStop = false;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
@@ -111,6 +115,7 @@
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(79, 36);
             this.btn_Save.TabIndex = 48;
+            this.btn_Save.TabStop = false;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
@@ -123,6 +128,7 @@
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(79, 34);
             this.btn_Edit.TabIndex = 47;
+            this.btn_Edit.TabStop = false;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
@@ -135,6 +141,7 @@
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(79, 34);
             this.btn_Add.TabIndex = 46;
+            this.btn_Add.TabStop = false;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
@@ -147,6 +154,7 @@
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.Size = new System.Drawing.Size(79, 36);
             this.btn_Reload.TabIndex = 45;
+            this.btn_Reload.TabStop = false;
             this.btn_Reload.Text = "Reload";
             this.btn_Reload.UseVisualStyleBackColor = true;
             this.btn_Reload.Click += new System.EventHandler(this.btn_Reload_Click);
@@ -173,6 +181,28 @@
             this.Employee_pl_Input.Size = new System.Drawing.Size(571, 191);
             this.Employee_pl_Input.TabIndex = 44;
             // 
+            // workStatusComboBox
+            // 
+            this.workStatusComboBox.FormattingEnabled = true;
+            this.workStatusComboBox.Items.AddRange(new object[] {
+            "Working",
+            "Has left"});
+            this.workStatusComboBox.Location = new System.Drawing.Point(445, 131);
+            this.workStatusComboBox.Name = "workStatusComboBox";
+            this.workStatusComboBox.Size = new System.Drawing.Size(97, 21);
+            this.workStatusComboBox.TabIndex = 5;
+            this.workStatusComboBox.SelectedIndexChanged += new System.EventHandler(this.workStatusComboBox_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(329, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Work status:";
+            // 
             // Employee_dtp_DateLeft
             // 
             this.Employee_dtp_DateLeft.CustomFormat = "hh:mm:ss  dd/MM/yyyy";
@@ -182,7 +212,7 @@
             this.Employee_dtp_DateLeft.Name = "Employee_dtp_DateLeft";
             this.Employee_dtp_DateLeft.ShowUpDown = true;
             this.Employee_dtp_DateLeft.Size = new System.Drawing.Size(161, 20);
-            this.Employee_dtp_DateLeft.TabIndex = 11;
+            this.Employee_dtp_DateLeft.TabIndex = 6;
             // 
             // Employee_dtp_DateJoin
             // 
@@ -193,7 +223,7 @@
             this.Employee_dtp_DateJoin.Name = "Employee_dtp_DateJoin";
             this.Employee_dtp_DateJoin.ShowUpDown = true;
             this.Employee_dtp_DateJoin.Size = new System.Drawing.Size(161, 20);
-            this.Employee_dtp_DateJoin.TabIndex = 10;
+            this.Employee_dtp_DateJoin.TabIndex = 4;
             // 
             // Employee_txt_LastName
             // 
@@ -201,7 +231,7 @@
             this.Employee_txt_LastName.Margin = new System.Windows.Forms.Padding(2);
             this.Employee_txt_LastName.Name = "Employee_txt_LastName";
             this.Employee_txt_LastName.Size = new System.Drawing.Size(388, 20);
-            this.Employee_txt_LastName.TabIndex = 9;
+            this.Employee_txt_LastName.TabIndex = 3;
             // 
             // Employee_txt_FirstName
             // 
@@ -209,7 +239,7 @@
             this.Employee_txt_FirstName.Margin = new System.Windows.Forms.Padding(2);
             this.Employee_txt_FirstName.Name = "Employee_txt_FirstName";
             this.Employee_txt_FirstName.Size = new System.Drawing.Size(388, 20);
-            this.Employee_txt_FirstName.TabIndex = 8;
+            this.Employee_txt_FirstName.TabIndex = 2;
             // 
             // LbDateLeft
             // 
@@ -270,7 +300,7 @@
             this.Employee_txt_EmployeeId.Margin = new System.Windows.Forms.Padding(2);
             this.Employee_txt_EmployeeId.Name = "Employee_txt_EmployeeId";
             this.Employee_txt_EmployeeId.Size = new System.Drawing.Size(388, 20);
-            this.Employee_txt_EmployeeId.TabIndex = 2;
+            this.Employee_txt_EmployeeId.TabIndex = 1;
             // 
             // Lb_EmployeeID
             // 
@@ -304,28 +334,6 @@
             this.label1.Size = new System.Drawing.Size(107, 22);
             this.label1.TabIndex = 43;
             this.label1.Text = "EMPLOYEE";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(329, 131);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 20);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Work status:";
-            // 
-            // workStatusComboBox
-            // 
-            this.workStatusComboBox.FormattingEnabled = true;
-            this.workStatusComboBox.Items.AddRange(new object[] {
-            "Working",
-            "Has left"});
-            this.workStatusComboBox.Location = new System.Drawing.Point(445, 131);
-            this.workStatusComboBox.Name = "workStatusComboBox";
-            this.workStatusComboBox.Size = new System.Drawing.Size(97, 21);
-            this.workStatusComboBox.TabIndex = 13;
-            this.workStatusComboBox.SelectedIndexChanged += new System.EventHandler(this.workStatusComboBox_SelectedIndexChanged);
             // 
             // Employee
             // 
