@@ -214,7 +214,7 @@
             this.SupplyPurchase_txt_PurchaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.SupplyPurchase_txt_PurchaseDate.Location = new System.Drawing.Point(160, 101);
             this.SupplyPurchase_txt_PurchaseDate.Margin = new System.Windows.Forms.Padding(2);
-            this.SupplyPurchase_txt_PurchaseDate.MaxDate = new System.DateTime(2023, 5, 19, 16, 28, 3, 0);
+            this.SupplyPurchase_txt_PurchaseDate.MaxDate = new System.DateTime(9998, 5, 19, 16, 28, 3, 0);
             this.SupplyPurchase_txt_PurchaseDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.SupplyPurchase_txt_PurchaseDate.Name = "SupplyPurchase_txt_PurchaseDate";
             this.SupplyPurchase_txt_PurchaseDate.ShowUpDown = true;

@@ -70,6 +70,8 @@ namespace FinalProject_CoffeeShop.Interface
 
                 dgv_RemainingItem_CellClick(null, null);
 
+                this.RemainingItem_txt_ItemId.Enabled = false;
+
                 this.RemainingItem_txt_Quantity.Focus();
             }
         }
@@ -218,6 +220,8 @@ namespace FinalProject_CoffeeShop.Interface
 
         private void setInputButtonsOn()
         {
+            this.RemainingItem_txt_ItemId.Enabled = true;
+
             this.RemainingItem_txt_ItemId.ResetText();
             this.RemainingItem_txt_Quantity.ResetText();
 
