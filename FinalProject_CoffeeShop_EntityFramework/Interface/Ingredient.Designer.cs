@@ -208,6 +208,7 @@
             this.dgv_Ingredient.Size = new System.Drawing.Size(355, 192);
             this.dgv_Ingredient.TabIndex = 54;
             this.dgv_Ingredient.TabStop = false;
+            this.dgv_Ingredient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Ingredient_CellClick);
             // 
             // label1
             // 

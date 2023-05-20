@@ -52,19 +52,20 @@
             // 
             this.dgv_Bill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Bill.Location = new System.Drawing.Point(14, 158);
-            this.dgv_Bill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_Bill.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Bill.Name = "dgv_Bill";
             this.dgv_Bill.RowHeadersWidth = 51;
             this.dgv_Bill.RowTemplate.Height = 24;
             this.dgv_Bill.Size = new System.Drawing.Size(536, 190);
             this.dgv_Bill.TabIndex = 42;
             this.dgv_Bill.TabStop = false;
+            this.dgv_Bill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Bill_CellClick);
             // 
             // btn_OpenBillInfo
             // 
             this.btn_OpenBillInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_OpenBillInfo.Location = new System.Drawing.Point(320, 375);
-            this.btn_OpenBillInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_OpenBillInfo.Margin = new System.Windows.Forms.Padding(2);
             this.btn_OpenBillInfo.Name = "btn_OpenBillInfo";
             this.btn_OpenBillInfo.Size = new System.Drawing.Size(104, 91);
             this.btn_OpenBillInfo.TabIndex = 41;
@@ -77,7 +78,7 @@
             // 
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.Location = new System.Drawing.Point(120, 429);
-            this.btn_Delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(77, 37);
             this.btn_Delete.TabIndex = 40;
@@ -90,7 +91,7 @@
             // 
             this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.Location = new System.Drawing.Point(223, 429);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(76, 37);
             this.btn_Cancel.TabIndex = 39;
@@ -103,7 +104,7 @@
             // 
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.Location = new System.Drawing.Point(120, 373);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(76, 37);
             this.btn_Save.TabIndex = 38;
@@ -116,7 +117,7 @@
             // 
             this.btn_GoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GoBack.Location = new System.Drawing.Point(453, 373);
-            this.btn_GoBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_GoBack.Margin = new System.Windows.Forms.Padding(2);
             this.btn_GoBack.Name = "btn_GoBack";
             this.btn_GoBack.Size = new System.Drawing.Size(97, 93);
             this.btn_GoBack.TabIndex = 37;
@@ -129,7 +130,7 @@
             // 
             this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Edit.Location = new System.Drawing.Point(14, 429);
-            this.btn_Edit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Edit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(77, 37);
             this.btn_Edit.TabIndex = 36;
@@ -142,7 +143,7 @@
             // 
             this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.Location = new System.Drawing.Point(14, 375);
-            this.btn_Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Add.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(80, 35);
             this.btn_Add.TabIndex = 35;
@@ -155,7 +156,7 @@
             // 
             this.btn_Reload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Reload.Location = new System.Drawing.Point(223, 373);
-            this.btn_Reload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Reload.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.Size = new System.Drawing.Size(76, 37);
             this.btn_Reload.TabIndex = 34;
@@ -172,7 +173,7 @@
             this.Bill_pl_Input.Controls.Add(this.Lb_Bill_Id);
             this.Bill_pl_Input.Controls.Add(this.label2);
             this.Bill_pl_Input.Location = new System.Drawing.Point(13, 47);
-            this.Bill_pl_Input.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bill_pl_Input.Margin = new System.Windows.Forms.Padding(2);
             this.Bill_pl_Input.Name = "Bill_pl_Input";
             this.Bill_pl_Input.Size = new System.Drawing.Size(537, 91);
             this.Bill_pl_Input.TabIndex = 33;
@@ -182,7 +183,7 @@
             this.Bill_dtp_CreatedAt.CustomFormat = "HH:mm:ss  dd/MM/yyyy";
             this.Bill_dtp_CreatedAt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Bill_dtp_CreatedAt.Location = new System.Drawing.Point(144, 58);
-            this.Bill_dtp_CreatedAt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bill_dtp_CreatedAt.Margin = new System.Windows.Forms.Padding(2);
             this.Bill_dtp_CreatedAt.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.Bill_dtp_CreatedAt.Name = "Bill_dtp_CreatedAt";
             this.Bill_dtp_CreatedAt.RightToLeftLayout = true;
@@ -204,7 +205,7 @@
             // Bill_txt_Bill_Id
             // 
             this.Bill_txt_Bill_Id.Location = new System.Drawing.Point(144, 11);
-            this.Bill_txt_Bill_Id.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bill_txt_Bill_Id.Margin = new System.Windows.Forms.Padding(2);
             this.Bill_txt_Bill_Id.Name = "Bill_txt_Bill_Id";
             this.Bill_txt_Bill_Id.Size = new System.Drawing.Size(256, 20);
             this.Bill_txt_Bill_Id.TabIndex = 1;
@@ -258,7 +259,7 @@
             this.Controls.Add(this.btn_Reload);
             this.Controls.Add(this.Bill_pl_Input);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Bill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill";

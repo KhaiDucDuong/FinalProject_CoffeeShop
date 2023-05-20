@@ -65,6 +65,7 @@
             this.dgv_Supplier.Size = new System.Drawing.Size(492, 226);
             this.dgv_Supplier.TabIndex = 63;
             this.dgv_Supplier.TabStop = false;
+            this.dgv_Supplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Supplier_CellClick);
             // 
             // btn_GoBack
             // 

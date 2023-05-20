@@ -67,6 +67,7 @@
             this.dgv_Employee.Size = new System.Drawing.Size(571, 213);
             this.dgv_Employee.TabIndex = 52;
             this.dgv_Employee.TabStop = false;
+            this.dgv_Employee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Employee_CellClick);
             // 
             // btn_GoBack
             // 
@@ -205,7 +206,7 @@
             // 
             // Employee_dtp_DateLeft
             // 
-            this.Employee_dtp_DateLeft.CustomFormat = "HH:mm:ss  dd/MM/yyyy";
+            this.Employee_dtp_DateLeft.CustomFormat = "dd/MM/yyyy";
             this.Employee_dtp_DateLeft.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Employee_dtp_DateLeft.Location = new System.Drawing.Point(154, 166);
             this.Employee_dtp_DateLeft.Margin = new System.Windows.Forms.Padding(2);
@@ -216,7 +217,7 @@
             // 
             // Employee_dtp_DateJoin
             // 
-            this.Employee_dtp_DateJoin.CustomFormat = "HH:mm:ss  dd/MM/yyyy";
+            this.Employee_dtp_DateJoin.CustomFormat = "dd/MM/yyyy";
             this.Employee_dtp_DateJoin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Employee_dtp_DateJoin.Location = new System.Drawing.Point(154, 126);
             this.Employee_dtp_DateJoin.Margin = new System.Windows.Forms.Padding(2);

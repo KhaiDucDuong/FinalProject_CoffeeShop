@@ -44,9 +44,6 @@ namespace FinalProject_CoffeeShop.Interface
 
         private void LoadData()
         {
-            this.workStatusComboBox.SelectedIndex = 0;
-
-
             try
             {
                 dgv_Employee.DataSource = db_Employee.getData();
@@ -74,14 +71,20 @@ namespace FinalProject_CoffeeShop.Interface
         {
             if (dgv_Employee.RowCount >= 2)
             {
+                this.workStatusComboBox.SelectedIndex = 0;
+
                 int r = dgv_Employee.CurrentCell.RowIndex;
 
                 this.Employee_txt_EmployeeId.Text = dgv_Employee.Rows[r].Cells[0].Value.ToString();
                 this.Employee_txt_FirstName.Text = dgv_Employee.Rows[r].Cells[1].Value.ToString();
                 this.Employee_txt_LastName.Text = dgv_Employee.Rows[r].Cells[2].Value.ToString();
                 this.Employee_dtp_DateJoin.Text = dgv_Employee.Rows[r].Cells[3].Value.ToString();
-                if(dgv_Employee.Rows[r].Cells[4].Value != null)
+                if(dgv_Employee.Rows[r].Cells[4].Value != DBNull.Value)
+                {
                     this.Employee_dtp_DateLeft.Text = dgv_Employee.Rows[r].Cells[4].Value.ToString();
+                    this.workStatusComboBox.SelectedIndex = 1;
+                }
+
             }
         }
 
@@ -110,6 +113,7 @@ namespace FinalProject_CoffeeShop.Interface
                 this.Employee_txt_EmployeeId.Enabled = false;
 
                 this.Employee_txt_FirstName.Focus();
+                
             }
         }
 

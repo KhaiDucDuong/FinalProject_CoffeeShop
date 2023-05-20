@@ -54,19 +54,20 @@
             // 
             this.dgv_Bill_Info.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Bill_Info.Location = new System.Drawing.Point(11, 167);
-            this.dgv_Bill_Info.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_Bill_Info.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Bill_Info.Name = "dgv_Bill_Info";
             this.dgv_Bill_Info.RowHeadersWidth = 51;
             this.dgv_Bill_Info.RowTemplate.Height = 24;
             this.dgv_Bill_Info.Size = new System.Drawing.Size(536, 190);
             this.dgv_Bill_Info.TabIndex = 53;
             this.dgv_Bill_Info.TabStop = false;
+            this.dgv_Bill_Info.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Bill_Info_CellClick);
             // 
             // btn_OpenBill
             // 
             this.btn_OpenBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_OpenBill.Location = new System.Drawing.Point(318, 378);
-            this.btn_OpenBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_OpenBill.Margin = new System.Windows.Forms.Padding(2);
             this.btn_OpenBill.Name = "btn_OpenBill";
             this.btn_OpenBill.Size = new System.Drawing.Size(100, 93);
             this.btn_OpenBill.TabIndex = 52;
@@ -79,7 +80,7 @@
             // 
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.Location = new System.Drawing.Point(116, 429);
-            this.btn_Delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(77, 37);
             this.btn_Delete.TabIndex = 51;
@@ -92,7 +93,7 @@
             // 
             this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.Location = new System.Drawing.Point(214, 431);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(80, 37);
             this.btn_Cancel.TabIndex = 50;
@@ -105,7 +106,7 @@
             // 
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.Location = new System.Drawing.Point(116, 378);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(76, 37);
             this.btn_Save.TabIndex = 49;
@@ -118,7 +119,7 @@
             // 
             this.btn_GoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GoBack.Location = new System.Drawing.Point(452, 378);
-            this.btn_GoBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_GoBack.Margin = new System.Windows.Forms.Padding(2);
             this.btn_GoBack.Name = "btn_GoBack";
             this.btn_GoBack.Size = new System.Drawing.Size(95, 93);
             this.btn_GoBack.TabIndex = 48;
@@ -131,7 +132,7 @@
             // 
             this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Edit.Location = new System.Drawing.Point(10, 431);
-            this.btn_Edit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Edit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(77, 35);
             this.btn_Edit.TabIndex = 47;
@@ -144,7 +145,7 @@
             // 
             this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.Location = new System.Drawing.Point(11, 378);
-            this.btn_Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Add.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(80, 35);
             this.btn_Add.TabIndex = 46;
@@ -157,7 +158,7 @@
             // 
             this.btn_Reload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Reload.Location = new System.Drawing.Point(214, 378);
-            this.btn_Reload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Reload.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.Size = new System.Drawing.Size(80, 37);
             this.btn_Reload.TabIndex = 45;
@@ -176,7 +177,7 @@
             this.Bill_Info_pl_Input.Controls.Add(this.Lb_Bill_Id);
             this.Bill_Info_pl_Input.Controls.Add(this.label2);
             this.Bill_Info_pl_Input.Location = new System.Drawing.Point(10, 29);
-            this.Bill_Info_pl_Input.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bill_Info_pl_Input.Margin = new System.Windows.Forms.Padding(2);
             this.Bill_Info_pl_Input.Name = "Bill_Info_pl_Input";
             this.Bill_Info_pl_Input.Size = new System.Drawing.Size(537, 125);
             this.Bill_Info_pl_Input.TabIndex = 44;
@@ -184,7 +185,7 @@
             // Bill_Info_txt_Quantity
             // 
             this.Bill_Info_txt_Quantity.Location = new System.Drawing.Point(153, 89);
-            this.Bill_Info_txt_Quantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bill_Info_txt_Quantity.Margin = new System.Windows.Forms.Padding(2);
             this.Bill_Info_txt_Quantity.Name = "Bill_Info_txt_Quantity";
             this.Bill_Info_txt_Quantity.Size = new System.Drawing.Size(120, 20);
             this.Bill_Info_txt_Quantity.TabIndex = 3;
@@ -192,7 +193,7 @@
             // Bill_Info_txt_ItemId
             // 
             this.Bill_Info_txt_ItemId.Location = new System.Drawing.Point(153, 53);
-            this.Bill_Info_txt_ItemId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bill_Info_txt_ItemId.Margin = new System.Windows.Forms.Padding(2);
             this.Bill_Info_txt_ItemId.Name = "Bill_Info_txt_ItemId";
             this.Bill_Info_txt_ItemId.Size = new System.Drawing.Size(256, 20);
             this.Bill_Info_txt_ItemId.TabIndex = 2;
@@ -222,7 +223,7 @@
             // Bill_Info_txt_Bill_Id
             // 
             this.Bill_Info_txt_Bill_Id.Location = new System.Drawing.Point(153, 13);
-            this.Bill_Info_txt_Bill_Id.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Bill_Info_txt_Bill_Id.Margin = new System.Windows.Forms.Padding(2);
             this.Bill_Info_txt_Bill_Id.Name = "Bill_Info_txt_Bill_Id";
             this.Bill_Info_txt_Bill_Id.Size = new System.Drawing.Size(256, 20);
             this.Bill_Info_txt_Bill_Id.TabIndex = 1;
@@ -277,7 +278,7 @@
             this.Controls.Add(this.btn_Reload);
             this.Controls.Add(this.Bill_Info_pl_Input);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Bill_Info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill_Info";
