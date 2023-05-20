@@ -249,6 +249,7 @@
             this.dgv_SupplyPurchase.Size = new System.Drawing.Size(343, 182);
             this.dgv_SupplyPurchase.TabIndex = 35;
             this.dgv_SupplyPurchase.TabStop = false;
+            this.dgv_SupplyPurchase.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SupplypurchaseDGV_CellClick);
             // 
             // label1
             // 
