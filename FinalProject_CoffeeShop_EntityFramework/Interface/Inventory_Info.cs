@@ -123,8 +123,10 @@ namespace FinalProject_CoffeeShop.Interface
                 int rowIndex = dgv_InventoryInfo.CurrentCell.RowIndex;
 
                 string selectedItemID = dgv_InventoryInfo.Rows[rowIndex].Cells[0].Value.ToString();
+                string ingredient_id = dgv_InventoryInfo.Rows[rowIndex].Cells[1].Value.ToString();
 
-                deleteRow(selectedItemID);
+
+                deleteRow(selectedItemID, ingredient_id);
             }
         }
 
@@ -189,7 +191,7 @@ namespace FinalProject_CoffeeShop.Interface
                 MessageBox.Show("Failed to update a new row!", "Non Query execution status");
             }
         }
-        private void deleteRow(string selectedItemID)
+        private void deleteRow(string selectedItemID, string ingredient_id)
         {
             DialogResult answer;
 
@@ -197,7 +199,7 @@ namespace FinalProject_CoffeeShop.Interface
 
             if (answer == DialogResult.Yes)
             {
-                db.removeRow(selectedItemID, ref error);
+                db.removeRow(selectedItemID, ingredient_id, ref error);
                 loadData();
                 if (!printError())
                     MessageBox.Show("Delete selected row successfully!", "Deletion status");
