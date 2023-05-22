@@ -40,6 +40,7 @@
             this.btn_ShowAll = new System.Windows.Forms.Button();
             this.btn_GoBack = new System.Windows.Forms.Button();
             this.btn_Open_Bill_Info_Query = new System.Windows.Forms.Button();
+            this.lb_revenue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Bill_Query)).BeginInit();
             this.SuspendLayout();
@@ -192,11 +193,22 @@
             this.btn_Open_Bill_Info_Query.UseVisualStyleBackColor = false;
             this.btn_Open_Bill_Info_Query.Click += new System.EventHandler(this.btn_Open_Bill_Info_Query_Click);
             // 
+            // lb_revenue
+            // 
+            this.lb_revenue.AutoSize = true;
+            this.lb_revenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.lb_revenue.Location = new System.Drawing.Point(6, 95);
+            this.lb_revenue.Name = "lb_revenue";
+            this.lb_revenue.Size = new System.Drawing.Size(69, 17);
+            this.lb_revenue.TabIndex = 10;
+            this.lb_revenue.Text = "Revenue:";
+            // 
             // Bill_Query
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 430);
+            this.Controls.Add(this.lb_revenue);
             this.Controls.Add(this.btn_Open_Bill_Info_Query);
             this.Controls.Add(this.btn_GoBack);
             this.Controls.Add(this.btn_ShowAll);
@@ -232,5 +244,6 @@
         private System.Windows.Forms.Button btn_ShowAll;
         private System.Windows.Forms.Button btn_GoBack;
         private System.Windows.Forms.Button btn_Open_Bill_Info_Query;
+        private System.Windows.Forms.Label lb_revenue;
     }
 }

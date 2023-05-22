@@ -69,8 +69,10 @@ namespace FinalProject_CoffeeShop.Query_Interface
             try
             {
                 dgv_Bill_Query.DataSource = db.getData(dtp_StartDate.Text, dtp_EndDate.Text);
+                lb_revenue.Text = "Revenue: " + db.getRevenue(dtp_StartDate.Text, dtp_EndDate.Text).ToString();
             }
-            catch { MessageBox.Show("Can not get the content in the Bill table. Error !!!"); }
+            catch { MessageBox.Show("Can not get the content in the Bill table. Error !!!");
+                    }
         }
 
         private void getAllData()
@@ -78,6 +80,7 @@ namespace FinalProject_CoffeeShop.Query_Interface
             try
             {
                 dgv_Bill_Query.DataSource = db.getData();
+                lb_revenue.Text = "Revenue: " + db.getRevenue().ToString();
             }
             catch { MessageBox.Show("Can not get the content in the Bill table. Error !!!"); }
         }
