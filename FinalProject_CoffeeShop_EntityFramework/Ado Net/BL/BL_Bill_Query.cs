@@ -100,38 +100,5 @@ namespace FinalProject_CoffeeShop.Ado_Net.BL
 
             return revenue;
         }
-
-        //public float getRevenue(string bill_id)
-        //{
-        //    float revenue = 0;
-        //    //Get the joint table of Bill_Info and Item with the given Bill_ID
-        //    DataSet ds_Bill_Info_Join_Item = db.ExecuteQueryDataSet("select bill_id, item_name, item_price, quantity from Bill_info join Item on Bill_info.item_id = Item.item_id where bill_id = '" + bill_id + "'", CommandType.Text);
-        //    if (ds_Bill_Info_Join_Item.Tables[0].Rows.Count <= 0)
-        //    {
-        //        return 0;
-        //    }
-        //    else
-        //    {
-        //        int i = 0;
-        //        //get the moneyed earned for a bill_id; for every item revenue += (item price * quantity)
-        //        foreach (DataRow dRow in ds_Bill_Info_Join_Item.Tables[0].Rows)
-        //        {
-        //            float itemPrice;
-        //            int quantity;
-        //            if(float.TryParse(ds_Bill_Info_Join_Item.Tables[0].Rows[i][2].ToString(), out itemPrice) &&
-        //                int.TryParse(ds_Bill_Info_Join_Item.Tables[0].Rows[i][3].ToString(), out quantity) )
-        //            {
-        //                revenue += itemPrice * quantity;
-        //                i++;
-        //            }
-        //            else
-        //            {
-        //                MessageBox.Show("Conversion failed!");
-        //            }
-        //        }
-        //    }
-
-        //    return revenue;
-        //}
     }
 }

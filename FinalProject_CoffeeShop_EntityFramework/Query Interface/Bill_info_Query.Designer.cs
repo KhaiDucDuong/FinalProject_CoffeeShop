@@ -38,6 +38,7 @@
             this.Lb_Bill_Id = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_Bill_info_Query = new System.Windows.Forms.DataGridView();
+            this.lb_revenue = new System.Windows.Forms.Label();
             this.Bill_Info_pl_Input.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Bill_info_Query)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +71,7 @@
             // 
             // Bill_Info_pl_Input
             // 
+            this.Bill_Info_pl_Input.Controls.Add(this.lb_revenue);
             this.Bill_Info_pl_Input.Controls.Add(this.btn_Search);
             this.Bill_Info_pl_Input.Controls.Add(this.btn_Open_Bill_Query);
             this.Bill_Info_pl_Input.Controls.Add(this.btn_ShowAll);
@@ -161,6 +163,17 @@
             this.dgv_Bill_info_Query.Size = new System.Drawing.Size(375, 445);
             this.dgv_Bill_info_Query.TabIndex = 51;
             // 
+            // lb_revenue
+            // 
+            this.lb_revenue.AutoSize = true;
+            this.lb_revenue.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lb_revenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.lb_revenue.Location = new System.Drawing.Point(21, 61);
+            this.lb_revenue.Name = "lb_revenue";
+            this.lb_revenue.Size = new System.Drawing.Size(79, 17);
+            this.lb_revenue.TabIndex = 52;
+            this.lb_revenue.Text = "Total price:";
+            // 
             // Bill_info_Query
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,5 +206,6 @@
         private System.Windows.Forms.DataGridView dgv_Bill_info_Query;
         private System.Windows.Forms.Button btn_Open_Bill_Query;
         private System.Windows.Forms.Button btn_ShowAll;
+        private System.Windows.Forms.Label lb_revenue;
     }
 }

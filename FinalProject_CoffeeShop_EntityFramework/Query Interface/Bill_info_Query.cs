@@ -69,6 +69,7 @@ namespace FinalProject_CoffeeShop.Query_Interface
             try
             {
                 dgv_Bill_info_Query.DataSource = db.getData(Bill_Info_txt_Bill_Id.Text);
+                lb_revenue.Text = "Total price: " + BL_Bill_info_query.getRevenue(Bill_Info_txt_Bill_Id.Text).ToString();
             }
             catch { MessageBox.Show("Can not get the content in the Bill table. Error !!!"); }
         }
@@ -78,6 +79,7 @@ namespace FinalProject_CoffeeShop.Query_Interface
             try
             {
                 dgv_Bill_info_Query.DataSource = db.getData();
+                lb_revenue.Text = "Total price: " + BL_Bill_info_query.getRevenue().ToString();
             }
             catch { MessageBox.Show("Can not get the content in the Bill table. Error !!!"); }
         }
