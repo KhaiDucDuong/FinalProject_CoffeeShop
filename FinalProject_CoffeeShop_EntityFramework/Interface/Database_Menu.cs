@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject_CoffeeShop.Query_Interface;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,36 +32,36 @@ namespace FinalProject_CoffeeShop.Interface
                 {
                     case "Bill":
                         {
-                            Bill bill = new Bill();
-                            bill.Show();
+                            Bill curForm = new Bill();
+                            curForm.Show();
                             this.Hide();
                             break;
                         }
                     case "Inventory":
                         {
-                            Inventory inventory = new Inventory();
-                            inventory.Show();
+                            Inventory curForm = new Inventory();
+                            curForm.Show();
                             this.Hide();
                             break;
                         }
                     case "Supply Purchase":
                         {
-                            Supply_Purchase supply_Purchase = new Supply_Purchase();
-                            supply_Purchase.Show();
+                            Supply_Purchase curForm = new Supply_Purchase();
+                            curForm.Show();
                             this.Hide();
                             break;
                         }
                     case "Employee":
                         {
-                            Employee em = new Employee();
-                            em.Show();
+                            Employee curForm = new Employee();
+                            curForm.Show();
                             this.Hide();
                             break;
                         }
                     case "Supplier":
                         {
-                            Supplier supplier = new Supplier();
-                            supplier.Show();
+                            Supplier curForm = new Supplier();
+                            curForm.Show();
                             this.Hide();
                             break;
                         }
@@ -80,9 +81,21 @@ namespace FinalProject_CoffeeShop.Interface
                         }
                     case "Remaining Items":
                         {
-                            Remaining_Items remaining_Item = new Remaining_Items();   
-                            remaining_Item.Show();  
+                            Remaining_Items curForm = new Remaining_Items();
+                            curForm.Show();  
                             this.Hide();
+                            break;
+                        }
+                    case "Bill Query":
+                        {
+                            Bill_Query curForm = new Bill_Query();
+                            curForm.Show();
+                            this.Hide();
+                            break;
+                        }
+                    case "SupplyPurchase Query":
+                        {
+
                             break;
                         }
                     default:

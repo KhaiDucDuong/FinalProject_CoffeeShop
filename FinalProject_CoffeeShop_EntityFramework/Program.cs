@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FinalProject_CoffeeShop.Interface;
+using FinalProject_CoffeeShop.Query_Interface;
 
 namespace FinalProject_CoffeeShop
 {
@@ -18,6 +19,8 @@ namespace FinalProject_CoffeeShop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Database_Menu());
+            //Application.Run(new Bill_info_Query());
+
         }
     }
 }

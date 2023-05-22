@@ -39,9 +39,10 @@
             // btn_Help
             // 
             this.btn_Help.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Help.Location = new System.Drawing.Point(281, 238);
+            this.btn_Help.Location = new System.Drawing.Point(211, 193);
+            this.btn_Help.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Help.Name = "btn_Help";
-            this.btn_Help.Size = new System.Drawing.Size(98, 44);
+            this.btn_Help.Size = new System.Drawing.Size(74, 36);
             this.btn_Help.TabIndex = 12;
             this.btn_Help.Text = "Help";
             this.btn_Help.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // btn_LogOut
             // 
             this.btn_LogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_LogOut.Location = new System.Drawing.Point(281, 171);
+            this.btn_LogOut.Location = new System.Drawing.Point(211, 139);
+            this.btn_LogOut.Margin = new System.Windows.Forms.Padding(2);
             this.btn_LogOut.Name = "btn_LogOut";
-            this.btn_LogOut.Size = new System.Drawing.Size(98, 44);
+            this.btn_LogOut.Size = new System.Drawing.Size(74, 36);
             this.btn_LogOut.TabIndex = 11;
             this.btn_LogOut.Text = "Log out";
             this.btn_LogOut.UseVisualStyleBackColor = true;
@@ -59,9 +61,10 @@
             // btn_Open
             // 
             this.btn_Open.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Open.Location = new System.Drawing.Point(281, 102);
+            this.btn_Open.Location = new System.Drawing.Point(211, 83);
+            this.btn_Open.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Open.Name = "btn_Open";
-            this.btn_Open.Size = new System.Drawing.Size(98, 44);
+            this.btn_Open.Size = new System.Drawing.Size(74, 36);
             this.btn_Open.TabIndex = 10;
             this.btn_Open.Text = "Open";
             this.btn_Open.UseVisualStyleBackColor = true;
@@ -71,9 +74,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 74);
+            this.label2.Location = new System.Drawing.Point(12, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 25);
+            this.label2.Size = new System.Drawing.Size(120, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Database list:";
             // 
@@ -83,9 +87,10 @@
             this.Lb_Menu.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.Lb_Menu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Lb_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lb_Menu.Location = new System.Drawing.Point(120, 23);
+            this.Lb_Menu.Location = new System.Drawing.Point(90, 19);
+            this.Lb_Menu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lb_Menu.Name = "Lb_Menu";
-            this.Lb_Menu.Size = new System.Drawing.Size(169, 34);
+            this.Lb_Menu.Size = new System.Drawing.Size(131, 28);
             this.Lb_Menu.TabIndex = 8;
             this.Lb_Menu.Text = "Coffee shop";
             // 
@@ -93,7 +98,7 @@
             // 
             this.DatabaseListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatabaseListBox.FormattingEnabled = true;
-            this.DatabaseListBox.ItemHeight = 22;
+            this.DatabaseListBox.ItemHeight = 17;
             this.DatabaseListBox.Items.AddRange(new object[] {
             "Bill",
             "Remaining Items",
@@ -102,24 +107,28 @@
             "Employee",
             "Supplier",
             "Ingredient",
-            "Item"});
-            this.DatabaseListBox.Location = new System.Drawing.Point(21, 102);
+            "Item",
+            "Bill Query",
+            "SupplyPurchase Query"});
+            this.DatabaseListBox.Location = new System.Drawing.Point(16, 83);
+            this.DatabaseListBox.Margin = new System.Windows.Forms.Padding(2);
             this.DatabaseListBox.Name = "DatabaseListBox";
-            this.DatabaseListBox.Size = new System.Drawing.Size(200, 180);
+            this.DatabaseListBox.Size = new System.Drawing.Size(175, 157);
             this.DatabaseListBox.TabIndex = 7;
             this.DatabaseListBox.SelectedIndexChanged += new System.EventHandler(this.DatabaseListBox_SelectedIndexChanged);
             // 
             // Database_Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 312);
+            this.ClientSize = new System.Drawing.Size(302, 254);
             this.Controls.Add(this.btn_Help);
             this.Controls.Add(this.btn_LogOut);
             this.Controls.Add(this.btn_Open);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Lb_Menu);
             this.Controls.Add(this.DatabaseListBox);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Database_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Database_Menu";
