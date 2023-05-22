@@ -64,6 +64,7 @@
     <Compile Include="Ado Net\BL\BL_Bill.cs" />
     <Compile Include="Ado Net\BL\BL_Bill_Info.cs" />
     <Compile Include="Ado Net\BL\BL_Bill_info_query.cs" />
+    <Compile Include="Ado Net\BL\BL_Bill_Query.cs" />
     <Compile Include="Ado Net\BL\BL_Employee.cs" />
     <Compile Include="Ado Net\BL\BL_ingredient.cs" />
     <Compile Include="Ado Net\BL\BL_inventory.cs" />

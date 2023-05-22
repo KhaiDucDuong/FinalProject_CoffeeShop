@@ -1,4 +1,5 @@
-﻿using FinalProject_CoffeeShop.Interface;
+﻿using FinalProject_CoffeeShop.Ado_Net.BL;
+using FinalProject_CoffeeShop.Interface;
 using FinalProject_CoffeeShop.Query_Interface;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace FinalProject_CoffeeShop.Query_Interface
             InitializeComponent();
         }
 
-        //BL_Bill_query db = new BL_Bill_query();
+        BL_Bill_Query db = new BL_Bill_Query();
 
         private void Bill_Query_Load(object sender, EventArgs e)
         {
@@ -67,7 +68,7 @@ namespace FinalProject_CoffeeShop.Query_Interface
         {
             try
             {
-                //dgv_Bill_Query.DataSource = db.getData(dtp_StartDate.Text, dtp_EndDate);
+                dgv_Bill_Query.DataSource = db.getData(dtp_StartDate.Text, dtp_EndDate.Text);
             }
             catch { MessageBox.Show("Can not get the content in the Bill table. Error !!!"); }
         }
@@ -76,7 +77,7 @@ namespace FinalProject_CoffeeShop.Query_Interface
         {
             try
             {
-                //dgv_Bill_Query.DataSource = db.getData();
+                dgv_Bill_Query.DataSource = db.getData();
             }
             catch { MessageBox.Show("Can not get the content in the Bill table. Error !!!"); }
         }
