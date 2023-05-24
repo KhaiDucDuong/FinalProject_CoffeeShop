@@ -39,6 +39,7 @@ namespace FinalProject_CoffeeShop.Interface
         private void Supply_Purchase_Load(object sender, EventArgs e)
         {
             loadData();
+            dgv_SupplyPurchase.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
         private void btn_OpenSupplyPurchaseInfo_Click(object sender, EventArgs e)
         {
