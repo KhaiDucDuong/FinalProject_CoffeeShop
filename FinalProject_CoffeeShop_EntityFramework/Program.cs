@@ -19,7 +19,6 @@ namespace FinalProject_CoffeeShop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Database_Menu());
-            //Application.Run(new Bill_info_Query());
 
         }
     }

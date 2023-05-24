@@ -22,5 +22,15 @@ namespace FinalProject_CoffeeShop.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=Coffee_Shop;Integrated Security=True")]
+        public string Coffee_ShopConnectionString {
+            get {
+                return ((string)(this["Coffee_ShopConnectionString"]));
+            }
+        }
     }
 }

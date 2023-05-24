@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinalProject_CoffeeShop.Report;
 
 namespace FinalProject_CoffeeShop.Interface
 {
@@ -95,7 +96,9 @@ namespace FinalProject_CoffeeShop.Interface
                         }
                     case "SupplyPurchase Query":
                         {
-
+                            SupplyPurchase_Report curForm = new SupplyPurchase_Report();
+                            curForm.Show();
+                            this.Hide();
                             break;
                         }
                     default:

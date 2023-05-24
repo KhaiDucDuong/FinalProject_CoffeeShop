@@ -93,6 +93,14 @@
     <Compile Include="Ado Net\BL\BL_supplypurchase.cs" />
     <Compile Include="Ado Net\BL\BL_supplypurchaseinfo.cs" />
     <Compile Include="Ado Net\DB\DB_Main.cs" />
+    <Compile Include="Coffee_ShopDataSet.cs">
+      <DependentUpon>Coffee_ShopDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Coffee_ShopDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coffee_ShopDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Interface\Bill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +193,12 @@
     <Compile Include="Query Interface\Bill_Query.designer.cs">
       <DependentUpon>Bill_Query.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\SupplyPurchase_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\SupplyPurchase_Report.Designer.cs">
+      <DependentUpon>SupplyPurchase_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Interface\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
@@ -241,6 +255,21 @@
     <EmbeddedResource Include="Query Interface\Bill_Query.resx">
       <DependentUpon>Bill_Query.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\SupplyPurchase_Report.resx">
+      <DependentUpon>SupplyPurchase_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\SupplyPurchase_reportWizard.rdlc" />
+    <None Include="Coffee_ShopDataSet.xsc">
+      <DependentUpon>Coffee_ShopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Coffee_ShopDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Coffee_ShopDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Coffee_ShopDataSet.xss">
+      <DependentUpon>Coffee_ShopDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -273,6 +302,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
