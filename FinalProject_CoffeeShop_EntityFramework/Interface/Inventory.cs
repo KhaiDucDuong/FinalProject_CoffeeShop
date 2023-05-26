@@ -40,6 +40,7 @@ namespace FinalProject_CoffeeShop.Interface
         private void Inventory_Load(object sender, EventArgs e)
         {
             loadData();
+            dgv_Inventory.Columns[1].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
         private void loadData()
         {

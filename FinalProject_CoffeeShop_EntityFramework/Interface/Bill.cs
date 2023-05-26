@@ -92,6 +92,8 @@ namespace FinalProject_CoffeeShop.Interface
         private void Bill_Load(object sender, EventArgs e)
         {
             LoadData();
+            dgv_Bill.Columns[1].DefaultCellStyle.Format = "HH:mm:ss dd/MM/yyyy";
+
         }
 
         private void btn_Reload_Click(object sender, EventArgs e)

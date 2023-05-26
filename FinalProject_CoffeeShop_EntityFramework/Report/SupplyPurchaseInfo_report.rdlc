@@ -126,6 +126,7 @@
                                   <Style>
                                     <FontFamily>times new Roman</FontFamily>
                                     <FontSize>12pt</FontSize>
+                                    <Format>dd/MM/yyyy</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>

@@ -38,6 +38,7 @@ namespace FinalProject_CoffeeShop.Query_Interface
         private void Bill_Query_Load(object sender, EventArgs e)
         {
             generateData();
+            dgv_Bill_Query.Columns[1].DefaultCellStyle.Format = "HH:mm:ss dd/MM/yyyy";
         }
 
         private void btn_Open_Bill_Info_Query_Click(object sender, EventArgs e)

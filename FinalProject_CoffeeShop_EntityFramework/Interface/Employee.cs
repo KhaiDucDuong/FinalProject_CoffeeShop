@@ -40,6 +40,8 @@ namespace FinalProject_CoffeeShop.Interface
         private void Employee_Load(object sender, EventArgs e)
         {
             LoadData();
+            dgv_Employee.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgv_Employee.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
         private void LoadData()
