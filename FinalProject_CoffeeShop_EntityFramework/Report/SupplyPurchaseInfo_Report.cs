@@ -57,7 +57,14 @@ namespace FinalProject_CoffeeShop.Report
 
         public float getPriceForPurchase(int pur_ID)
         {
+            double temp_price = 0;
             float price = 0;
+            try
+            {
+                temp_price = (double)(supplyPurchaseDetailsTableAdapter.GetTotalPrice(pur_ID));
+                price = float.Parse(temp_price.ToString());
+            }
+            catch { MessageBox.Show("Cannot get total price for this purchase ID!"); }
 
             return price;
         }

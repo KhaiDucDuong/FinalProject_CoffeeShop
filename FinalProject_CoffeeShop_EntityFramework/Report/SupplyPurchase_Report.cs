@@ -34,8 +34,7 @@ namespace FinalProject_CoffeeShop.Report
 
         private void SupplyPurchase_Report_Load(object sender, EventArgs e)
         {
-            this.supplyPurchaseTableAdapter.FillAll(this.coffee_ShopDataSet.SupplyPurchase);
-            this.reportViewer_SupplyPurchase.RefreshReport();
+            getAllData();
         }
 
         private void btn_GoBack_Click(object sender, EventArgs e)
@@ -54,8 +53,7 @@ namespace FinalProject_CoffeeShop.Report
 
         private void btn_ShowAll_Click(object sender, EventArgs e)
         {
-            this.supplyPurchaseTableAdapter.FillAll(this.coffee_ShopDataSet.SupplyPurchase);
-            this.reportViewer_SupplyPurchase.RefreshReport();
+            getAllData();
         }
 
         private void btn_Find_Click(object sender, EventArgs e)
@@ -64,6 +62,11 @@ namespace FinalProject_CoffeeShop.Report
             string converted_end_date = convertInterfaceDateTimeFormatToSqlFormat(dtp_EndDate.Text);
 
             this.supplyPurchaseTableAdapter.Fill(this.coffee_ShopDataSet.SupplyPurchase, converted_start_date, converted_end_date);
+            
+            if(this.coffee_ShopDataSet.SupplyPurchase.Rows.Count > 0)
+            {
+                updateTotalPrice();
+            }
 
             this.reportViewer_SupplyPurchase.RefreshReport();
         }
@@ -73,6 +76,36 @@ namespace FinalProject_CoffeeShop.Report
             DateTime convertedFormat;
             DateTime.TryParseExact(interface_format, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out convertedFormat);
             return convertedFormat.ToString();
+        }
+
+        private void updateTotalPrice()
+        {
+            SupplyPurchaseInfo_Report SupplyPurchase_Info_obj = new SupplyPurchaseInfo_Report();
+            float totalPrice = 0;
+            try
+            {
+                //get all purchase id currently in current table and add the price for each of them into totalPrice
+                for (int i = 0; i < this.coffee_ShopDataSet.SupplyPurchase.Rows.Count; i++)
+                {
+                    totalPrice += SupplyPurchase_Info_obj.getPriceForPurchase(int.Parse(this.coffee_ShopDataSet.SupplyPurchase.Rows[i][0].ToString()));
+                }
+                lb_totalCost.Text = "Total cost: " + totalPrice.ToString();
+            }
+            catch { MessageBox.Show("Failed to calculate total price for all supply purchases!"); }
+
+            SupplyPurchase_Info_obj.Close();
+        }
+
+        private void getAllData()
+        {
+            this.supplyPurchaseTableAdapter.FillAll(this.coffee_ShopDataSet.SupplyPurchase);
+
+            if (this.coffee_ShopDataSet.SupplyPurchase.Rows.Count > 0)
+            {
+                updateTotalPrice();
+            }
+
+            this.reportViewer_SupplyPurchase.RefreshReport();
         }
     }
 }

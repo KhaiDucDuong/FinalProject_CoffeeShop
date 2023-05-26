@@ -9807,7 +9807,7 @@ SELECT purchase_id, ingredient_id, quantity_per_unit, purchase_price FROM Supply
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        Ingredient.name, Ingredient.unit, SupplyPurchaseInfo.quantity_per_unit, SupplyPurchaseInfo.purchase_price, SupplyPurchase.employee_in_charge, SupplyPurchase.supplier_id, SupplyPurchase.purchase_date, 
@@ -9830,6 +9830,14 @@ FROM            SupplyPurchaseInfo INNER JOIN
                          Supplier ON SupplyPurchase.supplier_id = Supplier.supplier_id INNER JOIN
                          Employee ON SupplyPurchase.employee_in_charge = Employee.employee_id";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        SUM(SupplyPurchaseInfo.quantity_per_unit * SupplyPurchaseInfo.purchase_price) AS 'Total price'
+FROM            SupplyPurchaseInfo INNER JOIN
+                         SupplyPurchase ON SupplyPurchaseInfo.purchase_id = SupplyPurchase.purchase_id
+WHERE        (SupplyPurchase.purchase_id = @pur_id)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pur_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "purchase_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9880,6 +9888,35 @@ FROM            SupplyPurchaseInfo INNER JOIN
             Coffee_ShopDataSet.SupplyPurchaseDetailsDataTable dataTable = new Coffee_ShopDataSet.SupplyPurchaseDetailsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object GetTotalPrice(int pur_id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(pur_id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     

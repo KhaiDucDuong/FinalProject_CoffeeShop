@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.supplyPurchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.coffee_ShopDataSet = new FinalProject_CoffeeShop.Coffee_ShopDataSet();
             this.reportViewer_SupplyPurchase = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -65,9 +65,9 @@
             // reportViewer_SupplyPurchase
             // 
             this.reportViewer_SupplyPurchase.AutoSize = true;
-            reportDataSource2.Name = "SupplyPurchase";
-            reportDataSource2.Value = this.supplyPurchaseBindingSource;
-            this.reportViewer_SupplyPurchase.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "SupplyPurchase";
+            reportDataSource1.Value = this.supplyPurchaseBindingSource;
+            this.reportViewer_SupplyPurchase.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer_SupplyPurchase.LocalReport.ReportEmbeddedResource = "FinalProject_CoffeeShop.Report.SupplyPurchase_reportWizard.rdlc";
             this.reportViewer_SupplyPurchase.Location = new System.Drawing.Point(13, 179);
             this.reportViewer_SupplyPurchase.Name = "reportViewer_SupplyPurchase";
@@ -120,7 +120,7 @@
             // 
             this.lb_totalCost.AutoSize = true;
             this.lb_totalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_totalCost.Location = new System.Drawing.Point(7, 91);
+            this.lb_totalCost.Location = new System.Drawing.Point(-1, 93);
             this.lb_totalCost.Name = "lb_totalCost";
             this.lb_totalCost.Size = new System.Drawing.Size(95, 24);
             this.lb_totalCost.TabIndex = 20;
@@ -190,10 +190,10 @@
             this.btn_Find.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Find.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Find.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Find.Location = new System.Drawing.Point(177, 88);
+            this.btn_Find.Location = new System.Drawing.Point(183, 87);
             this.btn_Find.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Find.Name = "btn_Find";
-            this.btn_Find.Size = new System.Drawing.Size(76, 32);
+            this.btn_Find.Size = new System.Drawing.Size(68, 32);
             this.btn_Find.TabIndex = 16;
             this.btn_Find.Text = "FIND";
             this.btn_Find.UseVisualStyleBackColor = false;
