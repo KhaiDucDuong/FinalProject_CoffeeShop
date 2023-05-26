@@ -193,6 +193,12 @@
     <Compile Include="Query Interface\Bill_Query.designer.cs">
       <DependentUpon>Bill_Query.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\SupplyPurchaseInfo_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\SupplyPurchaseInfo_Report.Designer.cs">
+      <DependentUpon>SupplyPurchaseInfo_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\SupplyPurchase_Report.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Query Interface\Bill_Query.resx">
       <DependentUpon>Bill_Query.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\SupplyPurchaseInfo_report.rdlc" />
+    <EmbeddedResource Include="Report\SupplyPurchaseInfo_Report.resx">
+      <DependentUpon>SupplyPurchaseInfo_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\SupplyPurchase_Report.resx">
       <DependentUpon>SupplyPurchase_Report.cs</DependentUpon>

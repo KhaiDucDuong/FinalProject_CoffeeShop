@@ -45,9 +45,11 @@ namespace FinalProject_CoffeeShop.Report
             this.Hide();
         }
 
-        private void btn_Open_SupplyPurchaseInfo_Querry_Click(object sender, EventArgs e)
+        private void btn_Show_Details_report_Click(object sender, EventArgs e)
         {
-
+            SupplyPurchaseInfo_Report popUpForm = new SupplyPurchaseInfo_Report();
+            SupplyPurchaseInfo_Report.pur_ID = Pur_ID_txtb.Text;
+            popUpForm.Show();
         }
 
         private void btn_ShowAll_Click(object sender, EventArgs e)
