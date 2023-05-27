@@ -12,7 +12,7 @@
               <Width>1.27604in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.27604in</Width>
+              <Width>2.20312in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.27604in</Width>
@@ -31,7 +31,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>purchase id</Value>
+                              <Value>Purchase id</Value>
                               <Style>
                                 <FontSize>13pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -71,7 +71,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>supplier id</Value>
+                              <Value>Supplier id</Value>
                               <Style>
                                 <FontSize>13pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -111,7 +111,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>supplier id</Value>
+                              <Value>In charge employee's id</Value>
                               <Style>
                                 <FontSize>13pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -151,7 +151,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>purchase date</Value>
+                              <Value>Purchase date</Value>
                               <Style>
                                 <FontSize>13pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -196,7 +196,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!purchase_id.Value)</Value>
+                              <Value>=Fields!purchase_id.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -231,7 +231,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!supplier_id.Value)</Value>
+                              <Value>=Fields!supplier_id.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -266,7 +266,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!supplier_id.Value)</Value>
+                              <Value>=Fields!employee_in_charge.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -352,7 +352,7 @@
         </TablixRowHierarchy>
         <DataSetName>SupplyPurchase</DataSetName>
         <Height>0.60416in</Height>
-        <Width>5.10416in</Width>
+        <Width>6.03124in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -367,7 +367,7 @@
       </Border>
     </Style>
   </Body>
-  <Width>5.10417in</Width>
+  <Width>6.03124in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

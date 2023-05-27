@@ -267,6 +267,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\SupplyPurchase_Report.resx">
       <DependentUpon>SupplyPurchase_Report.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\SupplyPurchase_reportWizard.rdlc" />
     <None Include="Coffee_ShopDataSet.xsc">

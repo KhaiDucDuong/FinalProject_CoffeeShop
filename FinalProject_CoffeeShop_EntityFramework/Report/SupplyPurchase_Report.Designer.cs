@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.supplyPurchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.coffee_ShopDataSet = new FinalProject_CoffeeShop.Coffee_ShopDataSet();
             this.reportViewer_SupplyPurchase = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -65,14 +65,14 @@
             // reportViewer_SupplyPurchase
             // 
             this.reportViewer_SupplyPurchase.AutoSize = true;
-            reportDataSource1.Name = "SupplyPurchase";
-            reportDataSource1.Value = this.supplyPurchaseBindingSource;
-            this.reportViewer_SupplyPurchase.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "SupplyPurchase";
+            reportDataSource2.Value = this.supplyPurchaseBindingSource;
+            this.reportViewer_SupplyPurchase.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer_SupplyPurchase.LocalReport.ReportEmbeddedResource = "FinalProject_CoffeeShop.Report.SupplyPurchase_reportWizard.rdlc";
             this.reportViewer_SupplyPurchase.Location = new System.Drawing.Point(13, 179);
             this.reportViewer_SupplyPurchase.Name = "reportViewer_SupplyPurchase";
             this.reportViewer_SupplyPurchase.ServerReport.BearerToken = null;
-            this.reportViewer_SupplyPurchase.Size = new System.Drawing.Size(517, 259);
+            this.reportViewer_SupplyPurchase.Size = new System.Drawing.Size(613, 259);
             this.reportViewer_SupplyPurchase.TabIndex = 0;
             // 
             // supplyPurchaseTableAdapter
@@ -95,14 +95,14 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(517, 160);
+            this.panel1.Size = new System.Drawing.Size(613, 160);
             this.panel1.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(286, 93);
+            this.label4.Location = new System.Drawing.Point(342, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 20);
             this.label4.TabIndex = 22;
@@ -111,16 +111,16 @@
             // Pur_ID_txtb
             // 
             this.Pur_ID_txtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pur_ID_txtb.Location = new System.Drawing.Point(405, 90);
+            this.Pur_ID_txtb.Location = new System.Drawing.Point(461, 89);
             this.Pur_ID_txtb.Name = "Pur_ID_txtb";
-            this.Pur_ID_txtb.Size = new System.Drawing.Size(100, 26);
+            this.Pur_ID_txtb.Size = new System.Drawing.Size(127, 26);
             this.Pur_ID_txtb.TabIndex = 21;
             // 
             // lb_totalCost
             // 
             this.lb_totalCost.AutoSize = true;
             this.lb_totalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_totalCost.Location = new System.Drawing.Point(-1, 93);
+            this.lb_totalCost.Location = new System.Drawing.Point(30, 87);
             this.lb_totalCost.Name = "lb_totalCost";
             this.lb_totalCost.Size = new System.Drawing.Size(95, 24);
             this.lb_totalCost.TabIndex = 20;
@@ -135,7 +135,7 @@
             this.btn_Open_SupplyPurchaseInfo_Querry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Open_SupplyPurchaseInfo_Querry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Open_SupplyPurchaseInfo_Querry.ForeColor = System.Drawing.Color.Black;
-            this.btn_Open_SupplyPurchaseInfo_Querry.Location = new System.Drawing.Point(370, 123);
+            this.btn_Open_SupplyPurchaseInfo_Querry.Location = new System.Drawing.Point(453, 122);
             this.btn_Open_SupplyPurchaseInfo_Querry.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Open_SupplyPurchaseInfo_Querry.Name = "btn_Open_SupplyPurchaseInfo_Querry";
             this.btn_Open_SupplyPurchaseInfo_Querry.Size = new System.Drawing.Size(135, 27);
@@ -153,7 +153,7 @@
             this.btn_GoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_GoBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GoBack.ForeColor = System.Drawing.Color.Black;
-            this.btn_GoBack.Location = new System.Drawing.Point(263, 123);
+            this.btn_GoBack.Location = new System.Drawing.Point(346, 122);
             this.btn_GoBack.Margin = new System.Windows.Forms.Padding(2);
             this.btn_GoBack.Name = "btn_GoBack";
             this.btn_GoBack.Size = new System.Drawing.Size(93, 27);
@@ -171,7 +171,7 @@
             this.btn_ShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ShowAll.ForeColor = System.Drawing.Color.Black;
-            this.btn_ShowAll.Location = new System.Drawing.Point(11, 123);
+            this.btn_ShowAll.Location = new System.Drawing.Point(34, 122);
             this.btn_ShowAll.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ShowAll.Name = "btn_ShowAll";
             this.btn_ShowAll.Size = new System.Drawing.Size(76, 27);
@@ -190,7 +190,7 @@
             this.btn_Find.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Find.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Find.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Find.Location = new System.Drawing.Point(183, 87);
+            this.btn_Find.Location = new System.Drawing.Point(250, 87);
             this.btn_Find.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Find.Name = "btn_Find";
             this.btn_Find.Size = new System.Drawing.Size(68, 32);
@@ -204,7 +204,7 @@
             this.dtp_EndDate.CustomFormat = "dd/MM/yyyy";
             this.dtp_EndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_EndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_EndDate.Location = new System.Drawing.Point(253, 52);
+            this.dtp_EndDate.Location = new System.Drawing.Point(320, 52);
             this.dtp_EndDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_EndDate.Name = "dtp_EndDate";
             this.dtp_EndDate.RightToLeftLayout = true;
@@ -216,7 +216,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(200, 52);
+            this.label3.Location = new System.Drawing.Point(267, 52);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 24);
@@ -228,7 +228,7 @@
             this.dtp_StartDate.CustomFormat = "dd/MM/yyyy";
             this.dtp_StartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_StartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_StartDate.Location = new System.Drawing.Point(77, 52);
+            this.dtp_StartDate.Location = new System.Drawing.Point(144, 52);
             this.dtp_StartDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_StartDate.Name = "dtp_StartDate";
             this.dtp_StartDate.RightToLeftLayout = true;
@@ -240,7 +240,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 54);
+            this.label2.Location = new System.Drawing.Point(59, 54);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 24);
@@ -252,7 +252,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(105, 6);
+            this.label1.Location = new System.Drawing.Point(145, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(294, 24);
@@ -263,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 450);
+            this.ClientSize = new System.Drawing.Size(637, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.reportViewer_SupplyPurchase);
             this.Name = "SupplyPurchase_Report";
