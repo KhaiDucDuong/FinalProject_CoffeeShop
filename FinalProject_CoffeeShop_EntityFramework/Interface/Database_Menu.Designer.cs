@@ -46,6 +46,7 @@
             this.btn_Help.TabIndex = 12;
             this.btn_Help.Text = "Help";
             this.btn_Help.UseVisualStyleBackColor = true;
+            this.btn_Help.Click += new System.EventHandler(this.btn_Help_Click);
             // 
             // btn_LogOut
             // 
@@ -57,6 +58,7 @@
             this.btn_LogOut.TabIndex = 11;
             this.btn_LogOut.Text = "Log out";
             this.btn_LogOut.UseVisualStyleBackColor = true;
+            this.btn_LogOut.Click += new System.EventHandler(this.btn_LogOut_Click);
             // 
             // btn_Open
             // 

@@ -14,6 +14,19 @@ namespace FinalProject_CoffeeShop.Interface
 {
     public partial class Database_Menu : Form
     {
+        //disable exit button on top right
+        private const int CP_DISABLE_CLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle = cp.ClassStyle | CP_DISABLE_CLOSE_BUTTON;
+                return cp;
+            }
+        }
+
+
         public Database_Menu()
         {
             InitializeComponent();
@@ -117,6 +130,19 @@ namespace FinalProject_CoffeeShop.Interface
         private void Database_Menu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_LogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Help_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is a Coffee shop management program developed by Duong Duc Khai, To Duc An, and Ngo Dinh Huy.\n\n" +
+                "To make changes in the database, choose the name of a table you want to visit then click 'Open'\n" +
+                "You can query Bill table by choosing 'Bill Query'\n" +
+                "You can query and see reports of Supply Purchase table by choosing 'SupplyPurchase Query'", "Help menu");
         }
     }
 }
