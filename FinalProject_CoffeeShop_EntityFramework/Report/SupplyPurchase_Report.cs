@@ -107,5 +107,31 @@ namespace FinalProject_CoffeeShop.Report
 
             this.reportViewer_SupplyPurchase.RefreshReport();
         }
+
+        public float getTotalPrice(string start_date, string end_date)
+        {
+            float totalPrice = 0;
+            string converted_start_date = convertInterfaceDateTimeFormatToSqlFormat(dtp_StartDate.Text);
+            string converted_end_date = convertInterfaceDateTimeFormatToSqlFormat(dtp_EndDate.Text);
+
+            this.supplyPurchaseTableAdapter.Fill(this.coffee_ShopDataSet.SupplyPurchase, converted_start_date, converted_end_date);
+
+            if (this.coffee_ShopDataSet.SupplyPurchase.Rows.Count > 0)
+            {
+                SupplyPurchaseInfo_Report SupplyPurchase_Info_obj = new SupplyPurchaseInfo_Report();
+
+                try
+                {
+                    //get all purchase id currently in current table and add the price for each of them into totalPrice
+                    for (int i = 0; i < this.coffee_ShopDataSet.SupplyPurchase.Rows.Count; i++)
+                    {
+                        totalPrice += SupplyPurchase_Info_obj.getPriceForPurchase(int.Parse(this.coffee_ShopDataSet.SupplyPurchase.Rows[i][0].ToString()));
+                    }
+                }
+                catch { MessageBox.Show("Failed to calculate total price for all supply purchases!"); }
+            }
+
+            return totalPrice;
+        }
     }
 }

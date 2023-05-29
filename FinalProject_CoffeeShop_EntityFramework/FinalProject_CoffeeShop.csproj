@@ -193,6 +193,12 @@
     <Compile Include="Query Interface\Bill_Query.designer.cs">
       <DependentUpon>Bill_Query.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Revenue_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Revenue_Report.Designer.cs">
+      <DependentUpon>Revenue_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\SupplyPurchaseInfo_Report.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     <EmbeddedResource Include="Query Interface\Bill_Query.resx">
       <DependentUpon>Bill_Query.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\Revenue_Report.resx">
+      <DependentUpon>Revenue_Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\SupplyPurchaseInfo_report.rdlc" />
     <EmbeddedResource Include="Report\SupplyPurchaseInfo_Report.resx">
       <DependentUpon>SupplyPurchaseInfo_Report.cs</DependentUpon>
@@ -299,6 +308,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\query-icon-4.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
